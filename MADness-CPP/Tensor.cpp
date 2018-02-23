@@ -196,8 +196,6 @@ public:
 	/* Generate a 0 valued matrix given the dimensions */
 	/***************************************************/
 	Matrix ( int n, int m ){
-
-
 		for (int i = 0; i < n; i++ ){ 
 			Vector tmp(m);
 			b.push_back ( tmp );
@@ -208,8 +206,6 @@ public:
 	/* Copy constructor 							   */
 	/***************************************************/	
 	Matrix ( Matrix &obj ){
-
-
 		for ( int i = 0; i < obj.len() ; i ++){
 			Vector tmp = obj.b[i];
 			b.push_back ( tmp );

@@ -348,6 +348,50 @@ public:
 };
 
 
+
+
+/*****************************************************************/
+/*  Return the level-0 blocks rm, r0, rp of the central			 */
+/*  difference derivative operator with periodic boundary 		 */
+/*  conditions on either side.									 */
+/*****************************************************************/
+vector< Matrix >  make_dc_periodic ( int k){
+    
+    Matrix r0(k,k);
+    Matrix rp(k,k);
+    Matrix rm(k,k);
+    
+    vector< Matrix > res(3);
+
+    ldouble iphase = 1.0, jphase, gammaij, Kij;
+
+    for ( int i = 0; i < k; i++ ){
+        
+        jphase = 1.0;
+
+        for ( int j = 0; j < k; j ++ ){
+
+            gammaij = sqrt( (2*i+1)*(2*j+1) );
+
+            if ( (i-j) > 0  &&  ((i-j) %2 ) == 1 )
+                Kij = 2.0;
+            else
+                Kij = 0.0;
+
+            r0[i][j] = 0.5 * (1.0 - iphase*jphase - 2.0*Kij) * gammaij;
+            rm[i][j] = 0.5 * jphase * gammaij;
+            rp[i][j] = -0.5 * iphase * gammaij;
+            jphase = -jphase;
+        }
+        iphase = -iphase;
+    }
+    res[0] = rm;;
+    res[1] = r0;
+    res[2] = rp;
+    return res;
+}
+
+
 class Function {
 
 	/***************************************************/
@@ -360,7 +404,7 @@ class Function {
 	int max_level;
 	unordered_map<int, unordered_map< int, Vector > > d;
 	unordered_map<int, unordered_map< int, Vector > > s;
-	int rm, r0, rp;
+	Matrix rm, r0, rp;
 	int compressed;
 
 	Matrix quad_phi, quad_phiT, quad_phiw;
@@ -372,6 +416,10 @@ class Function {
 	Gauss G;
 
 public:
+
+	Function () {
+		cout << "do_nothing\n";
+	}
 	/***************************************************/
 	/* Constructor function for initializing data      */
 	/***************************************************/
@@ -390,7 +438,7 @@ public:
         init_twoscale(k);
         init_quadrature(k);
 
-        vector<int> m = make_dc_periodic(k);
+        vector< Matrix > m = make_dc_periodic(k);
 
         if ( m.size() != 3 )
         	assert ( "Vector size issue\n" );
@@ -1006,6 +1054,224 @@ public:
 				this->sclean(n + 1, 2 * l + 1, cleaning);
 		}
 	}
+
+
+	/****************************************************************/
+	/* Differentiate the function, which corresponds to application */
+	/* of a block triadiagonal matrix.  For an adaptively refined   */
+	/* target function we may need to refine boxes down until three */
+	/* boxes exist in the same scale.				    	 	    */
+	/****************************************************************/	
+	Function diff( Function result, int n = 0, int l = 0 ){
+	
+		if ( n == 0){
+			if ( this->compressed ) 
+				this->reconstruct();
+			result = Function( this->k, this->thresh );
+		}
+		
+		if ( this->s[n].find(l) == this->s[n].end() ){
+			/* Sub trees can run in parallel */
+			/* Run down tree until we hit scaling function coefficients */
+			this->diff( result, n+1, 2*l );
+			this->diff( result, n+1, 2*l+1 );
+		}
+		else {
+			// These can also go in parallel since may involve
+			// recurring up & down the tree.
+			Vector sm = this->get_coeffs(n,l-1);
+			Vector sp = this->get_coeffs(n,l+1);
+			Vector s0 = this->s[n][l];
+
+			if ( sm.len() && s0.len() && sp.len() ) {
+				Vector r =  ( this->rp * sm ) +  ( this->r0 * s0 ) + ( this->rm * sp );
+				result.s[n][l] = r.scale( pow( 2.0, n) ); 
+			}
+			else {
+				this->recur_down( n, l, s0 );
+				// Sub trees can run in parallel
+				this->diff( result, n+1, 2*l );
+				this->diff( result, n+1, 2*l+1 );
+			}
+		}
+
+		if ( n == 0 ) {
+			this->sclean();
+			return result;
+		}
+		
+
+	}
+
+	/***************************************************/
+	/* evaluate_function  	????				   	   */
+	/***************************************************/
+	// ldouble evaluate_function ( x,n,l):
+	
+	// coordinate = (x[i]+l)*(2.0**(n))
+	// return self.f(coordinate)
+
+
+	/*****************************************************************/
+	/*  Return coefficients for box [n][l] given function values at  */
+	/* quadrature points within same box.				   	         */
+	/*****************************************************************/
+	Vector quad_values_to_coeff( Vector values, int n, int l, Matrix transform_matrix) {
+
+		Vector coeff = ( values * transform_matrix ).scale( sqrt( pow(2, -n) ) ); 
+		return coeff;
+	}
+
+	/*****************************************************************/
+	/* Return the largest occupied level (i.e. finest refinement)    */ 
+	/* in the scaling function basis.					   	         */
+	/*****************************************************************/
+	int finest_level () {
+	
+		int n;
+		if ( this->compressed )
+			 this->reconstruct();
+
+		for ( n = this->max_level; n >= 0; n-- ){
+			if( this->s[n].size() > 0 )
+				break;
+		}
+		return n;
+	}
+
+
+	/*****************************************************************/
+	/*  Return a list of occupied levels (i.e. all n such that 		 */
+	/*	self.s[n] != {}).				   	         				 */
+	/*****************************************************************/
+	vector<int> occupied_levels( ){
+
+		if ( this->compressed )
+			this->reconstruct();
+
+		vector<int> result;
+		int n;
+
+		for ( n = this->max_level; n >=0 ; n-- ){
+			if( this->s[n].size() != 0 )
+				result.push_back(n);
+		}
+
+		return result;
+	}
+
+
+	/*****************************************************************/
+	/* Return a list of tuples of all leaves    					 */
+	/* (i.e. finest level n & l)				   	         		 */
+	/*****************************************************************/
+
+	vector<pair<int, int>> get_leaves( ) {
+
+		vector<int> nrange = this->occupied_levels();
+		vector<pair<int, int>> result;
+
+		for ( int i = 0; i < nrange.size(); i++ ){
+			int n = nrange[i];
+			for ( auto itr = this->s[n].begin(); itr != this->s[n].end(); itr++ )
+				result.push_back( { n, itr->first } );
+		}
+
+		return result;
+	}
+
+	/*****************************************************************/
+	/* refine numerical representation of f(x) to desired tolerance  */
+	/* but don't refine any more than the finest level of other 	 */
+	/* n is level in tree 											 */
+	/* l is box index 							   					 */
+	/*****************************************************************/
+	void refine_limited ( Function other, int n, int l) {
+	
+		if ( other.compressed )
+			other.reconstruct();
+
+		// project f(x) at next level
+
+		Vector s0 = this-> project(n + 1, 2 * l);
+		Vector s1 = this->project(n + 1, 2 * l + 1);
+
+		int k = this->k;
+
+		if( s0.len() != k || s1.len() != k )
+			cout << "Wrong initialization\n";
+
+		Vector s( s0, s1);
+
+		// apply the two scale relationship to get difference coeff
+		// in 1d this is O(k^2) flops (in 3d this is O(k^4) flops)
+
+		Vector d = ( s * this->hgT );
+
+		// check to see if within tolerance
+		// normf() is Frobenius norm == 2-norm for vectors
+
+		if ( ( d.getSlice(k, d.len() ).normf() <this->thresh) ||
+			 ( other.s[n + 1].find(2 * l) !=  other.s[n + 1].end() && 
+			   other.s[n + 1].find(2 * l + 1) != other.s[n + 1].end() ) )
+		{
+			// put into tree at level n+1
+			this->s[n + 1][2 * l] = s0;
+			this->s[n + 1][2 * l + 1] = s1;
+
+		}	
+		else if ( other.s[n + 1].find(2 * l) != other.s[n + 1].end() )
+		{
+			this->s[n + 1][2 * l] = s0;
+			this->refine_limited( other, n + 1, 2 * l + 1);
+		}
+		else if ( other.s[n + 1].find(2 * l + 1) != other.s[n + 1].end() )
+		{
+			this->refine_limited(other, n + 1, 2 * l);
+			this->s[n + 1][2 * l + 1] = s1;
+		}
+		else
+		{
+			// these recursive calls on sub-trees can go in parallel
+			this->refine_limited(other, n + 1, 2 * l);
+			this->refine_limited(other, n + 1, 2 * l + 1);
+		}
+	}
+
+
+
+	/*****************************************************************/
+	/* Take the inner product of the function with another 			 */
+	/* madness function. 											 */
+	/*****************************************************************/
+
+	ldouble inner( Function other){
+
+		if ( ! this->compressed )
+			this->compress();
+
+		if ( !other.compressed )
+			other.compress();
+
+		ldouble result = this->s[0][0].inner( other.s[0][0] ); 
+
+		int n = 0;
+
+		while  ( this->d.find(n) != this->d.end() &&
+			     other.d.find(n) != other.d.end() ) {
+
+			for ( auto itr = this->d[n].begin(); itr != this->d[n].end(); itr++ ){
+				int l = itr->first;
+				if( other.d[n].find(l) != other.d[n].end() ){
+					result += this->d[n][l].inner( other.d[n][l] );
+				}
+			}
+
+			n += 1;
+		}
+		return result;
+	}
+
 };
 
 
