@@ -1,3 +1,4 @@
+
 #include<math.h>
 #include <vector>
 #include <iostream>
@@ -7,349 +8,29 @@
 using namespace std;
 #define ldouble  long double
 
+vector< ldouble > phi_norms;
+const double pi = 3.1415926535897;
 
-class Vector {
+#include "helper.cpp"
+#include "Tensor.cpp"
+int autorefine = 1;	
 
-	vector<ldouble> a;
 
-public:
-	Vector () {
-		cout << "Do nothing\n";
+
+void addpair ( unordered_map<int, unordered_map< int, Vector > >& mp, int n, int l, Vector v){
+
+
+	// cout << mp.find(11);
+	if( mp.find( n ) != mp.end() ){
+		mp[n].insert( make_pair( l, v) );
+	}
+	else{
+		unordered_map< int, Vector > tmp;
+		tmp.insert ( make_pair ( l, v));
+		mp.insert ( make_pair( n, tmp));
 	}
 
-	/*********************************************/
-	/* if arg is an int							 */
-	/*********************************************/
-	Vector (int arg ) {
-
-		for ( int i = 0; i < arg ; i++ ){
-			a.push_back( 0.0 );
-		}
-	}
-
-	/*********************************************/
-	/* if arg is an array						 */
-	/*********************************************/
-	Vector (vector<ldouble> arg ) {
-
-
-		for ( int i = 0; i < arg.size(); i++ ){
-			a.push_back( arg[i] );
-		}
-	}
-
-	/*********************************************/
-	/* copy constructor							 */
-	/*********************************************/
-	Vector ( const Vector& obj ){
-
-
-		int n = obj.a.size();
-
-		for ( int i = 0; i < n; i++ )
-			a.push_back( obj.a[i] );
-
-	}
-
-	/*********************************************/
-	/* combining two Vectors 					 */
-	/*********************************************/
-
-	Vector ( Vector obj1, Vector obj2 ) {
-
-
-		int k = 0;
-		for ( int i = 0; i < obj1.len(); i++ )
-			a.push_back( obj1.a[i] );
-
-		for ( int i = 0; i < obj2.len(); i++ )
-			a.push_back(obj2.a[i]);
-	}
-	/*********************************************/
-	/* sum of square of all the values in a		 */
-	/*********************************************/
-	ldouble normf() {
-
-		ldouble sum = 0.0;
-
-		for (int i = 0; i < a.size(); i++ )
-			sum += a[i] * a[i];
-
-		return sqrt(sum);
-	}
-
-	/*********************************************/
-	/* sum of two vector object a				 */
-	/*********************************************/
-	ldouble inner( Vector other ){
-
-		ldouble sum = 0.0;
-
-		for (int i = 0; i < a.size(); i++ ) {
-			sum += a[i] * other.a[i];
-		}
-
-		return sum;
-	}
-
-	/*********************************************/
-	/* update a[] acc to alpha and beta			 */
-	/*********************************************/
-	Vector gaxpy( ldouble alpha, Vector other, ldouble beta) {
-		
-		for( int i = 0; i < a.size(); i++) {
-			a[i] = alpha * a[i] + beta * other.a[i];
-		}
-		return *this;
-	}
-
-	/*********************************************/
-	/* multiply each value of a with const s	 */
-	/*********************************************/
-	Vector scale( ldouble s ) {
-
-		for (int i = 0; i < a.size(); i++ )
-			a[i] *= s;
-
-		return *this;
-	}
-
-	/*********************************************/
-	/* if arg is an array						 */
-	/*********************************************/
-	Vector emul( Vector other) {
-		for (int i = 0 ; i < a.size(); i++ )
-			a[i] *= other.a[i];
-		return *this;
-	} 
-
-	/*********************************************/
-	/* Vector v[ind]							 */
-	/*********************************************/
-	ldouble& operator[] ( int ind ) {
-		return a[ind];
-	}
-
-	/*********************************************/
-	/* return a Vector object defined over 		 */
-	/* a[lo to hi]					 			 */
-	/*********************************************/
-
-	Vector getSlice (int lo, int hi) {
-		vector<ldouble>  tmp( a.begin()+lo, a.begin()+hi);
-		Vector obj(tmp);
-		return obj;
-	}
-
-	/*********************************************/
-	/* set a[lo to hi] to value					 */
-	/*********************************************/
-	void setSlice ( int lo, int hi, ldouble value ) {
-		for(int i = lo; i < hi; i++ )
-			a[i] = value;
-	}
-
-	/*********************************************/
-	/* Print the object by a 					 */
-	/*********************************************/
-	string toStr() {
-		string str = "";
-		for (int i = 0; i < a.size(); i++) {
-			str += to_string( a[i]);
-			str += "  ";
-		}
-		return str;
-	}
-   
-	/*********************************************/
-	/* obj.len() will return length of a 		 */
-	/*********************************************/
-    int len(){
-        return this->a.size();
-    }
-
-    /*********************************************/
-	/* obj3 = obj1 + obj2 				 		 */
-	/*********************************************/
-    Vector operator+ ( Vector other ){
-
-    	Vector r( *this );
-    	r.gaxpy (1.0, other, 1.0 );
-    	return r;
-    }
-
-
-};
-
-
-
-class Matrix {
-
-	vector< Vector > b;
-
-public:
-
-	Matrix () {
-		cout << "do nothing\n\n";
-	}
-	/***************************************************/
-	/* Generate a 0 valued matrix given the dimensions */
-	/***************************************************/
-	Matrix ( int n, int m ){
-
-		for (int i = 0; i < n; i++ ){ 
-			Vector tmp(m);
-			b.push_back ( tmp );
-		}
-	}
-
-	/***************************************************/
-	/* Copy constructor 							   */
-	/***************************************************/	
-	Matrix ( Matrix &obj ){
-		for ( int i = 0; i < obj.len() ; i ++){
-			Vector tmp = obj.b[i];
-			b.push_back ( tmp );
-		}
-	}
-	/***************************************************/
-	/* Get number of rows of the matrix 			   */
-	/***************************************************/
-	int len() {
-		return b.size();
-	}
-
-	/***************************************************/
-	/* [] Overloading 								   */
-	/***************************************************/
-
-	Vector& operator[] ( int idx ){
-		return b[idx];
-	}
-
-	/***************************************************/
-	/* Multiply a vector and matrix 				   */
-	/***************************************************/
-
-	friend Vector operator* ( Matrix M, Vector V );
-
-	friend Vector operator* ( Vector V, Matrix M );
-
-};
-
-
-/***************************************************/
-/* Matrix * Vector 				 				   */
-/***************************************************/
-Vector operator* ( Matrix M, Vector V ) {
-	
-	cout << "Matrix * Vector\n";
-
-	int n, m = 0;
- 	n = M.len();
- 	if( n!= 0 )
- 		m = M[0].len();
-
- 	if( m != V.len() )
- 		assert ( "Invalid dimensions\n" );
-
- 	Vector r (n);
-
- 	for ( int i = 0; i < n; i++ ) {
- 		for ( int j = 0; j < m; j++ ){
- 			r[i] += M[i][j] * V[j];
- 		}
- 	}
-    return r;
 }
-
-
-/***************************************************/
-/* Vector * Matrix 				 				   */
-/***************************************************/
-Vector operator* ( Vector V, Matrix M ) {
-	
-	int n, m = 0;
-
-	cout << "Vector * Matrix\n";
- 	n = M.len();
- 	if( n!= 0 )
- 		m = M[0].len();
-
- 	if( n != V.len() )
- 		assert ( "Invalid dimensions\n" );
-
- 	Vector r (m);
-
- 	for ( int i = 0; i < m; i++ ) {
- 		for ( int j = 0; j < n; j++ ){
- 			r[i] += V[j] * M[j][i];
- 		}
- 	}
-    return r;
-}
-
-
-
-
-class Gauss {
-
-	vector<vector< ldouble > > points;
-	vector<vector< ldouble > > weights;
-
-public:
-	Gauss () {
-
-		points.push_back ( {} );
-		weights.push_back ( {} );
-
-		points.push_back ( {0.50000000000000000} );
-		weights.push_back ( { 1.00000000000000000} );
-
-		points.push_back (  {0.78867513459481287, 0.21132486540518713} );
-		weights.push_back ( {0.50000000000000011, 0.50000000000000011} );
-
-		points.push_back ( {0.88729833462074170, 0.50000000000000000, 0.11270166537925830} );
-		weights.push_back ( { 0.27777777777777751, 0.44444444444444442, 0.27777777777777751} );
-
-		points.push_back ( {0.93056815579702623, 0.66999052179242813, 0.33000947820757187, 0.06943184420297371} );
-		weights.push_back ( { 0.17392742256872701, 0.32607257743127305, 0.32607257743127305, 0.17392742256872701} );
-		
-		points.push_back ( {0.95308992296933193, 0.76923465505284150, 0.50000000000000000, 0.23076534494715845, 0.04691007703066802} );
-		weights.push_back ( { 0.11846344252809465, 0.23931433524968321, 0.28444444444444444, 0.23931433524968321, 0.11846344252809465} );
-		
-		points.push_back ( {0.96623475710157603, 0.83060469323313224, 0.61930959304159849, 0.38069040695840156, 0.16939530676686776, 0.03376524289842397} );
-		weights.push_back ( { 0.08566224618958508, 0.18038078652406936, 0.23395696728634546, 0.23395696728634546, 0.18038078652406936, 0.08566224618958508} );
-
-		points.push_back ( {0.97455395617137930, 0.87076559279969723, 0.70292257568869854, 0.50000000000000000, 0.29707742431130141, 0.12923440720030277, 0.02544604382862070} );
-		weights.push_back ( { 0.06474248308443417, 0.13985269574463832, 0.19091502525255946, 0.20897959183673470, 0.19091502525255946, 0.13985269574463832, 0.06474248308443417} );
-		
-		points.push_back ( {0.98014492824876809, 0.89833323870681336, 0.76276620495816450, 0.59171732124782495, 0.40828267875217511, 0.23723379504183550, 0.10166676129318664, 0.01985507175123191} );
-		weights.push_back ( { 0.05061426814518921, 0.11119051722668717, 0.15685332293894369, 0.18134189168918102, 0.18134189168918102, 0.15685332293894369, 0.11119051722668717, 0.05061426814518921} );
-		
-		points.push_back ( {0.98408011975381304, 0.91801555366331788, 0.80668571635029518, 0.66212671170190451, 0.50000000000000000, 0.33787328829809554, 0.19331428364970482, 0.08198444633668206, 0.01591988024618696} );
-		weights.push_back (  { 0.04063719418078738, 0.09032408034742866, 0.13030534820146775, 0.15617353852000135, 0.16511967750062989, 0.15617353852000135, 0.13030534820146775, 0.09032408034742841, 0.04063719418078738});
-
-		points.push_back ( {0.98695326425858587, 0.93253168334449232, 0.83970478414951222, 0.71669769706462361, 0.57443716949081558, 0.42556283050918442, 0.28330230293537639, 0.16029521585048778, 0.06746831665550773, 0.01304673574141413} );
-		weights.push_back ( { 0.03333567215434403, 0.07472567457529021, 0.10954318125799088, 0.13463335965499817, 0.14776211235737641, 0.14776211235737641, 0.13463335965499817, 0.10954318125799088, 0.07472567457529021, 0.03333567215434403} );
-		
-		points.push_back ( {0.98911432907302843, 0.94353129988404771, 0.86507600278702468, 0.75954806460340585, 0.63477157797617245, 0.50000000000000000, 0.36522842202382755, 0.24045193539659410, 0.13492399721297532, 0.05646870011595234, 0.01088567092697151});
-		weights.push_back ( { 0.02783428355808731, 0.06279018473245226, 0.09314510546386703, 0.11659688229599521, 0.13140227225512346, 0.13646254338895031, 0.13140227225512346, 0.11659688229599521, 0.09314510546386703, 0.06279018473245226, 0.02783428355808731} );
-	}
-
-public:
-	void gauss_legendre (int order, Vector &p, Vector &w ) {
-		Vector newP( points[order] );
-		Vector newW( weights[order] );
-		
-		p = newP;
-		w = newW;
-	}
-};
-
-
-
-
 /*****************************************************************/
 /*  Return the level-0 blocks rm, r0, rp of the central			 */
 /*  difference derivative operator with periodic boundary 		 */
@@ -358,7 +39,7 @@ public:
 vector< Matrix >  make_dc_periodic ( int k){
     
     Matrix r0(k,k);
-    Matrix rp(k,k);
+ 	Matrix rp(k,k);
     Matrix rm(k,k);
     
     vector< Matrix > res(3);
@@ -397,10 +78,13 @@ class Function {
 	/***************************************************/
 	/* Private data								       */
 	/***************************************************/
-	int autorefine = 1;	
+	
+
+public:
+
 	int k;
-	int thresh;
-	int f;
+	ldouble thresh;
+	ldouble ( *f ) ( ldouble) ;
 	int max_level;
 	unordered_map<int, unordered_map< int, Vector > > d;
 	unordered_map<int, unordered_map< int, Vector > > s;
@@ -415,19 +99,18 @@ class Function {
 
 	Gauss G;
 
-public:
-
 	Function () {
-		cout << "do_nothing\n";
+		// cout << "do_nothing\n";
 	}
 	/***************************************************/
 	/* Constructor function for initializing data      */
 	/***************************************************/
-	Function( int k, int thr, int f = 0, int initial_level = 2) {
+	Function( int k_, double thr, ldouble( *func_ptr )( ldouble) = NULL, int initial_level = 2) {
 
-		k = k;
+		cout << "Function cons";
+		k = k_;
 		thresh = thr;
-		f = f;
+		f = func_ptr;
         max_level = 30;
 
         for (int i = 0; i <= max_level; i++ ) {
@@ -446,17 +129,20 @@ public:
         r0 = m[1];
         rp = m[2];
 
+       
         compressed = 0;
 
-        if(f) {
+        if(f != NULL) {
         	int max_level = pow ( 2, initial_level );
         	for (int i = 0; i < max_level; i++) 
 				refine(initial_level, i);
         }
+        cout << "outside cons\n";
 	}
 
-	Function ( Function &other ){
+	Function ( const Function &other ){
 
+		cout << "Function Copy cons\n";
 		k = other.k;
 		thresh = other.thresh;
 		f = other.f;
@@ -486,6 +172,7 @@ public:
 	/***************************************************/
 	void print_tree( int n = 0, int l = 0){
 
+		cout << "print_tree\n";
 		if ( s.find(n) == s.end() ){
 			cout << " print_tree -- 364 \n";
 			return;
@@ -498,7 +185,7 @@ public:
 				str = str + "   ";
 
 			cout << str << "[" << n << "," << l << "] Leaf Node with Coefficients ";
-			cout << str << s[n][l].toStr();
+			s[n][l].toStr();
 			cout << " ";
 		}
 		else {
@@ -512,6 +199,7 @@ public:
 	/***************************************************/
 	Function copy(){
        
+       	cout << "copy\n";
 		Function result( k, thresh );
 		result.compressed = this->compressed;
 		result.f = this->f;
@@ -527,7 +215,10 @@ public:
 	/***************************************************/
 	void init_twoscale ( int k ) {
 
-		Matrix hg_ = twoscalecoeffs( k );
+		cout << "init_twoscale \n" ;
+		vector< vector<ldouble>> hg_ = twoscalecoeffs( k );
+
+
 
 		Matrix tmp1( 2*k, 2*k );
 		Matrix tmp2( 2*k, k);
@@ -552,6 +243,7 @@ public:
 				hg1[i][j]  = hg_[i][j+k];
 			}
 		}
+
 	}
 	 
 
@@ -561,6 +253,7 @@ public:
 	/***************************************************/
 	void init_quadrature( int order) {
 
+		cout << "init_quadrature\n";
 		int npt;
 		G.gauss_legendre(order, quad_x, quad_w);
 		quad_npt = npt = quad_w.len();
@@ -575,14 +268,17 @@ public:
 
 		for ( int i = 0; i < npt; i++ ) {
 			
+			
 			Vector p( phi ( quad_x[i], k) );
-
+			//cout << p.toStr();
 			for ( int m = 0; m < k; m++ ) {
 				quad_phi[i][m] = p[m];
 				quad_phiT[m][i] = p[m];
 				quad_phiw[i][m] = quad_w[i] * p[m];
 			}
 		}
+		// cout << "init_quadrature\n";
+
 	}
 
 
@@ -591,18 +287,22 @@ public:
 	/***************************************************/
 	Vector project ( int n, int l ){
         
-		Vector s( k );
+		Vector s( this->k );
 		ldouble h = pow( 0.5, n );
 		ldouble scale = sqrt( h );
 
-		for ( int mu = 0; mu < quad_npt; mu++ ) { 
+		for ( int mu = 0; mu < this->quad_npt; mu++ ) { 
 
 			ldouble x = ( l + quad_x[ mu ] ) * h ;
-			ldouble f = f(x);
+			ldouble f_ = f(x);
 
-			for ( int i = 0; i < k; i++ )
-				s[i] += scale * f * quad_phiw[mu][i];
+			for ( int i = 0; i < k; i++ ){
+				s[i] += scale * f_ * quad_phiw[mu][i];
+				// cout << s[i] << "\n";
+			}
 		}
+		// for ( int i = 0; i < s.len(); i++ )
+		// s.toStr();
 		return s;
 	}
 
@@ -614,26 +314,26 @@ public:
 	void refine(int n, int l) {
 
 		Vector s0, s1;
-		int k = k;
+		int k = this->k;
 
 		s0 = project(n + 1, 2 * l);
 		s1 = project(n + 1, 2 * l + 1);
 		
 		/* size of s would be 2*k */
 		Vector s(s0, s1);
+		Vector d(s * hgT);
+
+		Vector tmp ( d, k, d.len() );
+
 		
-		Vector d = s * hgT;
-
-		Vector tmp ( d.getSlice(k, d.len()) );
-
-		if ( tmp.normf() < thresh  || n >= max_level - 1 ) {
-			this->s[n + 1][2 * l] = s0;
-			this->s[n + 1][2 * l + 1] = s1;
+		if ( tmp.normf() < this->thresh  || n >= this->max_level - 1 ) {
+			addpair ( this->s, n+1, 2*l, s0);
+			addpair ( this->s, n+1, 2*l+1, s1);
 		}
 		else {
 
-			refine(n + 1, 2 * l);
-			refine(n + 1, 2 * l + 1);
+			this->refine(n + 1, 2 * l);
+			this->refine(n + 1, 2 * l + 1);
 		}
 	}
 
@@ -642,9 +342,11 @@ public:
 
 	ldouble evaluate( int n, int l, ldouble x){
         
-		if ( s[n].find(l) != s[n].end() ) {
-			Vector p = phi ( x, this->k );
-			return  ( p.inner( s[n][l] ) * sqrt( pow ( 2.0, n)) );
+        // cout << "evaluate\n";
+
+		if ( this->s[n].find(l) != this->s[n].end() ) {
+			Vector p ( phi ( x, this->k ));
+			return  ( p.inner( this->s[n][l] ) * sqrt( pow ( 2.0, n)) );
 		}
 
 		else {
@@ -660,24 +362,37 @@ public:
 	}
 
 
-// def __call__(self, x):
-// '''
-// Evaluate function at x ... scaling function basis only
-// call to self after creation
-// looks like a Function evaluation
-// say g = Function(5, 1e-3, f) so g(1.0) should be similar to f(1.0)
-// '''
-// if self.compressed: self.reconstruct()
-// return self.__evaluate(0, 0, x)
+	/***************************************************/
+	// Evaluate function at x ... scaling function basis only
+	// call to self after creation
+	// looks like a Function evaluation
+	// say g = Function(5, 1e-3, f) so g(1.0) should be similar to f(1.0)
+	/***************************************************/
 
+	ldouble __f( ldouble x){
+
+	// cout << " __f\n";
+	if ( this->compressed ){
+		cout << "reconstructing\n";
+		this->reconstruct();
+	}
+
+	return this->evaluate(0, 0, x);
+
+	}
+
+	/***************************************************/
+	/*  norm2 									 	   */
+	/***************************************************/
 	ldouble norm2 ( ){
 		 
+		cout << "norm2\n";
 		if ( this->compressed )
 			this->reconstruct();
 
 		ldouble sum = 0.0;
 
-		for ( auto itr = s.begin(); itr != s.end(); itr++ ){
+		for ( auto itr = this->s.begin(); itr != this->s.end(); itr++ ){
 			for ( auto itr1 = (itr->second).begin(); itr1 != (itr->second).end(); itr1++ )
 				sum += pow ( (itr1->second).normf(), 2 );
 		}
@@ -693,24 +408,29 @@ public:
 	/*********************************************************/
 
 	void compress( int n = 0, int l = 0 ) {
+
+		// cout << "compress\n";
 		
 		if ( this->compressed ) 
 			return;
 
-		if ( s[n+1].find(2*l) == s[n+1].end() )
-			compress(n + 1, 2 * l);
+		if ( this->s[n+1].find(2*l) == this->s[n+1].end() )
+			this->compress(n + 1, 2 * l);
 
-		if ( s[n+1].find( 2*l + 1 ) == s[n+1].end() )
-			compress(n + 1, 2 * l + 1);
+		if ( this->s[n+1].find( 2*l + 1 ) == this->s[n+1].end() )
+			this->compress(n + 1, 2 * l + 1);
 
 		int k = this->k;
 
 		Vector s ( this->s[n+1][2*l], this->s[n + 1][2 * l + 1] );
 
-		Vector d = s * hgT;
+		Vector d ( s * hgT );
 
-		this->s[n][l] = d.getSlice(0, k);
-		this->d[n][l] = d.getSlice(k, d.len());
+		Vector tmp1( d, 0, k );
+		Vector tmp2( d, k, d.len());
+
+		addpair( this->s, n, l, tmp1);
+		addpair( this->d, n, l, tmp2);
 
 		this->s[n+1].erase( 2*l );
 		this->s[n+1].erase( 2*l + 1);
@@ -730,6 +450,7 @@ public:
 	
 	void reconstruct( int n=0, int l=0 ) {
 		
+		// cout << "reconstruct\n";
 		if ( ! this->compressed )
 			return;
 
@@ -742,10 +463,13 @@ public:
 
 			/* apply the two scale relationship to get difference coeff */
             /* in 1d this is O(k^2) flops (in 3d this is O(k^4) flops). */
-			Vector  s = d * this->hg;
+			Vector  s ( d * this->hg) ;
 
-			this->s[n + 1][2 * l] = s.getSlice( 0, k); 
-			this->s[n + 1][2 * l + 1] = s.getSlice( k, s.len() );
+			Vector tmp1( s, 0, k );
+			Vector tmp2( s, k, s.len());
+
+			addpair( this->s, n+1, 2*l, tmp1);
+			addpair( this->s, n+1, 2*l+1, tmp2);
 
 			/* sub-trees can be done in parallel */
 			reconstruct(n + 1, 2 * l);
@@ -764,6 +488,7 @@ public:
 
 	void mul_iter( Function &f1, Function &f2, int n=0, int l=0) {
 		
+		cout << "mul_iter\n";
 		if ( f1.s[n].find(l) != f1.s[n].end() && f2.s[n].find(l) != f2.s[n].end() ) {
 			if ( autorefine && n+1 <= this->max_level ) {   /* ?? Function.autorefine */
 			
@@ -831,6 +556,7 @@ public:
 
 	Function operator* (  Function other ){
 
+		cout << "operator*\n";
 		if ( this->compressed )
 			this->reconstruct();
 
@@ -859,7 +585,8 @@ public:
 	/*   recursive "iteration" for gaxpy.       	   */
 	/***************************************************/
 	void gaxpy_iter ( ldouble alpha, Function other, ldouble beta, int n=0, int l=0 ) {
-	
+		
+		cout << "gaxpy_iter\n";
 		if ( this->d[n].find(l) != this->d[n].end() || other.d[n].find(l) != other.d[n].end() ){
 
 			if ( this->d[n].find(l) != this->d[n].end() && other.d[n].find(l) != other.d[n].end() )
@@ -888,6 +615,7 @@ public:
 	/******************************************************/
 	Function gaxpy( ldouble alpha, Function other, ldouble beta) {
 
+		cout << "gaxpy\n";
 		if ( !this->compressed )
 			this->compress();
 		if ( !other.compressed )
@@ -904,7 +632,7 @@ public:
 	/*   basic addition 					       	   */
 	/***************************************************/
 	Function operator+ ( Function other ){
-
+		cout << "operator+\n";
 		Function result( k, thresh );
 		result.compressed = this->compressed;
 		result.f = this->f;
@@ -922,6 +650,7 @@ public:
 	/***************************************************/
 	Function operator- ( Function other ){
 
+		cout << "operator-\n";
 		Function result( k, thresh );
 		result.compressed = this->compressed;
 		result.f = this->f;
@@ -939,9 +668,13 @@ public:
 	/* each block 	 			  					   */
 	/***************************************************/
 	void summarize( int printcoeff = 0 ) {
+		cout << "summarize\n";
+		cout << "sum coefficients\n\n";
 
-		cout << "sum coefficients";
-
+		for (auto it = this->s.begin(); it != this->s.end(); it++){
+				for ( auto it2 = (it->second).begin(); it2 != (it->second).end(); it2++)
+					cout << it->first << "  " << it2->first << "\n";
+		}
 		for (auto itr = this->s.begin(); itr != this->s.end(); itr++) {
 
 			ldouble sum = 0.0;
@@ -957,16 +690,16 @@ public:
 			}
 			if ( !printcoeff ) {
 				if ( this->s[n].size() != 0 ) 
-					cout << "level=" << n << "boxes=" << this->s[n].size() << "norm=" << sqrt(sum);
+					cout << " level=  " << n << "   boxes=.  " << this->s[n].size() << "  norm=. " << sqrt(sum) << "\n";
 			}
 		}
 
-		cout << "difference coefficients";
+		cout << "difference coefficients\n";
 		for (auto itr = this->s.begin(); itr != this->s.end(); itr++) {
 			int n = itr->first;
 			ldouble sum = 0.0;
 
-			for ( auto itr2 = this->d.begin(); itr2 != this->d.end(); itr2++) {
+			for ( auto itr2 = this->d[n].begin(); itr2 != this->d[n].end(); itr2++) {
 				int l = itr2->first;
 
 				if ( printcoeff )
@@ -977,8 +710,10 @@ public:
 			}
 
 			if ( !printcoeff ) {
-				if ( this->d[n].size() != 0 ) 
-					cout << "level=" << n << "boxes=" << this->d[n].size() << "norm=" << sqrt(sum);
+				if ( this->d[n].size() != 0 ) {
+					cout << " level=   " << n << "   boxes=.  " << this->d[n].size() << "  norm=. " << sqrt(sum);
+					cout  << "\n";
+				}	
 			}
 		}
 	}
@@ -991,21 +726,22 @@ public:
 	/*************************************************************/
 
 	void recur_down ( int n, int l, Vector & s ) {
-		
+
 		int k = this->k;
 		Vector d (2*k );
 
 		for (int i = 0; i < k; i++ )
 			d[i] = s[i]; 
 
-		Vector s__ = d * this->hg;
+		Vector s__ ( d * this->hg );
 
-		for ( int i = 0; i < s__.len(); i++ )
-			s[i] = s__[i]; 
+		Vector tmp1 ( s__, 0, k );
+		Vector tmp2 ( s__, k, s__.len());
+		addpair( this->s, n + 1, 2 * l, tmp1 );
+		addpair( this->s, n + 1, 2 * l + 1, tmp2 );
 
-		this->s[n + 1][2 * l] = s.getSlice(0,k);
-		this->s[n + 1][2 * l + 1] = s.getSlice(k, s.len());
 	}
+
 
 	/***************************************************/
 	/* get_coeffs 				    	 			   */
@@ -1017,21 +753,28 @@ public:
 			Vector tmp( this->k );
 			return tmp;
 		}
+		
+		if ( this->s.find(n) != this->s.end() && this->s[n].find(l) != this->s[n].end() ) {
 
-		if ( this->s[n].find(l) != this->s[n].end() ) 
 			return this->s[n][l];
+		}
 
 		if ( n > 0 ){
-			s = this->get_coeffs(n-1, l/2);
-			if ( s.len() == 0)
-				return s;
+			Vector s__ ( this->get_coeffs(n - 1, l / 2 ) );
+			if ( s__.len() == 0)
+				return s__;
+			else{
+				s = s__;
+			}
 		}
-		else 
+		else{ 
 			return s;
+		}
 
 		this->recur_down(n-1, l/2, s);
 		return this->s[n][l];
 	}
+
 
 	/***************************************************/
 	/*  sclean 					    	 			   */
@@ -1062,34 +805,31 @@ public:
 	/* target function we may need to refine boxes down until three */
 	/* boxes exist in the same scale.				    	 	    */
 	/****************************************************************/	
-	Function diff( Function result, int n = 0, int l = 0 ){
-	
+	Function diff( Function &result, int n = 0, int l = 0 ){
+
 		if ( n == 0){
 			if ( this->compressed ) 
 				this->reconstruct();
-			result = Function( this->k, this->thresh );
 		}
 		
-		if ( this->s[n].find(l) == this->s[n].end() ){
-			/* Sub trees can run in parallel */
-			/* Run down tree until we hit scaling function coefficients */
+		if ( ( this->s.find(n) != this->s.end()) && ((this->s[n]).find(l) == (this->s[n]).end()) ){
+			
 			this->diff( result, n+1, 2*l );
 			this->diff( result, n+1, 2*l+1 );
 		}
 		else {
-			// These can also go in parallel since may involve
-			// recurring up & down the tree.
-			Vector sm = this->get_coeffs(n,l-1);
-			Vector sp = this->get_coeffs(n,l+1);
-			Vector s0 = this->s[n][l];
+			Vector sm ( this->get_coeffs(n,l-1) );
+			Vector sp ( this->get_coeffs(n,l+1) );
+			Vector s0 ( this->s[n][l] );
 
 			if ( sm.len() && s0.len() && sp.len() ) {
 				Vector r =  ( this->rp * sm ) +  ( this->r0 * s0 ) + ( this->rm * sp );
-				result.s[n][l] = r.scale( pow( 2.0, n) ); 
+
+				Vector tmp( r.scale( pow( 2.0, n) ) );
+				addpair( result.s, n, l, tmp);
 			}
 			else {
 				this->recur_down( n, l, s0 );
-				// Sub trees can run in parallel
 				this->diff( result, n+1, 2*l );
 				this->diff( result, n+1, 2*l+1 );
 			}
@@ -1099,9 +839,11 @@ public:
 			this->sclean();
 			return result;
 		}
-		
 
+		Function c;
+		return c;
 	}
+
 
 	/***************************************************/
 	/* evaluate_function  	????				   	   */
@@ -1117,7 +859,7 @@ public:
 	/* quadrature points within same box.				   	         */
 	/*****************************************************************/
 	Vector quad_values_to_coeff( Vector values, int n, int l, Matrix transform_matrix) {
-
+		cout << "quad_values_to_coeff\n";
 		Vector coeff = ( values * transform_matrix ).scale( sqrt( pow(2, -n) ) ); 
 		return coeff;
 	}
@@ -1128,6 +870,7 @@ public:
 	/*****************************************************************/
 	int finest_level () {
 	
+		cout << "finest_level\n";
 		int n;
 		if ( this->compressed )
 			 this->reconstruct();
@@ -1146,6 +889,7 @@ public:
 	/*****************************************************************/
 	vector<int> occupied_levels( ){
 
+		cout << "occupied_levels\n";
 		if ( this->compressed )
 			this->reconstruct();
 
@@ -1168,6 +912,7 @@ public:
 
 	vector<pair<int, int>> get_leaves( ) {
 
+		cout << "get_leaves";
 		vector<int> nrange = this->occupied_levels();
 		vector<pair<int, int>> result;
 
@@ -1188,6 +933,7 @@ public:
 	/*****************************************************************/
 	void refine_limited ( Function other, int n, int l) {
 	
+		cout << "refine_limited\n";
 		if ( other.compressed )
 			other.reconstruct();
 
@@ -1210,8 +956,9 @@ public:
 
 		// check to see if within tolerance
 		// normf() is Frobenius norm == 2-norm for vectors
+		Vector V( d, k, d.len() );
 
-		if ( ( d.getSlice(k, d.len() ).normf() <this->thresh) ||
+		if ( ( V.normf() <this->thresh) ||
 			 ( other.s[n + 1].find(2 * l) !=  other.s[n + 1].end() && 
 			   other.s[n + 1].find(2 * l + 1) != other.s[n + 1].end() ) )
 		{
@@ -1247,6 +994,7 @@ public:
 
 	ldouble inner( Function other){
 
+		// cout << "inner\n";
 		if ( ! this->compressed )
 			this->compress();
 
@@ -1274,13 +1022,82 @@ public:
 
 };
 
+/*****************************************************************/
+/* gaussian with square normalized to 1							 */
+/*****************************************************************/
+
+ldouble test1 ( ldouble x ){
+	
+	ldouble a = 500.0;
+	ldouble tmp = 2 * a / pi;
+	ldouble tmp2 = -a * pow(( x-0.5 ), 2);
+	return pow( tmp , 0.25 ) * exp( tmp2 );
+
+	// tmp = pow(.  2*a/math.pi,   0.25).  *math.exp(-a*(x-0.5)**2)
+}
+
+/*****************************************************************/
+/* derivative of test1 											 */
+/*****************************************************************/
+
+ldouble dtest1 ( ldouble x ) {
+
+	// cou << "dtest1\n";
+	ldouble a = 500.0;
+	ldouble tmp1 =  -2.0 * a * (x-0.5);
+	ldouble tmp2 =  pow( 2 * a /pi, 0.25 );
+	ldouble tmp3 =  exp( -a * pow( (x-0.5), 2 ));
+	return tmp1 * tmp2 * tmp3;
+}
+
+
 
 int main () {
-	Vector tmp( 10 );
-	Matrix M ;
-	// M = Matrix ( 10, 20);
-	// for ( int i = 0; i < )
-	cout << "Hello";
+	
+	int npt = 20 ;
+    int k = 5;
+    ldouble thresh = 1e-5 ;
+
+	Function F( k,  thresh, test1 );
+	cout << "Norm of function is" << F.norm2() << "\n";
+
+	vector< ldouble > range;
+	for (int i = 0; i < npt+1; i++)
+		range.push_back(i);
+
+	for ( int i = 0; i < range.size(); i++ ){
+		ldouble x = (ldouble) range[i];
+		x = x/(ldouble)npt;
+		cout <<  "f("  << x << "). " << F.__f( x ) <<  "   Exact " << test1(x) << "\n" ;
+	}
+	
+	// print "f(%.2f)=%12.8f exact(%.2f)=%12.8f err=%9.1e" % (x,f(x),x,test1(x),f(x)-test1(x))
+
+	cout << "coefficients before compressing\n";
+    F.summarize();
+
+    F.compress();
+
+    cout <<  "coefficients after compressing\n";
+
+    F.summarize();
+
+    F.reconstruct();
+
+    cout << "coefficients after reconstructing\n";
+    F.summarize();
+
+
+    Function fd( F.k, F.thresh);
+    // F.diff( fd );
+    Function df ( F.diff( fd ) );
+
+    for ( int i = 0; i < range.size(); i++ ){
+		ldouble x = (ldouble) range[i];
+		x = x/(ldouble)npt;
+		cout <<  "f("  << x << "). " << df.__f( x ) <<  "   Exact " << dtest1(x) << "\n" ;
+	}
+   
 }
 
 

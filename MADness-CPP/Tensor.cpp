@@ -1,12 +1,5 @@
-#include<math.h>
-#include <vector>
-#include <iostream>
-#include <unordered_map>
-#include <assert.h>
+// #include "helper.h"
 
-using namespace std;
-#define ldouble  long double
-// class Matrix;
 
 class Vector {
 
@@ -14,13 +7,14 @@ class Vector {
 
 public:
 	Vector () {
-		cout << "Do nothing\n";
+		// cout << "Do nothing\n";
 	}
 
 	/*********************************************/
 	/* if arg is an int							 */
 	/*********************************************/
 	Vector (int arg ) {
+
 
 		for ( int i = 0; i < arg ; i++ ){
 			a.push_back( 0.0 );
@@ -52,10 +46,20 @@ public:
 	}
 
 	/*********************************************/
+	/* copy constructor							 */
+	/*********************************************/
+	Vector ( const Vector& obj, int lo, int hi ){
+		cout << "sliced\n";
+		for ( int i = lo; i < hi; i++ ){
+			this->a.push_back( obj.a[i] );
+		}
+
+	}
+	/*********************************************/
 	/* combining two Vectors 					 */
 	/*********************************************/
 
-	Vector ( Vector obj1, Vector obj2 ) {
+	Vector ( Vector &obj1, Vector &obj2 ) {
 
 
 		int k = 0;
@@ -72,16 +76,16 @@ public:
 
 		ldouble sum = 0.0;
 
-		for (int i = 0; i < a.size(); i++ )
-			sum += a[i] * a[i];
-
+		for (int i = 0; i < a.size(); i++ ){
+			sum += ( a[i] * a[i]);
+		}
 		return sqrt(sum);
 	}
 
 	/*********************************************/
 	/* sum of two vector object a				 */
 	/*********************************************/
-	ldouble inner( Vector other ){
+	ldouble inner( Vector& other ){
 
 		ldouble sum = 0.0;
 
@@ -95,7 +99,7 @@ public:
 	/*********************************************/
 	/* update a[] acc to alpha and beta			 */
 	/*********************************************/
-	Vector gaxpy( ldouble alpha, Vector other, ldouble beta) {
+	Vector gaxpy( ldouble alpha, Vector& other, ldouble beta) {
 		
 		for( int i = 0; i < a.size(); i++) {
 			a[i] = alpha * a[i] + beta * other.a[i];
@@ -117,7 +121,7 @@ public:
 	/*********************************************/
 	/* if arg is an array						 */
 	/*********************************************/
-	Vector emul( Vector other) {
+	Vector emul( Vector &other) {
 		for (int i = 0 ; i < a.size(); i++ )
 			a[i] *= other.a[i];
 		return *this;
@@ -135,10 +139,9 @@ public:
 	/* a[lo to hi]					 			 */
 	/*********************************************/
 
-	Vector getSlice (int lo, int hi) {
+	vector<ldouble> getSlice (int lo, int hi) {
 		vector<ldouble>  tmp( a.begin()+lo, a.begin()+hi);
-		Vector obj(tmp);
-		return obj;
+		return tmp;
 	}
 
 	/*********************************************/
@@ -152,13 +155,11 @@ public:
 	/*********************************************/
 	/* Print the object by a 					 */
 	/*********************************************/
-	string toStr() {
-		string str = "";
+	void toStr() {
+		
 		for (int i = 0; i < a.size(); i++) {
-			str += to_string( a[i]);
-			str += "  ";
+			cout << a[i] << "  ";
 		}
-		return str;
 	}
    
 	/*********************************************/
@@ -178,6 +179,16 @@ public:
     	return r;
     }
 
+    /*********************************************/
+	/* obj3 = obj1 + obj2 				 		 */
+	/*********************************************/
+    // void operator= ( Vector other ){
+
+    // 	for ( int i = 0; i < other.len(); i++ ){
+    // 		a[i] = other.a[i];
+    // 	}
+    // }
+
 
 };
 
@@ -190,12 +201,13 @@ class Matrix {
 public:
 
 	Matrix () {
-		cout << "do nothing\n\n";
+		// cout << "do nothing\n\n";
 	}
 	/***************************************************/
 	/* Generate a 0 valued matrix given the dimensions */
 	/***************************************************/
 	Matrix ( int n, int m ){
+
 		for (int i = 0; i < n; i++ ){ 
 			Vector tmp(m);
 			b.push_back ( tmp );
@@ -270,7 +282,6 @@ Vector operator* ( Vector V, Matrix M ) {
 	
 	int n, m = 0;
 
-	cout << "Vector * Matrix\n";
  	n = M.len();
  	if( n!= 0 )
  		m = M[0].len();
@@ -278,7 +289,8 @@ Vector operator* ( Vector V, Matrix M ) {
  	if( n != V.len() )
  		assert ( "Invalid dimensions\n" );
 
- 	Vector r (m);
+
+ 	Vector r ( m );
 
  	for ( int i = 0; i < m; i++ ) {
  		for ( int j = 0; j < n; j++ ){
@@ -291,91 +303,59 @@ Vector operator* ( Vector V, Matrix M ) {
 
 
 
+class Gauss {
 
-int main () {
+	vector<vector< ldouble > > points;
+	vector<vector< ldouble > > weights;
 
-	// Vector v;
-	// cout << "size" << v.len() << "\n"; 
+public:
+	Gauss () {
 
-	// Vector a(10);
-	// cout << " size: " << a.len() << "\n";
+		points.push_back ( {} );
+		weights.push_back ( {} );
 
-	vector<ldouble> l = { 1, 2,3 ,4, 5};
-	Vector b(l);
+		points.push_back ( {0.50000000000000000} );
+		weights.push_back ( { 1.00000000000000000} );
 
-	Vector n;
-	n = b;
+		points.push_back (  {0.78867513459481287, 0.21132486540518713} );
+		weights.push_back ( {0.50000000000000011, 0.50000000000000011} );
 
-	cout << n.toStr();
-	// cout << " size: " << b.len() <<  "\n";
+		points.push_back ( {0.88729833462074170, 0.50000000000000000, 0.11270166537925830} );
+		weights.push_back ( { 0.27777777777777751, 0.44444444444444442, 0.27777777777777751} );
 
-	// Vector c = b;
-	// cout << " size: " << c.len() << "\n";
-
-	// Vector d( b, c );
-	// cout << " size: " << d.len() << "  " << d.toStr() << "\n";
-
-	// cout << b.toStr() <<"\n";
-	// b.setSlice(2,6, 100.00000);
-	// cout << b.toStr() <<"\n";
-	// cout << e.toStr() <<"\n"; 
-
-
-	// Vector v = b + c;
-	// cout << v.toStr() <<"\n"; 
-
-
-	// Matrix N(5,5);
-
-	// Matrix M;
-
-
-	// M = N;
-	// for ( int i = 0; i < 5; i++ ){
+		points.push_back ( {0.93056815579702623, 0.66999052179242813, 0.33000947820757187, 0.06943184420297371} );
+		weights.push_back ( { 0.17392742256872701, 0.32607257743127305, 0.32607257743127305, 0.17392742256872701} );
 		
-	// 	for ( int j= 0; j < 5; j++){
-	// 		M[i][j] = v;
-	// 		v -= 10;
-	// 	}
-	// 	v += 200;
-	// }
+		points.push_back ( {0.95308992296933193, 0.76923465505284150, 0.50000000000000000, 0.23076534494715845, 0.04691007703066802} );
+		weights.push_back ( { 0.11846344252809465, 0.23931433524968321, 0.28444444444444444, 0.23931433524968321, 0.11846344252809465} );
+		
+		points.push_back ( {0.96623475710157603, 0.83060469323313224, 0.61930959304159849, 0.38069040695840156, 0.16939530676686776, 0.03376524289842397} );
+		weights.push_back ( { 0.08566224618958508, 0.18038078652406936, 0.23395696728634546, 0.23395696728634546, 0.18038078652406936, 0.08566224618958508} );
 
-	// for ( int i = 0; i < 5; i++ ){
-	// 	for ( int j= 0; j < 5; j++){
-	// 		cout << M[i][j] << "   ";
-	// 	}
-	// 	cout << "\n";
-	// }
-	// Matrix L = N;
+		points.push_back ( {0.97455395617137930, 0.87076559279969723, 0.70292257568869854, 0.50000000000000000, 0.29707742431130141, 0.12923440720030277, 0.02544604382862070} );
+		weights.push_back ( { 0.06474248308443417, 0.13985269574463832, 0.19091502525255946, 0.20897959183673470, 0.19091502525255946, 0.13985269574463832, 0.06474248308443417} );
+		
+		points.push_back ( {0.98014492824876809, 0.89833323870681336, 0.76276620495816450, 0.59171732124782495, 0.40828267875217511, 0.23723379504183550, 0.10166676129318664, 0.01985507175123191} );
+		weights.push_back ( { 0.05061426814518921, 0.11119051722668717, 0.15685332293894369, 0.18134189168918102, 0.18134189168918102, 0.15685332293894369, 0.11119051722668717, 0.05061426814518921} );
+		
+		points.push_back ( {0.98408011975381304, 0.91801555366331788, 0.80668571635029518, 0.66212671170190451, 0.50000000000000000, 0.33787328829809554, 0.19331428364970482, 0.08198444633668206, 0.01591988024618696} );
+		weights.push_back (  { 0.04063719418078738, 0.09032408034742866, 0.13030534820146775, 0.15617353852000135, 0.16511967750062989, 0.15617353852000135, 0.13030534820146775, 0.09032408034742841, 0.04063719418078738});
 
-	// for ( int i = 0; i < L.len(); i++ ){
-	// 	for ( int j= 0; j < L[0].len(); j++){
-	// 		cout << L[i][j] << "   ";
-	// 	}
-	// 	cout << "\n";
-	// }
+		points.push_back ( {0.98695326425858587, 0.93253168334449232, 0.83970478414951222, 0.71669769706462361, 0.57443716949081558, 0.42556283050918442, 0.28330230293537639, 0.16029521585048778, 0.06746831665550773, 0.01304673574141413} );
+		weights.push_back ( { 0.03333567215434403, 0.07472567457529021, 0.10954318125799088, 0.13463335965499817, 0.14776211235737641, 0.14776211235737641, 0.13463335965499817, 0.10954318125799088, 0.07472567457529021, 0.03333567215434403} );
+		
+		points.push_back ( {0.98911432907302843, 0.94353129988404771, 0.86507600278702468, 0.75954806460340585, 0.63477157797617245, 0.50000000000000000, 0.36522842202382755, 0.24045193539659410, 0.13492399721297532, 0.05646870011595234, 0.01088567092697151});
+		weights.push_back ( { 0.02783428355808731, 0.06279018473245226, 0.09314510546386703, 0.11659688229599521, 0.13140227225512346, 0.13646254338895031, 0.13140227225512346, 0.11659688229599521, 0.09314510546386703, 0.06279018473245226, 0.02783428355808731} );
+	}
 
-	// cout << "\n\n" << c.toStr() << "\n";
-
-	// Vector c = L * b;
-
-	// cout << "\n\n" << c.toStr() << "\n";
-	
-	// Vector c = b * M;
-	// cout << c.toStr() << "\n";
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
+public:
+	void gauss_legendre (int order, Vector &p, Vector &w ) {
+		Vector newP( points[order] );
+		Vector newW( weights[order] );
+		
+		p = newP;
+		w = newW;
+	}
+};
 
 
