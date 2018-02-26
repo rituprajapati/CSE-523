@@ -1,4 +1,3 @@
-// #include "helper.h"
 
 /*********************************************************************/
 // Return the twoscale coefficients for the multiwavelets of order k.
@@ -8,7 +7,6 @@
 
 vector < vector <ldouble> > twoscalecoeffs( int k ){
 
-cout << "twoscalecoeffs\n";
 
 vector< vector < vector< ldouble > > > __hg;
 
@@ -159,14 +157,9 @@ __hg.push_back( { { 7.07106781186547462e-01 , 0.00000000000000000e+00 , 0.000000
 
 vector< ldouble > pn ( ldouble x, int order){
 
-      // cout << "pn \n";
     vector< ldouble > p;
     for(ldouble i = 0.0; i < (ldouble)order+1; i++ )
       p.push_back( i );
-
-    // for ( int i = 0; i < p.size(); i++ )
-    //   cout << p[i] << "  " ;
-
 
     p[0] = 1.0;
 
@@ -178,13 +171,6 @@ vector< ldouble > pn ( ldouble x, int order){
     for ( int n = 1; n < order; n++ ) {
          p[n+1] = n * ( x * p[n] - p[n-1] ) / (n+1) + x * p[n] ;
     }
-
-    //++++++++++++++++++++++++++++++++++++++++
-    // cout << "Inside pn, List is: ";
-    // for ( int i = 0; i < p.size() ; i++ )
-    //     cout << p[i] << "  ";
-    // cout << "\n";
-    //++++++++++++++++++++++++++++++++++++++++
 
     return p;
 }
@@ -201,20 +187,12 @@ vector< ldouble > pn ( ldouble x, int order){
 
 vector< ldouble > phi( ldouble x, int k) {
 
-      // cout << "phi\n";
     if ( phi_norms.size() == 0 ) {
-        // cout << "phi_norms is zero\n";
         for ( int n = 0; n < max( k, 100); n++ ){
             phi_norms.push_back( sqrt (2*n+1) );
         }
     }
-    
-    //++++++++++++++++++++++++++++++++++++++++
-    // cout << "phi_norms: ";
-    // for ( int i = 0; i < phi_norms.size() ; i++ )
-    //     cout << phi_norms[i] << "  ";
-    // cout << "\n";
-    //++++++++++++++++++++++++++++++++++++++++
+
 
     int order = k-1;
     vector< ldouble > p = pn (2.0 * x - 1, order );
@@ -223,13 +201,6 @@ vector< ldouble > phi( ldouble x, int k) {
          p[n] = p[n] * phi_norms[n];
     }
    
-    //++++++++++++++++++++++++++++++++++++++++
-    // cout << "Inside phi, List is: ";
-    // for ( int i = 0; i < p.size() ; i++ )
-    //     cout << p[i] << "  ";
-    // cout << "\n";
-    //++++++++++++++++++++++++++++++++++++++++
-
     return p;
 }
 
