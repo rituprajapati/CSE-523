@@ -14,7 +14,7 @@ class Function {
 
 public:
 	/***************************************************/
-	/* Private data								       */
+	/* class data								       */
 	/***************************************************/
 	int k;
 	ldouble thresh;
@@ -244,8 +244,6 @@ public:
 	/***************************************************/
 	void refine(int n, int l) {
 
-
-		//Vector s0, s1;
 		int k = this->k;
 
 		Vector s0 = project(n + 1, 2 * l);
@@ -253,7 +251,7 @@ public:
 
 		/* size of s would be 2*k */
 		Vector s(s0, s1);
-		Vector d(s * hgT);
+		Vector d = (s * hgT);
 		Vector tmp ( d, k, d.len() );
 
 		if ( tmp.normf() < this->thresh  || n >= this->max_level - 1 ) {
@@ -274,7 +272,7 @@ public:
 	ldouble evaluate( int n, int l, ldouble x){
         
 		if ( this->s[n].find(l) != this->s[n].end() ) {
-			Vector p( phi ( x, this->k ));
+			Vector p = ( phi ( x, this->k ));
 			return  ( p.inner( this->s[n][l] ) * sqrt( pow ( 2.0, n)) );
 		}
 		else {
@@ -344,9 +342,9 @@ public:
 
 		int k = this->k;
 
-		Vector s ( this->s[n+1][2*l], this->s[n + 1][2 * l + 1] );
+		Vector s( this->s[n+1][2*l], this->s[n + 1][2 * l + 1] );
 
-		Vector d ( s * this->hgT );
+		Vector d = ( s * this->hgT );
 
 		Vector tmp1( d, 0, k );
 		Vector tmp2( d, k, d.len());
@@ -382,7 +380,7 @@ public:
 			this->d[n].erase(l);
 			this->s[n].erase(l);
 
-			Vector  s ( d * this->hg) ;
+			Vector  s = ( d * this->hg) ;
 
 			Vector tmp1( s, 0, k );
 			Vector tmp2( s, k, s.len());
@@ -638,7 +636,7 @@ public:
 		for (int i = 0; i < k; i++ )
 			d[i] = s[i]; 
 
-		Vector s__ ( d * this->hg );
+		Vector s__ = ( d * this->hg );
 
 		Vector tmp1 ( s__, 0, k );
 		Vector tmp2 ( s__, k, s__.len());
@@ -664,7 +662,7 @@ public:
 		}
 
 		if ( n > 0 ){
-			Vector s__ ( this->get_coeffs(n - 1, l / 2 ) );
+			Vector s__ = ( this->get_coeffs(n - 1, l / 2 ) );
 			if ( s__.len() == 0)
 				return s__;
 			else{
@@ -720,9 +718,9 @@ public:
 			this->diff( result, n+1, 2*l+1 );
 		}
 		else {
-			Vector sm ( this->get_coeffs(n,l-1) );
-			Vector sp ( this->get_coeffs(n,l+1) );
-			Vector s0 ( this->s[n][l] );
+			Vector sm = ( this->get_coeffs(n,l-1) );
+			Vector sp = ( this->get_coeffs(n,l+1) );
+			Vector s0 = ( this->s[n][l] );
 
 			if ( sm.len() && s0.len() && sp.len() ) {
 				Vector r =  ( this->rp * sm ) +  ( this->r0 * s0 ) + ( this->rm * sp );
@@ -851,8 +849,8 @@ public:
 			   other.s[n + 1].find(2 * l + 1) != other.s[n + 1].end() ) )
 		{
 			// put into tree at level n+1
-			this->s[n + 1][2 * l] = s0;
-			this->s[n + 1][2 * l + 1] = s1;
+			addpair( this->s, n+1, 2*l, s0);
+			addpair( this->s, n+1, 2*l+1, s1);
 
 		}	
 		else if ( other.s[n + 1].find(2 * l) != other.s[n + 1].end() )
@@ -902,6 +900,95 @@ public:
 			}
 			n += 1;
 		}
+		return result;
+	}
+
+
+	/*****************************************************************/
+	/* Take the inner product in the box [n][l] with an external  	 */
+	/* analytic expression (i.e. not a madness function)			 */
+	/*****************************************************************/
+
+	ldouble box_quad( Function other, int n, int l){
+	
+		if ( this->compressed )
+			this->reconstruct();
+
+		Vector x(this->quad_npt);
+		Vector g(this->quad_npt);
+
+		ldouble h = pow( 0.5, n);
+		ldouble scale = sqrt(h);
+
+		for (int mu = 0; mu < this->quad_npt; mu++){
+
+			x[mu] = ( this->quad_x[mu] + l ) * h;
+			g[mu] = other.__f(x[mu]);
+		}
+
+		Vector tmp = this->quad_phiw * this->s[n][l];
+		return  ( tmp.inner(g) * scale );
+	}
+
+
+	/*****************************************************************/
+	/* Call box_quad iteratively until convergence 					 */
+	/* Take the inner product in the box [n][l] with an external  	 */
+	/* analytic expression (i.e. not a madness function)			 */
+	/*****************************************************************/
+
+	ldouble box_quad_iter( Function other, int n, int l, ldouble old=0.0, ldouble thresh = 0, bool debug = false){ 
+	
+		ldouble result;
+		if (old == 0.0)
+			old = this->box_quad(other, n, l);
+
+		if ( !thresh )
+			thresh = this->thresh;
+		    
+		this->get_coeffs(n + 1, 2 * l);
+		this->get_coeffs(n + 1, 2 * l + 1);
+		ldouble i1 = this->box_quad(other, n + 1, 2 * l);
+		ldouble i2 = this->box_quad(other, n + 1, 2 * l + 1);
+		ldouble new_ = i1 + i2;
+
+		if ( debug ){
+			cout << "--- in box [" << n << "][" << l << "]:" << "\n";
+			cout << "\t      new = " << new_ << "n";
+			cout << "\t      old = " << old  << "\n";
+			cout << "\t rel_diff = " << abs((new_ - old)/new_) << "\n";
+		}
+
+		if ( abs((new_ - old)/new_) <= thresh ){
+			result = new_;
+		}
+		else{
+			result = this->box_quad_iter(other, n + 1, 2 * l, i1, thresh, debug);
+			result += this->box_quad_iter(other, n + 1, 2 * l + 1, i2, thresh, debug);
+		}
+		return result;
+	}
+
+
+	/*****************************************************************/
+	/* Take the inner product of the function with an external 		 */
+	/* analytic function (i.e. not a madness function). 			 */
+	/*****************************************************************/
+
+	ldouble inner_ext( Function other) {
+
+		if ( this->compressed )
+			this->reconstruct();
+
+		this->sclean();
+		vector< pair< int, int > > leaves = this->get_leaves();
+		ldouble result = 0.0;
+
+		for ( int i = 0; i < leaves.size(); i++ ){
+			result += this->box_quad_iter(other, leaves[i].first, leaves[i].second);
+		}
+
+		this->sclean();
 		return result;
 	}
 

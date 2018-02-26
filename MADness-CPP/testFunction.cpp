@@ -90,12 +90,4 @@ ldouble dtest3 ( ldouble x ){
 ldouble ( *test[3] ) ( ldouble x ) = { test1, test2, test3 };
 ldouble ( *dtest[3] ) ( ldouble x ) = { dtest1, dtest2, dtest3 };
 
-// test[0] = test1;
-// test[1] = test2;
-// test[2] = test3;
-
-// dtest[0] = dtest1;
-// dtest[1] = dtest2;
-// dtest[2] = dtest3;
-
 

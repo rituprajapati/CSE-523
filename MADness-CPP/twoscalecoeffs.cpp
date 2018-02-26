@@ -1,8 +1,8 @@
 
 /*********************************************************************/
-// Return the twoscale coefficients for the multiwavelets of order k.
-// Note that a cached value is returned ... if you want to modify it
-// take a copy first
+/* Return the twoscale coefficients for the multiwavelets of order k */
+/* Note that a cached value is returned ... if you want to modify it */
+/* take a copy first                                                 */
 /*********************************************************************/
 
 vector < vector <ldouble> > twoscalecoeffs( int k ){
@@ -150,8 +150,8 @@ __hg.push_back( { { 7.07106781186547462e-01 , 0.00000000000000000e+00 , 0.000000
 }
 
 /*********************************************************************/
-// Evaluate the Legendre polynomials up to the given order at x
-// defined on [-1,1].
+/* Evaluate the Legendre polynomials up to the given order at x      */
+/* defined on [-1,1].                                                */
 /*********************************************************************/
 
 
@@ -177,12 +177,12 @@ vector< ldouble > pn ( ldouble x, int order){
 
 
 /*********************************************************************/
-//  Evaluate the shifted normalized Legendre polynomials up to the
-// given order at x defined on [0,1].
-// These are also our scaling functions, phi_i(x) , i=0..k-1
-// In addition to forming an orthonormal basis on [0,1] we have
-// phi_j(1/2-x) = (-1)^j phi_j(1/2+x)
-// (the wavelets are similar with phase (-1)^(j+k)).                      
+/*  Evaluate the shifted normalized Legendre polynomials up to the   */
+/* given order at x defined on [0,1].                                */
+/* These are also our scaling functions, phi_i(x) , i=0..k-1         */
+/* In addition to forming an orthonormal basis on [0,1] we have      */
+/* phi_j(1/2-x) = (-1)^j phi_j(1/2+x)                                */
+/* (the wavelets are similar with phase (-1)^(j+k)).                 */     
 /*********************************************************************/
 
 vector< ldouble > phi( ldouble x, int k) {
