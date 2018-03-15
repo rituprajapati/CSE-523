@@ -81,7 +81,8 @@ double funcB(double x);
 Vector sub(const Vector &v1, const Vector &v2);
 double sub_scale_factor(double n);
 void init_twoscale(int );
-
+double alpha = 1.0;
+double beta = -1.0;
 
 /**********************************************************************/
 /**********************************************************************/
@@ -193,6 +194,115 @@ struct Compress_Prolog {
           output_terminals(output_terminals) {}
 };
 
+
+/**********************************************************************/
+/**********************************************************************/
+/* Struct  - Compress_doIt
+/* Used By - compress_doIt_funcA_step, compress_doIt_funcB_step
+/**********************************************************************/
+/**********************************************************************/
+struct Compress_doIt {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
+
+   int execute(const std::pair<int, int> &node, CnCContext &context) const;
+
+   /*----------------------------------------------------------------*/
+   /* Compress_doIt Constructor
+   /*----------------------------------------------------------------*/
+   Compress_doIt( 
+            std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
+            std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
+          : 
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
+};
+
+
+/**********************************************************************/
+/**********************************************************************/
+/* Struct  - GaxpyOp
+/* Used By - gaxpyOp_step
+/**********************************************************************/
+/**********************************************************************/
+struct GaxpyOp {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
+
+   double alpha;
+   double beta;
+
+   int execute(const std::pair<int, int> &node, CnCContext &context) const;
+   /*----------------------------------------------------------------*/
+   /* GaxpyOp Constructor
+   /*----------------------------------------------------------------*/
+   GaxpyOp( 
+            double alpha,
+            double beta,
+            std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
+            std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
+          : 
+          alpha( alpha ),
+          beta( beta),
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
+};
+
+
+/**********************************************************************/
+/**********************************************************************/
+/* Struct  - Reconstruct_Prolog
+/* Used By - reconstruct_prolog_step
+/**********************************************************************/
+/**********************************************************************/
+struct Reconstruct_Prolog {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
+
+   int execute(const std::pair<int, int> &node, CnCContext &context) const;
+
+   /*----------------------------------------------------------------*/
+   /* Reconstruct_Prolog Constructor
+   /*----------------------------------------------------------------*/
+   Reconstruct_Prolog( 
+            std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
+            std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
+          : 
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
+};
+
+
+/**********************************************************************/
+/**********************************************************************/
+/* Struct  - Reconstruct_doIt
+/* Used By - reconstruct_doIt_step
+/**********************************************************************/
+/**********************************************************************/
+struct Reconstruct_doIt {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
+
+   int execute(const std::pair<int, int> &node, CnCContext &context) const;
+
+   /*----------------------------------------------------------------*/
+   /* Reconstruct_doIt Constructor
+   /*----------------------------------------------------------------*/
+   Reconstruct_doIt( 
+            std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
+            std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
+          : 
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
+};
+
+
+
+
 /**********************************************************************/
 /**********************************************************************/
 /* Struct  - CnCContext
@@ -231,7 +341,7 @@ struct CnCContext : public CnC::context<CnCContext> {
    CnC::item_collection<std::pair<int, int>, Node> gaxpy_result_item;
    CnC::item_collection<std::pair<int, int>, Node> reconstruct_result_item;
    CnC::item_collection<std::pair<int, int>, Node> s_coeff_item;
-   CnC::item_collection<std::pair<int, int>, Node> result_item;
+   CnC::item_collection<std::pair<int, int>, Node> subtract_2_item;
 
 
   /*----------------------------------------------------------------*/
@@ -251,6 +361,8 @@ struct CnCContext : public CnC::context<CnCContext> {
    CnC::tag_collection<std::pair<int, int>> subtract_2_tag;
    CnC::tag_collection<std::pair<int, int>> reconstruct_prolog_tag;
    CnC::tag_collection<std::pair<int, int>> reconstruct_doIt_tag;
+
+
   /*----------------------------------------------------------------*/
   /* Step Collections
   /*----------------------------------------------------------------*/
@@ -295,7 +407,7 @@ struct CnCContext : public CnC::context<CnCContext> {
      gaxpy_result_item(*this),
      reconstruct_result_item(*this),
      s_coeff_item(*this),
-     result_item(*this),
+     subtract_2_item(*this),
 
      compress_prolog_FuncA_tag(*this),
      compress_prolog_FuncB_tag(*this),
@@ -305,6 +417,8 @@ struct CnCContext : public CnC::context<CnCContext> {
      subtract_2_tag(*this),
      reconstruct_prolog_tag(*this),
      reconstruct_doIt_tag(*this),
+
+
      /*----------------------------------------------------------------*/
      /* Declare projectA_step
      /*----------------------------------------------------------------*/
@@ -330,7 +444,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                           std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{},
                           std::vector<OutputTerminalType> {
                               OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&projectB_tag}),
-                              OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})}
+                              OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_prolog_FuncB_tag})}
                           )
                   ),
     
@@ -358,12 +472,12 @@ struct CnCContext : public CnC::context<CnCContext> {
                 *this, 
                 "printer_step", 
                 Printer( 
-                  std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{&subtract_1_item}, 
+                  std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{&subtract_2_item}, 
                   std::vector<OutputTerminalType>{})
                 ),
 
     /*----------------------------------------------------------------*/
-    /* Declare printer_step
+    /* Declare compress_prolog_FuncA_step
     /*----------------------------------------------------------------*/
     compress_prolog_FuncA_step ( 
                                 *this, 
@@ -371,11 +485,115 @@ struct CnCContext : public CnC::context<CnCContext> {
                                 Compress_Prolog( 
                                     std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectA_item}, 
                                     std::vector<OutputTerminalType>{
-                                    OutputTerminalType(&compress_prologA_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
+                                    OutputTerminalType(&compress_prologA_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag}),
                                     OutputTerminalType(&funcA_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
-                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
+                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag})})
                               ),
 
+
+    /*----------------------------------------------------------------*/
+    /* Declare compress_prolog_FuncB_step
+    /*----------------------------------------------------------------*/
+    compress_prolog_FuncB_step ( 
+                                *this, 
+                                "compress_prolog_FuncB_step", 
+                                Compress_Prolog( 
+                                    std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectB_item}, 
+                                    std::vector<OutputTerminalType>{
+                                    OutputTerminalType(&compress_prologB_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag}),
+                                    OutputTerminalType(&funcB_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
+                                    OutputTerminalType(&compress_prologB_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag})})
+                              ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare compress_doIt_funcA_step
+    /*----------------------------------------------------------------*/
+    compress_doIt_funcA_step ( 
+                                *this, 
+                                "compress_doIt_funcA_step", 
+                                Compress_doIt( 
+                                    std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&compress_prologA_left_item, &compress_prologA_right_item}, 
+                                    std::vector<OutputTerminalType>{
+                                    OutputTerminalType(&compress_prologA_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag}),
+                                    OutputTerminalType(&funcA_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&gaxpyOP_tag}),
+                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag})})
+                              ),
+
+
+    /*----------------------------------------------------------------*/
+    /* Declare compress_doIt_funcB_step
+    /*----------------------------------------------------------------*/
+    compress_doIt_funcB_step ( 
+                                *this, 
+                                "compress_doIt_funcB_step", 
+                                Compress_doIt( 
+                                    std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&compress_prologB_left_item, &compress_prologB_right_item}, 
+                                    std::vector<OutputTerminalType>{
+                                    OutputTerminalType(&compress_prologB_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag}),
+                                    OutputTerminalType(&funcB_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
+                                    OutputTerminalType(&compress_prologB_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag})})
+                              ),
+
+
+    /*----------------------------------------------------------------*/
+    /* Declare gaxpyOp_step
+    /*----------------------------------------------------------------*/
+    gaxpyOp_step ( 
+                  *this, 
+                  "gaxpyOp_step", 
+                  GaxpyOp( 
+                      alpha,
+                      beta,
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&funcA_coeff_compressed_item, &funcB_coeff_compressed_item}, 
+                      std::vector<OutputTerminalType>{
+                      OutputTerminalType(&funcA_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&gaxpyOP_tag}),
+                      OutputTerminalType(&gaxpy_result_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&reconstruct_prolog_tag}),
+                      OutputTerminalType(&funcB_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
+                ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare reconstruct_prolog_step
+    /*----------------------------------------------------------------*/
+    reconstruct_prolog_step ( 
+                            *this, 
+                            "reconstruct_prolog_step", 
+                            Reconstruct_Prolog( 
+                                std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&gaxpy_result_item}, 
+                                std::vector<OutputTerminalType>{
+                                OutputTerminalType(&s_coeff_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&reconstruct_doIt_tag})})
+                          ),
+
+  
+    /*----------------------------------------------------------------*/
+    /* Declare reconstruct_doIt_step
+    /*----------------------------------------------------------------*/
+    reconstruct_doIt_step( 
+                          *this, 
+                          "reconstruct_doIt_step", 
+                          Reconstruct_doIt( 
+                              std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&s_coeff_item, &gaxpy_result_item}, 
+                              std::vector<OutputTerminalType>{
+                                OutputTerminalType(&s_coeff_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&reconstruct_doIt_tag}),
+                                OutputTerminalType(&reconstruct_result_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_2_tag})})
+                         ),
+
+
+
+    /*----------------------------------------------------------------*/
+    /* Declare subtract_2_step
+    /*----------------------------------------------------------------*/
+    subtract_2_step( 
+                    *this, 
+                    "subtract_2_step", 
+                    BinaryOp( 
+                        &sub, 
+                        &sub_scale_factor, 
+                        std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&reconstruct_result_item, &subtract_1_item}, 
+                        std::vector<OutputTerminalType>{
+                          OutputTerminalType(&reconstruct_result_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_2_tag}),
+                          OutputTerminalType(&subtract_2_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&printer_tag}),
+                          OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_2_tag})})
+                   ),
 
     k(k), 
     thresh(thresh), 
@@ -402,6 +620,7 @@ struct CnCContext : public CnC::context<CnCContext> {
       /* Steps Produce Consume
       /*----------------------------------------------------------------*/
       projectA_step.produces(projectA_item);
+
       projectB_step.produces(projectB_item);
 
       subtract_1_step.consumes(projectA_item);
@@ -410,11 +629,49 @@ struct CnCContext : public CnC::context<CnCContext> {
       subtract_1_step.produces(projectB_item);
       subtract_1_step.produces(subtract_1_item);
 
-
+      compress_prolog_FuncA_step.consumes( projectA_item);
+      compress_prolog_FuncA_step.produces( compress_prologA_left_item );
+      compress_prolog_FuncA_step.produces( compress_prologA_right_item );
+      compress_prolog_FuncA_step.produces( funcA_coeff_compressed_item );
       
+      compress_prolog_FuncB_step.consumes( projectB_item);
+      compress_prolog_FuncB_step.produces( compress_prologB_left_item );
+      compress_prolog_FuncB_step.produces( compress_prologB_right_item );
+      compress_prolog_FuncB_step.produces( funcB_coeff_compressed_item );
 
+      compress_doIt_funcA_step.consumes( compress_prologA_left_item );
+      compress_doIt_funcA_step.consumes( compress_prologA_right_item );
+      compress_doIt_funcA_step.produces( funcA_coeff_compressed_item);
+      compress_doIt_funcA_step.produces( compress_prologA_left_item);
+      compress_doIt_funcA_step.produces( compress_prologA_right_item);
 
-      printer_step.consumes(subtract_1_item);
+      compress_doIt_funcB_step.consumes( compress_prologB_left_item );
+      compress_doIt_funcB_step.consumes( compress_prologB_right_item );
+      compress_doIt_funcB_step.produces( funcB_coeff_compressed_item);
+      compress_doIt_funcB_step.produces( compress_prologB_left_item );
+      compress_doIt_funcB_step.produces( compress_prologB_right_item );
+
+      gaxpyOp_step.consumes( funcA_coeff_compressed_item);
+      gaxpyOp_step.consumes( funcB_coeff_compressed_item);
+      gaxpyOp_step.produces( funcA_coeff_compressed_item);
+      gaxpyOp_step.produces( funcB_coeff_compressed_item);
+      gaxpyOp_step.produces( gaxpy_result_item);
+
+      reconstruct_prolog_step.consumes( gaxpy_result_item );
+      reconstruct_prolog_step.produces( s_coeff_item);
+
+      reconstruct_doIt_step.consumes( s_coeff_item);
+      reconstruct_doIt_step.consumes( gaxpy_result_item);
+      reconstruct_doIt_step.produces( s_coeff_item);
+      reconstruct_doIt_step.produces( reconstruct_result_item);
+
+      subtract_2_step.consumes( reconstruct_result_item);
+      subtract_2_step.consumes( subtract_1_item);
+      subtract_2_step.produces( reconstruct_result_item);
+      subtract_2_step.produces( subtract_1_item);
+      subtract_2_step.produces( subtract_2_item);
+
+      printer_step.consumes(subtract_2_item);
 
       init_twoscale(k);
       init_quadrature(k);
@@ -654,8 +911,144 @@ int Compress_Prolog::execute( const std::pair<int, int> &node, CnCContext &conte
 
     Node input;
     input_terminals[0]->get(node, input);
+    int k = context.k;
+
+    if ( input.s.length() != 0 ) { //if the node is a leaf
+
+      if( node.first == 0){
+        output_terminals[1].put( node, input);
+      }
+      else{
+
+        output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), Vector(k), false ));
+
+        if( node.second % 2 == 0)
+           output_terminals[2].put( std::make_pair( node.first-1, node.second/2), input);
+        else
+           output_terminals[0].put( std::make_pair( node.first-1, node.second/2), input);
+      }
+
+    }
+    return CnC::CNC_Success;
 }
 
+
+int Compress_doIt::execute( const std::pair<int, int> &node, CnCContext &context ) const {
+
+
+    Node left;
+    Node right;
+    int k = context.k;
+
+    input_terminals[0]->get(node, left);
+    input_terminals[1]->get(node, right);
+
+    Vector s( left.s | right.s );
+    Vector d(s * (*(context.hgT)));
+
+    Vector sValue(d.data, 0, k);
+    Vector dValue(d.data, k, 2 * k);
+
+    if( node.first == 0){
+      output_terminals[1].put( node, Node( node.first, node.second, k, sValue, dValue, true) );
+    }
+    else{
+      output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), dValue, true) );
+
+      if( node.second % 2 == 0)
+        output_terminals[2].put( std::make_pair( node.first-1, node.second/2), Node( node.first, node.second, k, sValue, Vector(), false ));
+      else
+        output_terminals[0].put( std::make_pair( node.first-1, node.second/2), Node( node.first, node.second, k, sValue, Vector(), false ));
+    }
+
+    return CnC::CNC_Success;
+}
+
+
+
+int GaxpyOp::execute( const std::pair<int, int> &node, CnCContext &context ) const {
+
+    Node left;
+    Node right;
+
+    int k = context.k;
+
+    input_terminals[0]->get(node, left);
+    input_terminals[1]->get(node, right);
+
+    Vector tempD(left.d);
+    tempD.gaxpy( alpha, right.d, beta);
+
+    Vector tempS;
+
+    if( node.first == 0 && node.second == 0){
+      tempS = left.s;
+      tempS.gaxpy(alpha, right.s, beta);
+    }
+
+    output_terminals[1].put( node, Node( node.first, node.second, k, tempS, tempD, left.has_children || right.has_children ) );
+
+    if( left.has_children && !right.has_children ){
+
+      output_terminals[2].put( make_pair(node.first + 1, node.second * 2), Node(node.first, node.second, k, Vector(), Vector(k), false));
+      output_terminals[2].put( make_pair(node.first + 1, node.second * 2 + 1), Node(node.first, node.second, k, Vector(), Vector(k), false));
+
+    }
+
+    if( !left.has_children && right.has_children ){
+
+      output_terminals[0].put( make_pair(node.first + 1, node.second * 2), Node(node.first, node.second, k, Vector(), Vector(k), false));
+      output_terminals[0].put( make_pair(node.first + 1, node.second * 2 + 1), Node(node.first, node.second, k, Vector(), Vector(k), false));
+
+    }
+
+    return CnC::CNC_Success;
+}
+
+
+int Reconstruct_Prolog::execute( const std::pair<int, int> &node, CnCContext &context ) const {
+
+    Node input;
+
+    input_terminals[0]->get( node, input);
+
+    if( node.first == 0) {
+        output_terminals[0].put( node, input);
+    }
+    return CnC::CNC_Success;
+}
+
+
+int Reconstruct_doIt::execute( const std::pair<int, int> &node, CnCContext &context ) const {
+
+    Node s_coeff;
+    Node node_information;
+
+    int k = context.k;
+    input_terminals[0]->get( node, s_coeff);
+    input_terminals[1]->get( node, node_information);
+
+    Vector s = s_coeff.s;
+
+    if( node_information.has_children ){
+
+        Vector v1( s| node_information.d );
+        Vector v2( v1 * (*context.hg) );
+
+        Vector leftChildS(v2.data, 0, k);
+        Vector rightChildS(v2.data, k, 2 * k);
+
+        output_terminals[0].put(make_pair(node.first + 1, node.second * 2), Node( node.first + 1, node.second * 2, k, leftChildS, Vector(), false));
+        output_terminals[0].put(make_pair(node.first + 1, node.second * 2 + 1), Node( node.first + 1, node.second * 2 + 1, k, rightChildS, Vector(), false));
+
+        output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), Vector(), true));
+    }
+    else{
+        output_terminals[1].put( node, Node( node.first, node.second, k, s, Vector(), true));
+    }
+
+    return CnC::CNC_Success;
+}
 
 
 int Printer::execute(const std::pair<int, int> &node, CnCContext &context) const {
