@@ -460,7 +460,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                           std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectA_item, &projectB_item},
                           std::vector<OutputTerminalType>{
                               OutputTerminalType(&projectA_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_1_tag}),
-                              OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&printer_tag}),
+                              OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
                               OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_1_tag})}
                           )
                   ),
@@ -899,7 +899,6 @@ int BinaryOp::execute(const std::pair<int, int> &node, CnCContext &context) cons
          output_terminals[2].put(std::make_pair(node.first + 1, 2 * node.second), Node(node.first + 1, 2 * node.second, k, right_unfiltered.get_slice(0, k), Vector(), false));
          output_terminals[2].put(std::make_pair(node.first + 1, 2 * node.second + 1), Node(node.first + 1, 2 * node.second + 1, k, right_unfiltered.get_slice(k, 2 * k), Vector(), false));
       }
-
       output_terminals[1].put(node, Node(node.first, node.second, k, Vector(), Vector(), true));
    }
    
@@ -913,7 +912,7 @@ int Compress_Prolog::execute( const std::pair<int, int> &node, CnCContext &conte
     input_terminals[0]->get(node, input);
     int k = context.k;
 
-    if ( input.s.length() != 0 ) { //if the node is a leaf
+    if ( !input.has_children ) { //if the node is a leaf
 
       if( node.first == 0){
         output_terminals[1].put( node, input);
@@ -922,7 +921,7 @@ int Compress_Prolog::execute( const std::pair<int, int> &node, CnCContext &conte
 
         output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), Vector(k), false ));
 
-        if( node.second % 2 == 0)
+        if( node.second & 0x1uL)
            output_terminals[2].put( std::make_pair( node.first-1, node.second/2), input);
         else
            output_terminals[0].put( std::make_pair( node.first-1, node.second/2), input);
@@ -955,10 +954,12 @@ int Compress_doIt::execute( const std::pair<int, int> &node, CnCContext &context
     else{
       output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), dValue, true) );
 
-      if( node.second % 2 == 0)
+      if( node.second & 0x1uL){
         output_terminals[2].put( std::make_pair( node.first-1, node.second/2), Node( node.first, node.second, k, sValue, Vector(), false ));
-      else
+      }
+      else{
         output_terminals[0].put( std::make_pair( node.first-1, node.second/2), Node( node.first, node.second, k, sValue, Vector(), false ));
+      }
     }
 
     return CnC::CNC_Success;
@@ -977,13 +978,13 @@ int GaxpyOp::execute( const std::pair<int, int> &node, CnCContext &context ) con
     input_terminals[1]->get(node, right);
 
     Vector tempD(left.d);
-    tempD.gaxpy( alpha, right.d, beta);
+    tempD.gaxpy( 1.0, right.d, -1.0);
 
     Vector tempS;
 
     if( node.first == 0 && node.second == 0){
       tempS = left.s;
-      tempS.gaxpy(alpha, right.s, beta);
+      tempS.gaxpy(1.0, right.s, -1.0);
     }
 
     output_terminals[1].put( node, Node( node.first, node.second, k, tempS, tempD, left.has_children || right.has_children ) );
