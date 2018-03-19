@@ -486,8 +486,8 @@ struct CnCContext : public CnC::context<CnCContext> {
                                     std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectA_item}, 
                                     std::vector<OutputTerminalType>{
                                     OutputTerminalType(&compress_prologA_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag}),
-                                    OutputTerminalType(&funcA_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
-                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag})})
+                                    OutputTerminalType(&funcA_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> { &gaxpyOP_tag}),
+                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
                               ),
 
 
@@ -502,7 +502,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                                     std::vector<OutputTerminalType>{
                                     OutputTerminalType(&compress_prologB_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag}),
                                     OutputTerminalType(&funcB_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
-                                    OutputTerminalType(&compress_prologB_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag})})
+                                    OutputTerminalType(&compress_prologB_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
                               ),
 
     /*----------------------------------------------------------------*/
@@ -955,10 +955,10 @@ int Compress_doIt::execute( const std::pair<int, int> &node, CnCContext &context
       output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), dValue, true) );
 
       if( node.second & 0x1uL){
-        output_terminals[2].put( std::make_pair( node.first-1, node.second/2), Node( node.first, node.second, k, sValue, Vector(), false ));
+        output_terminals[2].put( std::make_pair( node.first-1, node.second/2), Node( node.first-1, node.second/2, k, sValue, Vector(), false ));
       }
       else{
-        output_terminals[0].put( std::make_pair( node.first-1, node.second/2), Node( node.first, node.second, k, sValue, Vector(), false ));
+        output_terminals[0].put( std::make_pair( node.first-1, node.second/2), Node( node.first-1, node.second/2, k, sValue, Vector(), false ));
       }
     }
 
@@ -991,15 +991,15 @@ int GaxpyOp::execute( const std::pair<int, int> &node, CnCContext &context ) con
 
     if( left.has_children && !right.has_children ){
 
-      output_terminals[2].put( make_pair(node.first + 1, node.second * 2), Node(node.first, node.second, k, Vector(), Vector(k), false));
-      output_terminals[2].put( make_pair(node.first + 1, node.second * 2 + 1), Node(node.first, node.second, k, Vector(), Vector(k), false));
+      output_terminals[2].put( make_pair(node.first + 1, node.second * 2), Node(node.first+1, node.second * 2, k, Vector(), Vector(k), false));
+      output_terminals[2].put( make_pair(node.first + 1, node.second * 2 + 1), Node(node.first+1, node.second*2+1, k, Vector(), Vector(k), false));
 
     }
 
     if( !left.has_children && right.has_children ){
 
-      output_terminals[0].put( make_pair(node.first + 1, node.second * 2), Node(node.first, node.second, k, Vector(), Vector(k), false));
-      output_terminals[0].put( make_pair(node.first + 1, node.second * 2 + 1), Node(node.first, node.second, k, Vector(), Vector(k), false));
+      output_terminals[0].put( make_pair(node.first + 1, node.second * 2), Node(node.first+1, node.second*2, k, Vector(), Vector(k), false));
+      output_terminals[0].put( make_pair(node.first + 1, node.second * 2 + 1), Node(node.first+1, node.second*2+1, k, Vector(), Vector(k), false));
 
     }
 
