@@ -461,7 +461,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                           std::vector<OutputTerminalType>{
                               OutputTerminalType(&projectA_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_1_tag}),
                               OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
-                              OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_1_tag})}
+                              OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})}
                           )
                   ),
 
@@ -516,7 +516,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                                     std::vector<OutputTerminalType>{
                                     OutputTerminalType(&compress_prologA_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag}),
                                     OutputTerminalType(&funcA_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&gaxpyOP_tag}),
-                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcA_tag})})
+                                    OutputTerminalType(&compress_prologA_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
                               ),
 
 
@@ -531,7 +531,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                                     std::vector<OutputTerminalType>{
                                     OutputTerminalType(&compress_prologB_left_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag}),
                                     OutputTerminalType(&funcB_coeff_compressed_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {}),
-                                    OutputTerminalType(&compress_prologB_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_doIt_funcB_tag})})
+                                    OutputTerminalType(&compress_prologB_right_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
                               ),
 
 
@@ -592,7 +592,7 @@ struct CnCContext : public CnC::context<CnCContext> {
                         std::vector<OutputTerminalType>{
                           OutputTerminalType(&reconstruct_result_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_2_tag}),
                           OutputTerminalType(&subtract_2_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&printer_tag}),
-                          OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&subtract_2_tag})})
+                          OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
                    ),
 
     k(k), 
