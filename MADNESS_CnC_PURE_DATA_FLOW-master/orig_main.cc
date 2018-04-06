@@ -84,35 +84,20 @@ void init_twoscale(int );
 double alpha = 1.0;
 double beta = -1.0;
 
-
-
-struct step_Base {
-
-public:
-   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
-   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
-
-   step_Base( 
-            std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
-            std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
-          :
-          input_terminals(input_terminals),
-          output_terminals(output_terminals) {}
-};
-
 /**********************************************************************/
 /**********************************************************************/
 /* Struct  - Project
 /* Used By - projectA_step, projectB_step   
 /**********************************************************************/
 /**********************************************************************/
-struct Project : step_Base {
+struct Project {
 
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
    double (*func)(double); 
 
-   int execute(const std::pair<int, int> &node, CnCContext &context) const;
-
    Vector sValue(int n, int l, CnCContext &context) const;
+   int execute(const std::pair<int, int> &node, CnCContext &context) const;
 
   /*----------------------------------------------------------------*/
   /* Project Constructor
@@ -122,8 +107,8 @@ struct Project : step_Base {
             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
           :
           func(func),
-          step_Base(input_terminals, output_terminals)
-          {}
+          input_terminals(input_terminals),
+          output_terminals(output_terminals) {}
 };
 
 
@@ -133,8 +118,10 @@ struct Project : step_Base {
 /* Used By - subtract_1_step
 /**********************************************************************/
 /**********************************************************************/
-struct BinaryOp : step_Base{
+struct BinaryOp {
 
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    using funcT = Vector (*)(const Vector &, const Vector&);
    funcT func;   
@@ -154,7 +141,8 @@ struct BinaryOp : step_Base{
             : 
             func(func), 
             scale_factor(scale_factor), 
-            step_Base( input_terminals, output_terminals) {}
+            input_terminals(input_terminals), 
+            output_terminals(output_terminals) {}
 };
 
 
@@ -164,7 +152,10 @@ struct BinaryOp : step_Base{
 /* Used By - printer_step
 /**********************************************************************/
 /**********************************************************************/
-struct Printer : step_Base{
+struct Printer {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    int execute(const std::pair<int, int> &node, CnCContext &context) const;
 
@@ -174,7 +165,8 @@ struct Printer : step_Base{
    Printer( std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
           : 
-         step_Base(input_terminals, output_terminals) {}
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
 };
 
 
@@ -184,7 +176,10 @@ struct Printer : step_Base{
 /* Used By - compress_prolog_FuncA_step, compress_prolog_FuncB_step
 /**********************************************************************/
 /**********************************************************************/
-struct Compress_Prolog :step_Base{
+struct Compress_Prolog {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    int execute(const std::pair<int, int> &node, CnCContext &context) const;
 
@@ -195,7 +190,8 @@ struct Compress_Prolog :step_Base{
             std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
           : 
-          step_Base(input_terminals, output_terminals) {}
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
 };
 
 
@@ -205,7 +201,10 @@ struct Compress_Prolog :step_Base{
 /* Used By - compress_doIt_funcA_step, compress_doIt_funcB_step
 /**********************************************************************/
 /**********************************************************************/
-struct Compress_doIt :step_Base{
+struct Compress_doIt {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    int execute(const std::pair<int, int> &node, CnCContext &context) const;
 
@@ -216,7 +215,8 @@ struct Compress_doIt :step_Base{
             std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
           : 
-          step_Base(input_terminals, output_terminals) {}
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
 };
 
 
@@ -226,7 +226,10 @@ struct Compress_doIt :step_Base{
 /* Used By - gaxpyOp_step
 /**********************************************************************/
 /**********************************************************************/
-struct GaxpyOp :step_Base{
+struct GaxpyOp {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    double alpha;
    double beta;
@@ -243,7 +246,8 @@ struct GaxpyOp :step_Base{
           : 
           alpha( alpha ),
           beta( beta),
-          step_Base(input_terminals, output_terminals) {}
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
 };
 
 
@@ -253,7 +257,10 @@ struct GaxpyOp :step_Base{
 /* Used By - reconstruct_prolog_step
 /**********************************************************************/
 /**********************************************************************/
-struct Reconstruct_Prolog : step_Base{
+struct Reconstruct_Prolog {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    int execute(const std::pair<int, int> &node, CnCContext &context) const;
 
@@ -264,7 +271,8 @@ struct Reconstruct_Prolog : step_Base{
             std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
           : 
-         step_Base(input_terminals, output_terminals) {}
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
 };
 
 
@@ -274,7 +282,10 @@ struct Reconstruct_Prolog : step_Base{
 /* Used By - reconstruct_doIt_step
 /**********************************************************************/
 /**********************************************************************/
-struct Reconstruct_doIt : step_Base{
+struct Reconstruct_doIt {
+
+   std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals;
+   std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals;
 
    int execute(const std::pair<int, int> &node, CnCContext &context) const;
 
@@ -285,32 +296,10 @@ struct Reconstruct_doIt : step_Base{
             std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
           : 
-          step_Base(input_terminals, output_terminals) {}
+          input_terminals(input_terminals), 
+          output_terminals(output_terminals) {}
 };
 
-
-
-/**********************************************************************/
-/**********************************************************************/
-/* Struct  -  evaluate
-/* Used By -  evaluate_step
-/**********************************************************************/
-/**********************************************************************/
-// struct  Evaluate : step_Base{
-
-//    int execute(const std::pair<int, int> &node, CnCContext &context) const;
-//    double x;
-//    /*----------------------------------------------------------------*/
-//    /* Reconstruct_doIt Constructor
-//    /*----------------------------------------------------------------*/
-//    Evaluate( 
-//             double x,
-//             std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
-//             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
-//           : 
-//           x(x),
-//           step_Base(input_terminals, output_terminals) {}
-// };
 
 
 
@@ -355,8 +344,6 @@ struct CnCContext : public CnC::context<CnCContext> {
    CnC::item_collection<std::pair<int, int>, Node> subtract_2_item;
 
 
-   CnC::item_collection<std::pair<int, int>, Node> evaluate_item; // Have to decide who is gonna put item here
-
   /*----------------------------------------------------------------*/
   /* Tag Collections
   /*----------------------------------------------------------------*/
@@ -375,7 +362,6 @@ struct CnCContext : public CnC::context<CnCContext> {
    CnC::tag_collection<std::pair<int, int>> reconstruct_prolog_tag;
    CnC::tag_collection<std::pair<int, int>> reconstruct_doIt_tag;
 
-   // CnC::tag_collection<std::pair<int, int>> evaluate_tag;
 
   /*----------------------------------------------------------------*/
   /* Step Collections
@@ -397,8 +383,6 @@ struct CnCContext : public CnC::context<CnCContext> {
    CnC::step_collection<Reconstruct_doIt>  reconstruct_doIt_step;
    CnC::step_collection<BinaryOp> subtract_2_step;
 
-   // CnC::step_collection<Evaluate> evaluate_step;
-
   /*----------------------------------------------------------------*/
   /* CnCContext Constructor
   /*----------------------------------------------------------------*/
@@ -412,6 +396,7 @@ struct CnCContext : public CnC::context<CnCContext> {
      projectB_tag(*this), 
      subtract_1_tag(*this),
      printer_tag(*this), 
+
      
      compress_prologA_left_item(*this),
      compress_prologA_right_item(*this),
@@ -424,7 +409,6 @@ struct CnCContext : public CnC::context<CnCContext> {
      s_coeff_item(*this),
      subtract_2_item(*this),
 
-
      compress_prolog_FuncA_tag(*this),
      compress_prolog_FuncB_tag(*this),
      compress_doIt_funcA_tag(*this),
@@ -433,8 +417,6 @@ struct CnCContext : public CnC::context<CnCContext> {
      subtract_2_tag(*this),
      reconstruct_prolog_tag(*this),
      reconstruct_doIt_tag(*this),
-
-     evaluate_item( *this),
 
 
      /*----------------------------------------------------------------*/
@@ -613,20 +595,6 @@ struct CnCContext : public CnC::context<CnCContext> {
                           OutputTerminalType(&subtract_1_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})})
                    ),
 
-
-    /*----------------------------------------------------------------*/
-    /* Declare printer_step
-    /*----------------------------------------------------------------*/
-    // evaluate_step(
-    //             *this, 
-    //             "evaluate_step", 
-    //             Evaluate( 
-    //               x,
-    //               std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{&evaluate_item}, 
-    //               std::vector<OutputTerminalType>{})
-    //             ),
-
-
     k(k), 
     thresh(thresh), 
     max_level(max_level) {
@@ -786,33 +754,6 @@ struct CnCContext : public CnC::context<CnCContext> {
          iphase = -1 * iphase;
       }
    }
-
-
-  double __evaluate (  int n, int l, double x ) {
-
-  Node nodeInfo;
-
-  evaluate_item.get(make_pair(n,l), nodeInfo);
-  int k = this->k;
-
-  if( !nodeInfo.has_children ){
-    double *p = phi(x, k);
-    return ( nodeInfo.s.inner( *p) * sqrt( pow ( 2.0, n)) ) ; // doubt!! Inner needs a Vector bu p here is a pointer???
-  } 
-  else{
-
-    n += 1; l *= 2; x = 2.0 * x;
-
-    if ( x >= 1 ) {
-      l = l+1; x = x-1;
-    }
-
-    return __evaluate(n, l, x);
-  }
-} 
-
-
-
 };
 
 //Vector sub(const Vector &v1, const Vector &v2);
@@ -1117,8 +1058,6 @@ int Printer::execute(const std::pair<int, int> &node, CnCContext &context) const
    std::cout << "Printer:: Node with info: (Key: (" << node.first << ", " << node.second << "), " << nodeInfo.toString() << ")" << std::endl;
    return CnC::CNC_Success;
 }
-
-
 
 
 int main(int argc, char *argv[]) {
