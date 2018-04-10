@@ -1,64 +1,1901 @@
-Printer:: Node with info: (Key: (4, 15), Node with key(4, 15), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (3, 
-Printer:: Node with info: (Key: (3Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5, 26), Node with key(5, 26), S Vector: [-3.6583e-16, 2.44415e-17, -1.02077e-15, -2.41339e-16, -1.94421e-15, 2.04658e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (54Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (2, 0), Node with key(2, 0), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (4, 5), Node with key(4, 5), S Vector: [], d Vector: [], has_children: 1)
-), Node with key(3, 3), S Vector: [], d Vector: [], has_children: 1)
-, 22), Node with key(5, 22), S Vector: [-1.36132e-15, 4.561e-16, -4.02542e-16, -1.70806e-16, -3.37003e-16, 4.83601e-17], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 11), Node with key(5, 11), S Vector: [2.48697e-16, 3.49303e-16, -6.63404e-16, -7.66598e-17, -2.0603e-15, 1.07864e-17], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (4, 11), Node with key(4, 11), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (4, 125), Printer:: Node with info: (Key: (4, Node with key(4, 12), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (2, 1), Node with key(2, 1), S Vector: [], d Vector: [], has_children: 1)
-, 8), Node with key(4, 8), S Vector: [], d Vector: [], has_children: 1)
-4, 10), Node with key(4, 10), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 25), Node with key(5, 25), S Vector: [2.2563e-15, -1.66977e-15, -2.12797e-15, -1.64565e-15, -2.96878e-15, 1.51171e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (2, 2), Node with key(2, 2), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (3, 1), Node with key(3, 1), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (3, 5), 5Printer:: Node with info: (Key: (, 18), Node with key(5, 18), S Vector: [-2.59803e-15, 1.55478e-15, 8.4106e-16, -3.0765e-16, 8.79343e-16, 1.25916e-15], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 30), Node with key(5, 30), S Vector: [-1.5627e-15, -5.10555e-16, -9.13726e-17, 9.6467e-16, 4.87194e-16, -1.65247e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (1, 1), Node with key(1, 1), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 9), Node with key(5, 9), S Vector: [1.41395e-15, 5.59861e-16, 1.97374e-16, -1.08416e-15, 2.25123e-16, -2.29885e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 29), Node with key(5, 29), S Vector: [-3.9933e-16, -6.39183e-16, 7.33078e-16, 4.40104e-16, -1.12043e-16, -4.72983e-17], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 8), Node with key(5, 8), S Vector: [3.06583e-16, 3.44706e-16, 3.98761e-16, 2.57925e-16, 1.38376e-15, 6.71054e-16], d Vector: [], has_children: 0)
-5, 10), Node with key(5, 10), S Vector: [2.80743e-16, 2.96481e-16, 7.29159e-17, -2.91577e-16, -1.93788e-16, -2.35564e-16], d Vector: [], has_children: 0)
-, Printer:: Node with info: (Key: (5, 5), Node with key(5, 5), S Vector: [1.85544e-15, 3.31644e-16, -6.1227e-17, 7.48242e-17, 1.42761e-15, 3.34432e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 19), Node with key(5, 19), S Vector: [5.12063e-16, 1.06013e-15, 1.02259e-15, -3.50649e-16, -1.54679e-17, 1.34688e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (2, 3), Node with key(2, 3), S Vector: [], d Vector: [], has_children: 1)3
-, 4), Node with key(3, 4), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (4, 0), Node with key(4, 0), S Vector: [], d Vector: [], has_children: 1)
+Inside CnCContext 5 1e-06 30
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
+inside Project::execute
+inside Project::sValue
+inside Project::sValue
 Printer:: Node with info: (Key: (0, 0), Node with key(0, 0), S Vector: [], d Vector: [], has_children: 1)
-3, 2), Node with key(3, 2), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 17), Node with key(5, 17), S Vector: [-3.11464e-15, 7.04639e-16, -2.13229e-16, -1.3961e-17, 1.10329e-16, -6.98355e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5, 415, ), Node with key(5, 15), S Vector: [-3.59896e-16, -1.62321e-15, -7.48944e-16, 6.61649e-16, 2.08113e-16, 1.15124e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 31), Node with key(5, 31), S Vector: [-2.38798e-15, 2.11902e-16, 4.46477e-16, 8.48366e-17, 6.81993e-16, 1.86682e-16], d Vector: [], has_children: 0)
+Printer:: Node with info: (Key: (1, 0), Node with key(1, 0), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (2, 1), Node with key(2, 1), S Vector: [], d Vector: [], has_children: 1)
 Printer:: Node with info: (Key: (4, 4), Node with key(4, 4), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 16), Node with key(5, 16), S Vector: [-2.91054e-15, 6.81712e-16, 4.17959e-16, -5.30041e-16, 1.48697e-16, -3.63122e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 14), Node with key(5, 14), S Vector: [-4.17198e-17, 9.92466e-16, 7.68963e-16, -2.11508e-16, 6.94538e-16, -1.1832e-15], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (4, 9), Node with key(4, 9), S Vector: [], d Vector: [], has_children: 1)
-5, 24), Node with key(5, 24), S Vector: [5.03203e-15, -1.09371e-15, -7.15624e-16, -1.25886e-15, -1.11659e-15, -3.64856e-16], d Vector: [], has_children: 0)
-28), Node with key(5, 28), S Vector: [-2.76008e-16, 2.82116e-17, -7.35877e-16, 1.22966e-16, -1.19212e-15, 2.84538e-16], d Vector: [], has_children: 0)
-4, 14), Node with key(4, 14), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 0), Node with key(5, 0), S Vector: [-2.32066e-15, 7.60887e-16, 5.16686e-16, 2.13683e-16, 1.0991e-15, 2.81821e-16], d Vector: [], has_children: 0)
-4, 13), Node with key(4, 13), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5, 2), Node with key(5, 2), S Vector: [1.15459e-15, -4.90228e-16, 4.31847e-16, -8.08883e-16, 8.86173e-16, -4.19995e-17], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (4, 2), Node with key(4, 2), S Vector: [], d Vector: [], has_children: 1)
-3, 0), Node with key(3, 0), S Vector: [], d Vector: [], has_children: 1)
-1), Node with key(4, 1), S Vector: [], d Vector: [], has_children: 1)
-Node with key(3, 5), S Vector: [], d Vector: [], has_children: 1)
-3, 7), Node with key(3, 7), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 7), Node with key(5, 7), S Vector: [1.64689e-15, 4.78462e-16, 1.80924e-16, 3.22761e-16, 9.85286e-16, -1.28985e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (4, 3), 3Node with key(4, 3), S Vector: [], d Vector: [], has_children: 1, 6), Node with key(3, 6), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 4), Node with key(5, 4), S Vector: [6.70909e-16, 5.30318e-17, 6.80064e-16, 2.90859e-16, 1.39795e-15, 3.04924e-16], d Vector: [], has_children: 0)
-1, 0), Node with key(1, 0), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 6), Node with key(5, 6), S Vector: [1.2463e-15, 1.18002e-17, 7.09324e-16, -2.72554e-16, 9.89592e-16, -1.48178e-17], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 27), Node with key(5, 27), S Vector: [-2.15977e-15, 6.61606e-16, -4.86073e-16, -4.57891e-16, -1.81291e-15, 2.00276e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 12), Node with key(5, 12), S Vector: [1.60758e-15, -3.09458e-16, -1.55953e-15, 9.56461e-16, -1.15917e-15, -9.4674e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 20), Node with key(5, 20), S Vector: [-3.81093e-16, -9.75986e-17, 3.74447e-16, -6.40343e-17, 2.22456e-15, 3.87042e-16], d Vector: [], has_children: 0)
+Printer:: Node with info: (Key: (3, 2), Node with key(3, 2), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (4, 5), Node with key(4, 5), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 8), Node with key(5, 8), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 91), Node with key(8, 91), S Vector: [-1.05426, -0.015468, 0.000535036, 1.48542e-05, -6.93709e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 9), Node with key(5, 9), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 92), Node with key(8, 92), S Vector: [-1.09982, -0.0106679, 0.000700831, 1.29226e-05, -1.82163e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 77Printer:: Node with info: (Key: (), 8Node with key(8, 77), S Vector: [-0.0426174, -0.0293298, 0.000386407, 2.00882e-06, -2.24291e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (, 8, 93), Node with key(8, 93), S Vector: [-1.12668, -0.00469885, 0.000833985, 9.38534e-06, -2.61063e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 72), Node with key(8, 72), S Vector: [0.553209, -0.0357479, -0.000175726, 1.38324e-05, -7.45612e-09], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()
+Printer:: Node with info: (Key: (8, 79), Node with key(8, 79), S Vector: [-0.22507, -0.0234378, 0.000346961, -5.07086e-06, -1.99443e-07], d Vector: [], has_children: 18, 75)), 
+Node with key(8, 75), S Vector: [0.179628, -0.0345009, 0.000254117, 8.944e-06, -1.87516e-07], d Vector: [], has_children: 1Printer:: Node with info: (Key: (8, 73), Node with key(8, 73), S Vector: [0.427816, -0.0364816, -1.48792e-05, 1.31894e-05, -7.33797e-08], d Vector: [], has_children: 1)
+74), Node with key(8, 74), S Vector: [0.301984, -0.0360154, 0.000132251, 1.15236e-05, -1.35421e-07], d Vector: [], has_children: 1)
+)Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7
+6Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (, , Printer:: Node with info: (Key: (7, 39519Printer:: Node with info: (Key: (37), Node with key(7, 37), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+Printer:: Node with info: (Key: (6, 18), Node with key(6, 18), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 36), Node with key(7, 36), S Vector: [], d Vector: [], has_children: 1)
+6, 22), Node with key(6, 22), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(7, 39), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 47), Node with key(7, 47), S Vector: [], d Vector: [], has_children: 1)
+, 11), Node with key(5, 11), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 95), Node with key(8, 95), S Vector: [-1.11148, 0.0093449, 0.000938567, -1.05354e-06, -3.67272e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 45), Node with key(7, 45), S Vector: [], d Vector: [], has_children: 1)
+7, 38), Node with key(7, 38), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 94), Node with key(8, 94), S Vector: [-1.1313, 0.00211771, 0.000917357, 4.55711e-06, -3.3494e-07], d Vector: [], has_children: 1)
+7, 46), Node with key(7, 46), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(6, 19), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (3, 3), Node with key(3, 3), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5, 14), Node with key(5, 14), S Vector: [], d Vector: [], has_children: 1)
+4, 6), Node with key(4, 6), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 35), Node with key(7, 35), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 16), Node with key(6, 16), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 17), Printer:: Node with info: (Key: (Node with key(6, 17), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: (7, 32)Printer:: Node with info: (Key: (6), Node with key(7, 32), S Vector: [], d Vector: [], has_children: 1
+Printer:: Node with info: (Key: (4, 7), Node with key(4, 7), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (87Printer:: Node with info: (Key: (Printer:: Node with info: (Key: ()
+, Printer:: Node with info: (Key: (6Printer:: Node with info: (Key: (8, 69), Node with key(8, 69), S Vector: [0.884076, -0.026228, -0.000619734, 9.80138e-06, 1.62105e-07], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+
+8, Printer:: Node with info: (Key: (8, 118), Node with key(8, 118), S Vector: [0.413352, 0.00826291, -0.000348966, -1.02761e-05, 6.50168e-08], d Vector: [], has_children: 1)
+23), Node with key(6, 23), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, Printer:: Node with info: (Key: (345, 12), Node with key(5, 12), S Vector: [], d Vector: [], has_children: 1)
+5Printer:: Node with info: (Key: (8, 100), Node with key(8, 100), S Vector: [-0.687374, 0.0344748, 0.000166428, -1.96433e-05, 2.32607e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (88, , 97), Node with key(8, 97), S Vector: [-0.99814, 0.0229794, 0.000778366, -1.21772e-05, -3.07121e-07], d Vector: [], has_children: 1)
+, 71), Node with key(8, 71), S Vector: [0.673883, -0.0337555, -0.000337993, 1.34542e-05, 6.52789e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7Printer:: Node with info: (Key: (, 77546Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (, 25), Node with key(6, 25), S Vector: [], d Vector: [], has_children: 1)
+), Printer:: Node with info: (Key: (8, 108), Node with key(8, 108), S Vector: [0.0369145, 0.012801, -0.000311409, 1.04047e-05, 7.16797e-08], d Vector: [], has_children: 1)
+, 59), Node with key(7, 59), S Vector: [], d Vector: [], has_children: 1)
+, 13), Node with key(5, 13), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 96), Node with key(8, 96), S Vector: [-1.06668, 0.016474, 0.000891688, -6.8504e-06, -3.57607e-07], d Vector: [], has_children: 1)
+119), Node with key(8, 119), S Vector: [0.436718, 0.00511071, -0.000461964, -8.63455e-06, 1.401e-07], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()
+8, 64), Node with key(8, 64), S Vector: [1.0915, 0.00288996, -0.000713297, -7.04922e-06, 2.0448e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 58), Node with key(7, 58), S Vector: [], d Vector: [], has_children: 1)
+, 33), Node with key(7, 33), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (2, 0), Node with key(2, 0), S Vector: [], d Vector: [], has_children: 1)8
+Printer:: Node with info: (Key: (7, 48), Node with key(7, 48), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, Printer:: Node with info: (Key: (28Printer:: Node with info: (Key: (), 786Node with key(7, 34), S Vector: [], d Vector: [], has_children: 1)
+8, 68), Printer:: Node with info: (Key: (Node with key(8, 68), S Vector: [0.966094, -0.0210225, -0.000719018, 6.86924e-06, 2.06245e-07], d Vector: [], has_children: 18, 78Printer:: Node with info: (Key: (), )Printer:: Node with info: (Key: (Node with key(8, 78), S Vector: [-0.138984, -0.0263061, 0.000387633, -1.75623e-06, -2.18384e-07], d Vector: [], has_children: 1)8
+8, 116), Node with key(8, 116), S Vector: [0.341945, 0.0117399, -0.000101999, -9.73719e-06, -9.82262e-08], d Vector: [], has_children: 1)
+8, 66), Node with key(8, 66), S Vector: [1.07093, -0.00904185, -0.000800437, -1.24326e-07, 2.2222e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 44), Node with key(7, 44), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 109), Node with key(8, 109), S Vector: [0.0776983, 0.0108763, -0.00018503, 1.06879e-05, -3.50662e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 31), Node with key(6, 31), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (2, 2), Node with key(2, 2), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 89), Node with key(8, 89), S Vector: [-0.924908, -0.0210053, 0.000184285, 1.37198e-05, 1.33865e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (3, 5), Node with key(3, 5), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 63), Node with key(7, 63), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 20), Node with key(6, 20), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (4, 11), Node with key(4, 11), S Vector: [], d Vector: [], has_children: 1)
+3, , 1), Node with key(3, 1), S Vector: [], d Vector: [], has_children: 1)
+112Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 127), Node with key(8, 127), S Vector: [0.128752, -0.0220865, 1.92012e-05, 1.58042e-05, 7.0233e-09], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 51), Node with key(7, 51), S Vector: [], d Vector: [], has_children: 1)
+6, 24), Node with key(6, 24), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8Printer:: Node with info: (Key: (8, 126), Node with key(8, 126), S Vector: [0.204607, -0.0215186, -0.000164418, 1.50248e-05, 8.95494e-08], d Vector: [], has_children: 1), 
+76), Node with key(8, 76), S Vector: [0.0639896, -0.0321729, 0.000341031, 5.70104e-06, -2.40115e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 103), Node with key(8, 103), S Vector: [-0.335647, 0.0309954, -0.000411395, -1.05379e-05, 3.18193e-07], d Vector: [], has_children: 17, 56Printer:: Node with info: (Key: (), Printer:: Node with info: (Key: (6, 26), Node with key(6, 26), S Vector: [], d Vector: [], has_children: 1)Node with key(7, 56), S Vector: [], d Vector: [], has_children: 1
+)Printer:: Node with info: (Key: (65
+Printer:: Node with info: (Key: (3Printer:: Node with info: (Key: (, Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (, Printer:: Node with info: (Key: (8Printer:: Node with info: (Key: (8, 104), Node with key(8, 104), S Vector: [-0.234321, 0.0274089, -0.00050504, -5.22611e-06, 3.43951e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 42), Node with key(7, 42), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 15), Node with key(5, 15), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (1, 1), Printer:: Node with info: (Key: (54, 3), Node with key(4, 3), S Vector: [], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (8, 85), Node with key(8, 85), S Vector: [-0.630602, -0.0197781, -0.00014229, -1.18627e-06, 2.54469e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, )82Printer:: Node with info: (Key: (6
+Printer:: Node with info: (Key: (7, 40), Node with key(7, 40), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(8, 65), S Vector: [1.09159, -0.00290618, -0.000777323, -3.75616e-06, 2.11178e-07], d Vector: [], has_children: 1)
+), Printer:: Node with info: (Key: (8, 102), Node with key(8, 102), S Vector: [-0.447843, 0.0336226, -0.000258727, -1.50948e-05, 2.49679e-07], d Vector: [], has_children: 1)
+0), Node with key(3, 0), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 81), Node with key(8, 81), S Vector: [-0.371601, -0.0192926, 0.000173155, -8.91318e-06, -5.00822e-08], d Vector: [], has_children: 1)
+, Printer:: Node with info: (Key: (8, 105), Node with key(8, 105), S Vector: [-0.146361, 0.0233438, -0.000534858, 1.38042e-07, 3.25016e-07], d Vector: [], has_children: 1)
+, 80), Node with key(8, 80), S Vector: [-0.301946, -0.0210246, 0.000271609, -7.55756e-06, -1.17871e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 114), Node with key(8, 114), S Vector: [0.258895, 0.0117999, 7.37681e-05, -4.47265e-06, -2.19624e-07], d Vector: [], has_children: 1)
+Node with key(6, 28), S Vector: [], d Vector: [], has_children: 1)
+7, 41), Node with key(7, 41), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 113), Node with key(8, 113), S Vector: [0.219206, 0.0110819, 0.000104853, -7.42933e-07, -2.54105e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 4), Node with key(5, 4), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 121), Node with key(8, 121), S Vector: [0.444189, -0.00329144, -0.00059834, -2.34892e-06, 2.43294e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 67), Node with key(8, 67), S Vector: [1.02893, -0.0151906, -0.000780625, 3.50619e-06, 2.35303e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7, 53Printer:: Node with info: (Key: (), ), 6, 9), Node with key(6, 9), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 62), Node with key(7, 62), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 101), Node with key(8, 101), S Vector: [-0.566846, 0.0348784, -5.97585e-05, -1.82773e-05, 1.46827e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 84), Node with key(8, 84), S Vector: [-0.563863, -0.0187914, -0.000105893, -4.83059e-06, 2.0087e-07], d Vector: [], has_children: 1)
+7, , 60), Node with key(7, 60), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()27), 8, 125), Node with key(8, 125), S Vector: [0.276101, -0.0195864, -0.000330627, 1.28998e-05, 1.74188e-07], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (4, 1), Node with key(4, 1), S Vector: [], d Vector: [], has_children: 1)
+7, 49), Node with key(7, 49), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (4, 2), Node with key(4, 2), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (85, 23), Node with key(5, 23), S Vector: [], d Vector: [], has_children: 1)
+Node with key(1, 1), S Vector: [], d Vector: [], has_children: 1)
+6, 30), Node with key(6, 30), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 86), Node with key(8, 86), S Vector: [-0.701024, -0.0208693, -0.000131899, 3.01065e-06, 2.66191e-07], d Vector: [], has_children: 1)
+Node with key(8, 82), S Vector: [-0.436634, -0.0183642, 6.65389e-05, -8.90603e-06, 4.63054e-08], d Vector: [], has_children: 1Printer:: Node with info: (Key: (7, 16), Node with key(7, 16), S Vector: [], d Vector: [], has_children: 1)
+, 21), Node with key(6, 21), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (8, 117), Node with key(8, 117), S Vector: [0.380657, 0.0104842, -0.00022388, -1.066e-05, -1.71595e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 33), Node with key(8, 33), S Vector: [0.574654, 0.0131235, 0.000225554, -6.36907e-06, -1.99993e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 8), Node with key(6, 8), S Vector: [], d Vector: [], has_children: 1)
+, 52), Node with key(7, 52), S Vector: [], d Vector: [], has_children: 1)
+70), Node with key(8, 70), S Vector: [0.785518, -0.0305403, -0.00048966, 1.20689e-05, 1.10141e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 57), Node with key(7, 57), S Vector: [], d Vector: [], has_children: 1)
+2, 3), Node with key(2, 3), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 83), Node with key(8, 83), S Vector: [-0.499857, -0.0182395, -3.18051e-05, -7.50772e-06, 1.29263e-07], d Vector: [], has_children: 1)
+), Node with key(8, 112), S Vector: [0.182199, 0.0102991, 9.02305e-05, 3.1568e-06, -2.31191e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 106), Node with key(8, 106), S Vector: [-0.0725791, 0.019286, -0.000504325, 4.87395e-06, 2.66003e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 3), Node with key(5, 3), S Vector: [], d Vector: [], has_children: 1)
+, 124), Node with key(8, 124), S Vector: [0.338814, -0.016482, -0.000465195, 9.72504e-06, 2.22222e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 61), Node with key(7, 61), S Vector: [], d Vector: [], has_children: 1)
+, 88), Node with key(8, 88), S Vector: [-0.850428, -0.0218436, 3.71277e-05, 1.09638e-05, 2.09395e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 47), Node with key(6, 47), S Vector: [], d Vector: [], has_children: 1)
 )
-Printer:: Node with info: (Key: (4, 7), Node with key(4, 7), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 13), Node with key(5, 13), S Vector: [1.30683e-15, -1.58439e-16, -3.75907e-16, 1.34933e-15, 1.37516e-16, -4.30712e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 3), Node with key(5, 3), S Vector: [1.35715e-15, 4.57076e-16, 1.35471e-16, -1.47408e-16, 4.01769e-16, 4.16199e-16], d Vector: [], has_children: 0)
-, 21), Node with key(5, 21), S Vector: [-9.86676e-16, -3.19969e-16, -2.20804e-16, -7.05015e-16, 8.51846e-16, 7.48519e-17], d Vector: [], has_children: 0)6
-), Node with key(4, 6), S Vector: [], d Vector: [], has_children: 1)
-Printer:: Node with info: (Key: (5, 23), Node with key(5, 23), S Vector: [-2.06447e-15, -5.58445e-16, -4.84634e-16, -6.21601e-16, 3.78864e-16, 2.53093e-16], d Vector: [], has_children: 0)
-Printer:: Node with info: (Key: (5, 1), Node with key(5, 1), S Vector: [-1.69095e-15, 1.08955e-15, -5.36288e-16, -1.60102e-17, 1.00126e-15, -1.79727e-17], d Vector: [], has_children: 0)
-0.029251
+
+Printer:: Node with info: (Key: (4, 0), Node with key(4, 0), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 6), Node with key(5, 6), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 123), 3Node with key(8, 123), S Vector: [0.389166, -0.0124932, -0.000557751, 5.8516e-06, 2.56949e-07], d Vector: [], has_children: 17)
+Printer:: Node with info: (Key: (3, 6), Printer:: Node with info: (Key: (7, 17), Node with key(7, 17), S Vector: [], d Vector: [], has_children: 1)
+29), Node with key(6, 29), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (4, 8), Node with key(4, 8), S Vector: [], d Vector: [], has_children: 1)
+, 50), Node with key(7, 50), S Vector: [], d Vector: [], has_children: 1)
+)
+Printer:: Node with info: (Key: (7, 8Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5, 8), 7, 43), Node with key(7, 43), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 99), Node with key(8, 99), S Vector: [-0.803425, 0.0322885, 0.000396912, -1.89934e-05, -1.04422e-07], d Vector: [], has_children: 1)
+Node with key(7, 53), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 95), Node with key(7, 95), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 87), Node with key(8, 87), S Vector: [-0.77484, -0.0216855, -7.11883e-05, 7.24013e-06, 2.61738e-07], d Vector: [], has_children: 1)
+8, Printer:: Node with info: (Key: (90), Node with key(8, 90), S Vector: [-0.994372, -0.0189216, 0.000356226, 1.51005e-05, 3.7558e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 191), Node with key(8, 191), S Vector: [-0.330773, -0.0569249, -0.00121838, 2.65594e-05, 5.3313e-07], d Vector: [], has_children: 1)
+Node with key(3, 6), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 110), Node with key(8, 110), S Vector: [0.113499, 0.00991718, -6.50184e-05, 9.35984e-06, -1.29314e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 190), Node with key(8, 190), S Vector: [-0.151319, -0.0464144, -0.00147826, 1.70677e-05, 6.52273e-07], d Vector: [], has_children: 1)
+Node with key(6, 27), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7, 6Printer:: Node with info: (Key: (, 4Printer:: Node with info: (Key: (188, 115), Node with key(8, 115), S Vector: [0.300444, 0.0121137, 1.60734e-06, -7.59672e-06, -1.68919e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (4, 9), Node with key(4, 9), S Vector: [], d Vector: [], has_children: 1)
+Node with key(7, 8), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 2), Node with key(5, 2), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (5, 19), Node with key(5, 19), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 9), Node with key(7, 9), S Vector: [], d Vector: [], has_children: 1)
+5, 7), Node with key(5, 7), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()8, 98), Node with key(8, 98), S Vector: [-0.90888, 0.0283783, 0.000608005, -1.63976e-05, -2.19372e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 39), Node with key(6, 39), S Vector: [], d Vector: [], has_children: 1)
+, Printer:: Node with info: (Key: (8, 32), Node with key(8, 32), S Vector: [0.532532, 0.0111387, 0.000280456, -2.7956e-06, -2.45626e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 19), Node with key(8, 19), S Vector: [0.168844, 0.00869785, 0.00042335, -1.69954e-05, -5.60108e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 25), Node with key(7, 25), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 79), Printer:: Node with info: (Key: (Node with key(7, 79), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 94), Node with key(7, 94), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 18), Node with key(8, 18), S Vector: [0.145359, 0.00466273, 0.000615095, -1.51017e-05, -1.80309e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 51), Node with key(8, 51), S Vector: [0.602743, -0.00404102, 0.000440641, 5.1085e-06, -1.45921e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 122), Node with key(8, 122), S Vector: [0.42469, -0.00797052, -0.000602489, 1.6963e-06, 2.62562e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, Printer:: Node with info: (Key: (6), Node with key(6, 6), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 50), Node with key(8, 50), S Vector: [0.622317, -0.00718466, 0.000367179, 7.25025e-06, -1.22697e-07], d Vector: [], has_children: 1)
+, 120), Node with key(8, 120), S Vector: [0.447764, 0.00117661, -0.000548888, -5.90403e-06, 2.01265e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 36), Node with key(8, 36), S Vector: [0.726301, 0.0147675, -0.00010968, -1.07133e-05, 2.35929e-08], d Vector: [], has_children: 1)
+8, 38), Node with key(8, 38), S Vector: [0.818267, 0.0112179, -0.000337802, -7.95707e-06, 1.39735e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 48), Node with key(6, 48), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 5), Node with key(5, 5), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7, 15), Node with key(7, 15), S Vector: [], d Vector: [], has_children: 1), 
+8Printer:: Node with info: (Key: (8, 28), Node with key(8, 28), S Vector: [0.434315, 0.0041994, 6.24175e-05, 9.94009e-06, -5.41108e-08], d Vector: [], has_children: 1)
+19Printer:: Node with info: (Key: (7, 97), Node with key(7, 97), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 1), Node with key(5, 1), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 35), Node with key(8, 35), S Vector: [0.674298, 0.0151253, 1.68962e-05, -1.04887e-05, -5.29852e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 195), Node with key(8, 195), S Vector: [-1.2695, -0.0698101, 0.000457257, 3.54297e-05, -2.74173e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (4), 6Printer:: Node with info: (Key: (Node with key(6, 4), S Vector: [], d Vector: [], has_children: 1, )4Printer:: Node with info: (Key: (
+17), Node with key(5, 17), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 13), Node with key(7, 13), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 7), Node with key(6, 7), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 107), Node with key(8, 107), S Vector: [-0.0121866, 0.0156644, -0.000424349, 8.41972e-06, 1.77006e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 27), Node with key(8, 27), S Vector: [0.42002, 0.00417705, -5.65052e-05, 9.85978e-06, 6.53785e-08], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (6, 10), Node with key(6, 10), S Vector: [], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (6, 5), Node with key(6, 5), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 12), Node with key(6, 12), S Vector: [], d Vector: [], has_children: 1)
+Node with key(7, 54), S Vector: [], d Vector: [], has_children: 1)
+8, 34), Node with key(8, 34), S Vector: [0.62272, 0.0145326, 0.000133485, -9.02033e-06, -1.31448e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 24), Node with key(7, 24), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 98), Node with key(7, 98), S Vector: [], d Vector: [], has_children: 1)
+13), Node with key(4, 13), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 37), Node with key(8, 37), S Vector: [0.775373, 0.0134377, -0.000232011, -9.79818e-06, 8.95245e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 197), Node with key(8, 197), S Vector: [-1.71448, -0.0569307, 0.00115344, 2.20691e-05, -5.29023e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 49), Node with key(8, 49), S Vector: [0.651679, -0.00966753, 0.000270803, 8.96266e-06, -9.18946e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, Printer:: Node with info: (Key: (5, 27), Node with key(5, 27), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(7, 18), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 194), Node with key(8, 194), S Vector: [-1.02366, -0.0716722, 1.84541e-05, 3.82376e-05, -7.44848e-08], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+Printer:: Node with info: (Key: (8, 448, ), 10Printer:: Node with info: (Key: (Node with key(8, 48), S Vector: [0.688257, -0.0113337, 0.000157283, 1.01311e-05, -5.43662e-08], d Vector: [], has_children: 1Printer:: Node with info: (Key: (85Printer:: Node with info: (Key: (6, , 5525Printer:: Node with info: (Key: (), Node with key(6, 55), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, ), Node with key(7, 19), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+6Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (, 15), Node with key(6, 15), S Vector: [], d Vector: [], has_children: 1)5, 24), Node with key(5, 24), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 189), Node with key(8, 189), S Vector: [-0.0111803, -0.0343513, -0.00161687, 6.2406e-06, 6.99995e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 39), Node with key(8, 39), S Vector: [0.852172, 0.00827461, -0.00041765, -5.45735e-06, 1.72431e-07], d Vector: [], has_children: 1)
+3), Node with key(6, 3), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 188), Node with key(8, 188), S Vector: [0.085949, -0.0217176, -0.00162529, -4.74976e-06, 6.73275e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 196), Node with key(8, 196), S Vector: [-1.50322, -0.0647257, 0.000845309, 2.97677e-05, -4.30911e-07], d Vector: [], has_children: 1)
+), Node with key(4, 10), S Vector: [], d Vector: [], has_children: 1)
+, 111), Node with key(8, 111), S Vector: [0.147485, 0.00980441, 3.11147e-05, 6.71138e-06, -1.99956e-07], d Vector: [], has_children: 1)
+)Printer:: Node with info: (Key: (
+7, 26), Node with key(7, 26), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(5, 25), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 16), Node with key(5, 16), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 21), Node with key(7, 21), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 99), Node with key(7, 99), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (, 49), Node with key(6, 49), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 43), Node with key(8, 43), S Vector: [0.868588, -0.00581134, -0.000400471, 5.93276e-06, 1.50834e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 11), Node with key(7, 11), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 159), Node with key(8, 159), S Vector: [1.3531, 0.0107749, -0.000802224, 2.9157e-06, 6.57017e-08], d Vector: [], has_children: 1)
+, 14), Node with key(4, 14), S Vector: [], d Vector: [], has_children: 1)
+4Printer:: Node with info: (Key: (, 12), Node with key(4, 12), S Vector: [], d Vector: [], has_children: 18, Printer:: Node with info: (Key: (23Printer:: Node with info: (Key: (5, ), Node with key(8, 23), S Vector: [0.324937, 0.0104503, -0.000219586, -5.91578e-06, 3.31029e-07], d Vector: [], has_children: 16, 14), Node with key(6, 14), S Vector: [], d Vector: [], has_children: 1)
+7Printer:: Node with info: (Key: (, )Printer:: Node with info: (Key: (, 77), Node with key(7, 7), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (, 4Printer:: Node with info: (Key: (8, 158), Node with key(8, 158), S Vector: [1.30487, 0.0170983, -0.000826968, 9.80758e-07, 1.78878e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5Printer:: Node with info: (Key: (17
+78, 26), Node with key(8, 26), S Vector: [0.404244, 0.00504181, -0.000163201, 7.88119e-06, 1.81765e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (, Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (6117Printer:: Node with info: (Key: (7, 29), Printer:: Node with info: (Key: (Node with key(7, 29), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: (56Printer:: Node with info: (Key: (83), 7)
+, 33), Node with key(6, 33), S Vector: [], d Vector: [], has_children: 1)
+
+8, 54), Node with key(8, 54), S Vector: [0.618605, 0.00727214, 0.000487063, -2.68673e-06, -1.70552e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 59), Node with key(8, 59), S Vector: [0.868695, 0.0182852, -2.23923e-05, -1.29719e-05, -4.84702e-08], d Vector: [], has_children: 1)
+6, 51), Node with key(6, 51), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 40), Node with key(6, 40), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 22), Node with key(8, 22), S Vector: [0.286222, 0.0117988, -0.000119656, -1.08562e-05, 2.83822e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 46), Node with key(6, 46), S Vector: [], d Vector: [], has_children: 1)
+6, 0), Node with key(6, 0), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 81), Node with key(7, 81), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 93), Node with key(7, 93), S Vector: [], d Vector: [], has_children: 1)
+), Printer:: Node with info: (Key: (7, 1), Node with key(7, 1), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 187), Node with key(8, 187), S Vector: [0.139829, -0.00951082, -0.0015084, -1.47729e-05, 5.80223e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 163), Node with key(8, 163), S Vector: [1.33985, -0.0122048, -0.000713518, -4.18077e-07, -4.79596e-08], d Vector: [], has_children: 1)
+, 710), Node with key(3, 7), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(3, 4), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 1628), Node with key(8, 162), S Vector: [1.37257, -0.0066812, -0.000714774, 7.38758e-07, -9.08341e-08], d Vector: [], has_children: 1)
+0), Node with key(5, 0), S Vector: [], d Vector: [], has_children: 1)
+, 20), Node with key(7, 20), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 67), Node with key(7, 67), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 42), Node with key(8, 42), S Vector: [0.883044, -0.00247744, -0.000455645, 3.33179e-06, 1.75242e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 80), Node with key(7, 80), S Vector: [], d Vector: [], has_children: 1)
+10), Node with key(5, 10), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7Printer:: Node with info: (Key: (, 7, 0, 78Printer:: Node with info: (Key: (), 29), Node with key(5, 29), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 21), Node with key(5, 21), S Vector: [], d Vector: [], has_children: 1)
+7, 27), Node with key(7, 27), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 186), Node with key(8, 186), S Vector: [0.153546, 0.00135854, -0.00128338, -2.29032e-05, 4.38037e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 59), Printer:: Node with info: (Key: (Node with key(6, 59), S Vector: [], d Vector: [], has_children: 18, 15), ), 
+Printer:: Node with info: (Key: (8, 55), Node with key(8, 55), S Vector: [0.650129, 0.010879, 0.000439406, -5.35248e-06, -1.64099e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 92), Node with key(7, 92), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(8, 17), S Vector: [0.138282, -0.000740643, 0.000773339, -1.13858e-05, -2.83603e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 198), Node with key(8, 198), S Vector: [-1.89508, -0.0471221, 0.00136334, 1.33253e-05, -5.62432e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 18), Node with key(5, 18), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 1), Node with key(6, 1), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 58), Node with key(8, 58), S Vector: [0.805791, 0.01788, 0.000124909, -1.18055e-05, -9.64481e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 41), Node with key(8, 41), S Vector: [0.885367, 0.00115922, -0.000478099, 4.30452e-07, 1.8835e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 3), Node with key(7, 3), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 42), Node with key(6, 42), S Vector: [], d Vector: [], has_children: 1)
+Node with key(6, 11), S Vector: [], d Vector: [], has_children: 1)
+20), Node with key(5, 20), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 85), Node with key(7, 85), S Vector: [], d Vector: [], has_children: 1)
+
+), Node with key(7, 10), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 192), Node with key(8, 192), S Vector: [-0.542634, -0.0650218, -0.000859367, 3.36799e-05, 3.56498e-07], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+8, 3), Node with key(8, 3), S Vector: [1.30084, 0.000928234, -0.00115472, -4.5074e-06, 4.37078e-07], d Vector: [], has_children: 1)
+55), Node with key(7, 55), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+Printer:: Node with info: (Key: (6, 43), Node with key(6, 43), S Vector: [], d Vector: [], has_children: 1)
+7Printer:: Node with info: (Key: (, 96), 8Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (, 2Node with key(7, 96), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: (4, 15), Node with key(4, 15), S Vector: [], d Vector: [], has_children: 18Printer:: Node with info: (Key: ()
+Printer:: Node with info: (Key: (8, 16), Node with key(8, 16), S Vector: [0.151804, -0.00717535, 0.000878855, -6.26772e-06, -3.55779e-07], d Vector: [], has_children: 1)
+), Node with key(7, 78), S Vector: [], d Vector: [], has_children: 1)
+6, 35), Node with key(6, 35), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7, 30), Node with key(7, 30), S Vector: [], d Vector: [], has_children: 1)8Node with key(7, 0), S Vector: [], d Vector: [], has_children: 1
+7, 12), Node with key(7, 12), S Vector: [], d Vector: [], has_children: 1)
+Node with key(8, 15), S Vector: [0.188717, -0.014177, 0.000918171, -2.86692e-07, -3.91955e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 61), Node with key(8, 61), S Vector: [0.98843, 0.0155053, -0.000336802, -1.3041e-05, 5.50713e-08], d Vector: [], has_children: 1)
+8, 21), Node with key(8, 21), S Vector: [0.244447, 0.0121619, 3.28359e-05, -1.46919e-05, 1.93624e-07], d Vector: [], has_children: 1)
+, 14), Node with key(7, 14), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 14), Node with key(8, 14), S Vector: [0.250056, -0.0212025, 0.000884495, 5.97863e-06, -3.91854e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 60), Node with key(8, 60), S Vector: [0.93097, 0.0175069, -0.000179356, -1.34132e-05, -7.9554e-09], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (), 7, 31), Node with key(7, 31), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 2), Node with key(6, 2), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 44), Node with key(6, 44), S Vector: [], d Vector: [], has_children: 1)
+, Printer:: Node with info: (Key: (8, 63137), ), , 111Printer:: Node with info: (Key: (Node with key(8, 63), S Vector: [1.07238, 0.00804728, -0.000613335, -9.77379e-06, 1.5426e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7, 103), Node with key(7, 103), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 23), Node with key(7, 23), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 161), Node with key(8, 161), S Vector: [1.38605, -0.00108721, -0.000732243, 2.19956e-06, -8.50948e-08], d Vector: [], has_children: 1)
+, 31), Printer:: Node with info: (Key: (Node with key(8, 31), S Vector: [0.497804, 0.00890182, 0.000289817, 1.24197e-06, -2.56953e-07], d Vector: [], has_children: 1Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8Printer:: Node with info: (Key: ()
+Printer:: Node with info: (Key: (5, 22), Node with key(5, 22), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 160), Node with key(8, 160), S Vector: [1.37985, 0.00470407, -0.000764821, 3.16639e-06, -2.93423e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6Printer:: Node with info: (Key: ()8, , 
+Node with key(6, 13), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 28), Node with key(7, 28), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7), Node with key(8, 7), S Vector: [1.07465, -0.0313478, -0.000727808, 2.04468e-05, 2.4721e-07], d Vector: [], has_children: 1)65, Printer:: Node with info: (Key: (75, , ), 100), Node with key(7, 100), S Vector: [], d Vector: [], has_children: 1)
+8, 199), Node with key(8, 199), S Vector: [-2.0394, -0.0360925, 0.00146865, 4.5451e-06, -5.34936e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 25), Node with key(8, 25), S Vector: [0.384186, 0.00661418, -0.000236164, 4.21689e-06, 2.74739e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 171), Node with key(8, 171), S Vector: [0.448111, -0.0442431, 9.91717e-05, 2.16273e-05, 7.0382e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 20), Node with key(8, 20), S Vector: [0.203658, 0.0111931, 0.000221194, -1.68457e-05, 7.45034e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 82), Node with key(7, 82), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+8, 29), Node with key(8, 29), S Vector: [0.450256, 0.0051172, 0.00017147, 8.23381e-06, -1.56822e-07], d Vector: [], has_children: 1)1847, 119), Node with key(7, 119), S Vector: [], d Vector: [], has_children: 1), )
+Printer:: Node with info: (Key: (7, 87), Node with key(7, 87), S Vector: [], d Vector: [], has_children: 1)
+8, 135), Node with key(8, 135), S Vector: [-0.160337, 0.00467469, 0.000313038, -1.34699e-05, -1.37371e-07], d Vector: [], has_children: 1)
+31), Node with key(5, 31), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 193), Node with key(8, 193), S Vector: [-0.777363, -0.070059, -0.000433996, 3.76868e-05, 1.44882e-07], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()8, 239), , Node with key(8, 239), S Vector: [0.384121, 0.0213051, -0.000487615, -3.56486e-06, 1.71014e-07], d Vector: [], has_children: 13726), Node with key(5, 26), S Vector: [], d Vector: [], has_children: 1))
+
+Printer:: Node with info: (Key: (8, 134), Node with key(8, 134), S Vector: [-0.17159, 0.00167383, 0.000456525, -1.05583e-05, -2.26678e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 63), Node with key(6, 63), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()7, 71), Node with key(7, 71), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 57), Node with key(8, 57), S Vector: [0.746189, 0.0163972, 0.00025477, -1.00637e-05, -1.29226e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 30), Node with key(5, 30), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 143), Node with key(8, 2), S Vector: [1.28251, 0.00955896, -0.00106197, -1.10171e-05, 3.76046e-07], d Vector: [], has_children: 1)
+Node with key(8, 143), S Vector: [-0.0523595, 0.000566348, 0.000150431, 1.80861e-05, 1.7324e-07], d Vector: [], has_children: 1
+, 185), Node with key(8, 185), S Vector: [0.133062, 0.0101506, -0.000976549, -2.85347e-05, 2.69114e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 24), Node with key(8, 24), S Vector: [0.357938, 0.00856278, -0.000258218, -6.22682e-07, 3.27696e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (6, 8Printer:: Node with info: (Key: (456Printer:: Node with info: (Key: (), Node with key(6, 45), S Vector: [], d Vector: [], has_children: 1)
+7, 5), Node with key(7, 5), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(6, 37), S Vector: [], d Vector: [], has_children: 1)
+, Printer:: Node with info: (Key: (8, 164), Node with key(8, 164), S Vector: [1.28797, -0.0177581, -0.000720638, -5.96881e-07, 3.49106e-08], d Vector: [], has_children: 1)47
+), Printer:: Node with info: (Key: (8, 175), Node with key(8, 175), S Vector: [-0.0714835, -0.0261011, 0.000989988, 1.14252e-05, -3.62448e-07], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (7, 75), Node with key(7, 75), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 62), Node with key(8, 62), S Vector: [1.03688, 0.0123146, -0.000484797, -1.18206e-05, 1.01774e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (68, 238), Node with key(8, 238), S Vector: [0.304029, 0.0248763, -0.000429765, -6.16315e-06, 1.51044e-07], d Vector: [], has_children: 1)
+)
+Printer:: Node with info: (Key: (6, 60), ), Node with key(8, 184), S Vector: [0.0865197, 0.0163512, -0.000619232, -3.14267e-05, 9.62872e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 170), Node with key(8, 170), S Vector: [0.601472, -0.0440458, -0.000146486, 1.96238e-05, 1.78368e-07], d Vector: [], has_children: 1)
+Node with key(7, 111), S Vector: [-1.61418, 0.0425058, 0.00184134, 7.95918e-06, -3.29798e-06], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6Printer:: Node with info: (Key: (, 8, 142), Node with key(8, 142), S Vector: [-0.0533016, 0.000178224, -4.36167e-05, 1.44258e-05, 2.87288e-07], d Vector: [], has_children: 1)38Printer:: Node with info: (Key: (
+Printer:: Node with info: (Key: (7, 102), Node with key(7, 102), S Vector: [], d Vector: [], has_children: 1)
+40), Node with key(8, 40), S Vector: [0.874963, 0.0048344, -0.000465405, -2.57542e-06, 1.88087e-07], d Vector: [], has_children: 1)
+Node with key(8, 47), S Vector: [0.729027, -0.0120768, 3.36447e-05, 1.06842e-05, -2.72366e-09], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (8, 12), Node with key(8, 12), S Vector: [0.440459, -0.0330717, 0.000604265, 1.72021e-05, -2.96289e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 11), Node with key(8, 11), S Vector: [0.562053, -0.0368946, 0.000375499, 2.12749e-05, -2.01437e-07], d Vector: [], has_children: 1)
+8, 207), Node with key(8, 207), S Vector: [-1.98919, 0.0253293, 0.000221503, -1.56457e-05, 1.13466e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 66), Node with key(7, 66), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 201), Node with key(8, 201), S Vector: [-2.21049, -0.0134833, 0.00139437, -9.85167e-06, -3.51673e-07], d Vector: [], has_children: 1)
+50), Node with key(6, 50), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7Printer:: Node with info: (Key: (8, 133), Node with key(8, 133), S Vector: [-0.17072, -0.00227962, 0.000556351, -6.1579e-06, -3.08275e-07], d Vector: [], has_children: 1)
+), Printer:: Node with info: (Key: (Node with key(6, 38), S Vector: [], d Vector: [], has_children: 1)
+8, 165), Node with key(8, 165), S Vector: [1.21677, -0.0233527, -0.000721664, 6.42139e-07, 1.21449e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 84), Node with key(7, 84), S Vector: [], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (7, 110), Node with key(7, 110), S Vector: [-1.73814, 0.0295109, 0.00140814, 6.60517e-05, -3.60187e-06], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, , 169), Printer:: Node with info: (Key: (53Printer:: Node with info: (Key: (6, 54), Node with key(6, 54), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 46), Node with key(8, 46), S Vector: [0.770692, -0.0118489, -9.22044e-05, 1.05137e-05, 2.67818e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 174), Node with key(8, 174), S Vector: [0.0314588, -0.0331608, 0.000823827, 1.64164e-05, -2.65434e-07], d Vector: [], has_children: 1)
+, 34), Node with key(6, 34), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 151), Node with key(8, 151), S Vector: [0.471368, 0.0403838, 0.000363674, -2.25344e-05, -1.86945e-07], d Vector: [], has_children: 1)
+Node with key(6, 60), S Vector: [], d Vector: [], has_children: 1)
+, 6), Node with key(7, 6), S Vector: [], d Vector: [], has_children: 1)
+7, 118), Node with key(7, 118), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 121), Node with key(7, 121), S Vector: [], d Vector: [], has_children: 1)
+8, 200), Node with key(8, 200), S Vector: [-2.1446, -0.0246389, 0.00147433, -3.39271e-06, -4.5876e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 13), Node with key(8, 13), S Vector: [0.334919, -0.0276824, 0.000777793, 1.19728e-05, -3.58426e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 83), Node with key(7, 83), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 243), Node with key(8, 243), S Vector: [0.572069, 0.00623352, -0.000414261, 5.15224e-06, 4.35848e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 172), Node with key(8, 172), S Vector: [0.297449, -0.0424744, 0.000357792, 2.1814e-05, -6.53304e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 89), Printer:: Node with info: (Key: (7, 91), Node with key(7, 89), S Vector: [], d Vector: [], has_children: 1Node with key(7, 91), S Vector: [], d Vector: [], has_children: 1Printer:: Node with info: (Key: ()
+Printer:: Node with info: (Key: (8, 173), Node with key(8, 173), S Vector: [0.15636, -0.0387262, 0.000606744, 2.00243e-05, -1.61341e-07], d Vector: [], has_children: 1)
+8, 157), Node with key(8, 157), S Vector: [1.23455, 0.0234961, -0.000818274, -2.71317e-06, 2.82789e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 205), Node with key(8, 205), S Vector: [-2.14563, 0.0188327, 0.000627596, -1.83209e-05, 3.46517e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 0), Node with key(8, 0), S Vector: [1.16528, 0.023352, -0.000685303, -1.96178e-05, 1.48804e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 86), Node with key(7, 86), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 156), Node with key(8, 156), S Vector: [1.14241, 0.0296331, -0.000757106, -7.79543e-06, 3.49728e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 1), Node with key(8, 1), S Vector: [1.23589, 0.0171912, -0.000899269, -1.62296e-05, 2.75349e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 10), Node with key(8, 10), S Vector: [0.69361, -0.0387829, 0.000107472, 2.381e-05, -1.14198e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 36), Node with key(6, 36), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 206), Node with key(8, 206), S Vector: [-2.07302, 0.0228694, 0.000416557, -1.72596e-05, 8.77074e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 69), Printer:: Node with info: (Key: (Node with key(7, 69), S Vector: [], d Vector: [], has_children: 17Printer:: Node with info: (Key: (, , , Printer:: Node with info: (Key: (74), Node with key(7, 74), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (61Printer:: Node with info: (Key: (7, 73), Node with key(7, 73), S Vector: [], d Vector: [], has_children: 1)
+447Printer:: Node with info: (Key: (8), ), 22), Node with key(7, 22), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 167), Node with key(8, 167), S Vector: [1.01712, -0.0340774, -0.000637136, 7.26814e-06, 2.73144e-07], d Vector: [], has_children: 1)
+6, 41), Node with key(6, 41), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 138), Node with key(8, 138), S Vector: [-0.0940989, 0.00626306, -0.000153237, -9.51732e-06, 2.85323e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 109), Node with key(7, 109), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 88), Node with key(7, 88), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 4), Node with key(7, 4), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 240), Node with key(8, 240), S Vector: [0.451224, 0.0174107, -0.000512763, -6.98231e-07, 1.77923e-07], d Vector: [], has_children: 1)
+8Printer:: Node with info: (Key: (8, 177), Node with key(8, 177), S Vector: [-0.195561, -0.00940305, 0.00111708, -1.09263e-06, -4.23086e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 9), Node with key(8, 9), S Vector: [0.827994, -0.0385061, -0.000180362, 2.45653e-05, 7.79625e-09], d Vector: [], has_children: 1)
+), Node with key(6, 61), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 176), Node with key(8, 176), S Vector: [-0.14805, -0.0180002, 0.00109085, 5.46797e-06, -3.9965e-07], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (7, 76), Node with key(7, 76), S Vector: [], d Vector: [], has_children: 1)
+
+Node with key(8, 44), S Vector: [0.843468, -0.00860551, -0.000317118, 8.04969e-06, 1.25822e-07], d Vector: [], has_children: 1)
+, 132), Node with key(8, 132), S Vector: [-0.155086, -0.00679055, 0.000599008, -9.75344e-07, -3.38826e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8), Printer:: Node with info: (Key: (, Node with key(8, 53), S Vector: [0.600059, 0.00341945, 0.000502812, 2.22532e-08, -1.69613e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 2), Node with key(7, 2), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 166), Node with key(8, 166), S Vector: [1.12627, -0.0288746, -0.000699173, 3.3669e-06, 2.14163e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 244), Node with key(8, 244), S Vector: [0.588412, 0.00326765, -0.000351134, 5.36966e-06, -1.52015e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 120), Node with key(7, 120), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 219), Node with key(8, 219), S Vector: [-1.2776, 0.00820898, 0.000116515, 8.99052e-06, -9.41504e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 58), Node with key(6, 58), S Vector: [], d Vector: [], has_children: 1)
+, 56), Node with key(8, 56), S Vector: [0.693355, 0.0139967, 0.000361069, -7.86441e-06, -1.44989e-07], d Vector: [], has_children: 1)
+8Printer:: Node with info: (Key: (, 308Printer:: Node with info: (Key: (8, 241), Node with key(8, 241), S Vector: [0.504663, 0.0134505, -0.000504983, 1.94544e-06, 1.51124e-07], d Vector: [], has_children: 1)78
+Node with key(8, 169), S Vector: [0.750998, -0.042063, -0.000359187, 1.61357e-05, 2.54981e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (7, 64), Node with key(7, 64), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 123), Node with key(7, 123), S Vector: [], d Vector: [], has_children: 1)
+8, 242), Node with key(8, 242), S Vector: [0.544633, 0.00966329, -0.000469191, 3.98276e-06, 1.02918e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 137), Node with key(8, 137), S Vector: [-0.117228, 0.0069502, -1.78143e-05, -1.30445e-05, 1.55116e-07], d Vector: [], has_children: 17Printer:: Node with info: (Key: ()8, 147), Node with key(8, 147), S Vector: [0.0492815, 0.0179107, 0.000862631, 4.89327e-06, -4.96414e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 53), Node with key(6, 53), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 204), Node with key(8, 204), S Vector: [-2.20137, 0.0131264, 0.00084602, -1.84663e-05, -1.81325e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 245), 8Node with key(8, 245), S Vector: [0.595326, 0.000786455, -0.000290665, 4.73161e-06, -6.26749e-08], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (, Printer:: Node with info: (Key: (), Node with key(8, 30), S Vector: [0.470715, 0.00677753, 0.00025163, 5.138e-06, -2.27236e-07], d Vector: [], has_children: 1), Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (218), Node with key(8, 218), S Vector: [-1.30502, 0.00773779, 3.39578e-06, 9.95737e-06, -2.57571e-08], d Vector: [], has_children: 1)
+, 202), Node with key(8, 202), S Vector: [-2.23915, -0.00321488, 0.00124856, -1.44967e-05, -2.3325e-07], d Vector: [], has_children: 1)
+
+8, 8), Node with key(8, 8), S Vector: [0.957544, -0.0359937, -0.000466315, 2.34493e-05, 1.34818e-07], d Vector: [], has_children: 1)
+8, 45), Node with key(8, 45), S Vector: [0.809902, -0.0106651, -0.000211868, 9.60265e-06, 7.10749e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 136), Node with key(8, 136), S Vector: [-0.140751, 0.00646102, 0.000146506, -1.43671e-05, 1.11053e-08], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (6, 62), Node with key(6, 62), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (5, 28), Printer:: Node with info: (Key: (Node with key(5, 28), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 32), Node with key(6, 32), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 148), Node with key(8, 148), S Vector: [0.123047, 0.0246876, 0.000872274, -3.34486e-06, -5.28675e-07], d Vector: [], has_children: 1)
+146), Node with key(8, 146), S Vector: [-0.00160273, 0.0115724, 0.000761064, 1.20021e-05, -3.88509e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: ()6
+8, 52), Node with key(8, 52), S Vector: [0.594913, -0.000431836, 0.000486827, 2.65921e-06, -1.6147e-07], d Vector: [], has_children: 18)Printer:: Node with info: (Key: (8, 139
+
+), Node with key(8, 139), S Vector: [-0.0749288, 0.00471943, -0.000235687, -4.18068e-06, 3.79783e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 117), Node with key(7, 117), S Vector: [], d Vector: [], has_children: 1)
+7, 68), Node with key(7, 68), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 154), Node with key(8, 154), S Vector: [0.901147, 0.0392338, -0.000439381, -1.87866e-05, 2.9756e-07], d Vector: [], has_children: 1)
+7Printer:: Node with info: (Key: (8, 235, ), 77Printer:: Node with info: (Key: (), 
+8Printer:: Node with info: (Key: (Node with key(7, 77), S Vector: [], d Vector: [], has_children: 1)
+8, 247), Node with key(8, 247), S Vector: [0.586956, -0.00300211, -0.000209267, 1.97276e-06, -9.5954e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (6, 56), Node with key(6, 56), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (
+8, 144), Node with key(8, 144), S Vector: [-0.0473009, 0.00258373, 0.000372197, 1.89885e-05, -3.39836e-08], d Vector: [], has_children: 1)8, 5), Node with key(8, 5), S Vector: [1.24495, -0.0169116, -0.0010937, 9.56907e-06, 4.19227e-07], d Vector: [], has_children: 1)
+, Printer:: Node with info: (Key: (7, 65), Node with key(7, 65), S Vector: [], d Vector: [], has_children: 1)
+8, 6), Node with key(8, 6), S Vector: [1.17236, -0.0248431, -0.000943142, 1.56982e-05, 3.47526e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 203), Node with key(8, 203), S Vector: [-2.23443, 0.00574104, 0.00105882, -1.72919e-05, -1.21054e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 122), Node with key(7, 122), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 149), Node with key(8, 149), S Vector: [0.219934, 0.0311592, 0.000784037, -1.14453e-05, -4.79333e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 108), Node with key(7, 108), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (168), Node with key(8, 168), S Vector: [0.891022, -0.0386089, -0.000524759, 1.17685e-05, 2.87698e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 178), Node with key(8, 178), S Vector: [-0.213325, -0.000907666, 0.00106424, -7.84103e-06, -4.23755e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 217), Node with key(8, 217), S Vector: [-1.33236, 0.00816921, -0.000114464, 9.77756e-06, 4.82863e-08], d Vector: [], has_children: 1)
+, 70), Node with key(7, 70), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 216), Node with key(8, 216), S Vector: [-1.36275, 0.00948686, -0.000223371, 8.46109e-06, 1.15658e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 129), Node with key(8, 129), S Vector: [-0.0165273, -0.0189883, 0.000369009, 1.27526e-05, -1.91324e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 90), Node with key(7, 90), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 125), Node with key(7, 125), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 246), Node with key(8, 246), S Vector: [0.594407, -0.00126639, -0.000241632, 3.48526e-06, -9.08828e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 248), Node with key(8, 248), S Vector: [0.573838, -0.00455614, -0.000194533, 5.61502e-07, -7.85974e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 126), Node with key(7, 126), S Vector: [], d Vector: [], has_children: 1)57Printer:: Node with info: (Key: (8, 251), Node with key(8, 251), S Vector: [0.502807, -0.00918503, -0.000209801, -4.2148e-07, 4.38599e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 104), Node with key(7, 104), S Vector: [], d Vector: [], has_children: 1)
+, 150), Node with key(8, 150), S Vector: [0.337603, 0.0365938, 0.000607025, -1.81681e-05, -3.57757e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 112), Node with key(7, 112), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 4), Node with key(8, 4), S Vector: [1.28842, -0.00811037, -0.00116619, 2.60413e-06, 4.51348e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 131), Node with key(8, 131), S Vector: [-0.12356, -0.0113903, 0.00057909, 4.30889e-06, -3.22562e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 116), Node with key(7, 116), S Vector: [], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (
+Printer:: Node with info: (Key: (8, 182), Node with key(8, 182), S Vector: [-0.0462595, 0.0201548, 0.000121008, -2.962e-05, -1.9242e-07], d Vector: [], has_children: 1)
+, Printer:: Node with info: (Key: (8, 254), Node with key(8, 254), S Vector: [0.382541, -0.013787, -0.000162714, 3.47003e-06, 9.25929e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 130), Node with key(8, 130), S Vector: [-0.0766691, -0.0155998, 0.000499232, 9.05859e-06, -2.70664e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (6, 52), Node with key(6, 52), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 236), Node with key(8, 236), S Vector: [0.111735, 0.0301721, -0.000242779, -8.99646e-06, 1.94208e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7Printer:: Node with info: (Key: (, 8, 180), Node with key(8, 180), S Vector: [-0.167401, 0.0133301, 0.000724715, -2.05255e-05, -3.60576e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 105), Node with key(7, 105), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 232), Node with key(8, 232), S Vector: [-0.329195, 0.0316549, 0.00010581, -4.15713e-06, -1.15595e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 155), Node with key(8, 155), S Vector: [1.03015, 0.0350501, -0.000631271, -1.3496e-05, 3.58057e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 106), Node with key(7, 106), S Vector: [], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (8, 140), Node with key(8, 140), S Vector: [-0.0618793, 0.00280216, -0.00024773, 2.18341e-06, 4.43675e-07], d Vector: [], has_children: 1)
+, 101), Node with key(7, 101), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 209), Node with key(8, 209), S Vector: [-1.80816, 0.0261359, -0.000101203, -1.14651e-05, 1.46174e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 212), Node with key(8, 212), S Vector: [-1.56255, 0.0201134, -0.000368601, -3.20119e-06, 2.0738e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 114), Node with key(7, 114), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 249), Node with key(8, 249), S Vector: [0.555459, -0.006055, -0.000194259, -4.27216e-07, -4.37962e-08], d Vector: [], has_children: 1)
+Node with key(8, 235), S Vector: [0.00448494, 0.0316381, -0.000136009, -8.8688e-06, -4.14734e-08], d Vector: [], has_children: 1)
+128), Node with key(8, 128), S Vector: [0.0534131, -0.0212202, 0.000203121, 1.50479e-05, -9.63512e-08], d Vector: [], has_children: 1)
+8, 141), Node with key(8, 141), S Vector: [-0.0552528, 0.00109158, -0.000182108, 8.73757e-06, 3.75881e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (224Printer:: Node with info: (Key: (115Printer:: Node with info: (Key: (), 8Node with key(8, 224), S Vector: [-1.05459, 0.0187839, 0.000312645, -2.01499e-06, -7.49196e-08], d Vector: [], has_children: 18
+), Node with key(7, 115), S Vector: [], d Vector: [], has_children: 1)
+), Node with key(6, 57), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 113), Node with key(7, 113), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 255), Node with key(8, 255), S Vector: [0.332825, -0.0148661, -0.000113509, 4.79397e-06, 7.15773e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 250), Node with key(8, 250), S Vector: [0.531843, -0.00758744, -0.00020205, -7.78382e-07, 2.61948e-10], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 253), Node with key(8, 253), S Vector: [0.427941, -0.0123915, -0.000194851, 1.95591e-06, 9.50307e-08], d Vector: [], has_children: 1)
+8, 145), Node with key(8, 145), S Vector: [-0.0322736, 0.00631506, 0.000587498, 1.69223e-05, -2.24667e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 252), Node with key(8, 252), S Vector: [0.468164, -0.0108158, -0.000209482, 5.60896e-07, 7.77439e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 210), Node with key(8, 210), S Vector: [-1.71961, 0.0248652, -0.00022243, -8.98182e-06, 1.62691e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 231), Node with key(8, 231), S Vector: [-0.437219, 0.0306724, 0.000144928, -2.49167e-06, -7.21367e-08], d Vector: [], has_children: 1)
+7Printer:: Node with info: (Key: (8, 228), Node with key(8, 228), S Vector: [-0.735866, 0.0266104, 0.000199149, -1.55895e-06, 4.48882e-08], d Vector: [], has_children: 1)
+8, 233), Node with key(8, 233), S Vector: [-0.218394, 0.032254, 4.54408e-05, -6.0559e-06, -1.19049e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 153), Node with key(8, 153), S Vector: [0.760509, 0.0417086, -0.000192728, -2.25894e-05, 1.72447e-07], d Vector: [], has_children: 1)Printer:: Node with info: (Key: (78, 181), Node with key(8, 181), S Vector: [-0.112789, 0.0179161, 0.000449989, -2.5738e-05, -2.91659e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 230), Node with key(8, 230), S Vector: [-0.541401, 0.029453, 0.00016807, -1.46933e-06, -5.2703e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 211), Node with key(8, 211), S Vector: [-1.63694, 0.0227734, -0.000312709, -6.22043e-06, 1.85491e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 214), Node with key(8, 214), S Vector: [-1.44364, 0.0142186, -0.000367341, 3.29622e-06, 1.91339e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (Printer:: Node with info: (Key: (8, 213), Node with key(8, 213), S Vector: [-1.49796, 0.0171635, -0.000387209, 3.84099e-08, 2.00404e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 208), Node with key(8, 208), S Vector: [-1.89935, 0.0263584, 4.77624e-05, -1.36863e-05, 1.34885e-07], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 152), Node with key(8, 152), S Vector: [0.614791, 0.0421338, 8.55093e-05, -2.40088e-05, 1.18137e-09], d Vector: [], has_children: 1)
+, 124), Node with key(7, 124), S Vector: [], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 179), Node with key(8, 179), S Vector: [-0.202761, 0.00687043, 0.000932165, -1.44323e-05, -4.03337e-07], d Vector: [], has_children: 1)
+
+Printer:: Node with info: (Key: (8, 225), Node with key(8, 225), S Vector: [-0.98546, 0.0210982, 0.000283542, -2.76659e-06, -2.0494e-08], d Vector: [], has_children: 1)
+)
+8, 234), Node with key(8, 234), S Vector: [-0.106436, 0.0322996, -3.67732e-05, -7.77502e-06, -9.2995e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 226), Node with key(8, 226), S Vector: [-0.908733, 0.0231658, 0.000250387, -2.72936e-06, 2.23249e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 72), Node with key(7, 72), S Vector: [], d Vector: [], has_children: 1)
+, 215), Node with key(8, 215), S Vector: [-1.39907, 0.0115717, -0.000310832, 6.21543e-06, 1.75417e-07], d Vector: [], has_children: 1)
+, 183), Node with key(8, 183), S Vector: [0.0234141, 0.0196945, -0.000243566, -3.16743e-05, -6.15733e-08], d Vector: [], has_children: 1)
+8, 237), Node with key(8, 237), S Vector: [0.212484, 0.0278897, -0.000344826, -8.06058e-06, 9.55136e-08], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (8, 229), Node with key(8, 229), S Vector: [-0.641095, 0.0280897, 0.0001834, -1.22239e-06, -2.25598e-09], d Vector: [], has_children: 1)
+Printer:: Node with info: (Key: (7, 107), Node with key(7, 107), S Vector: [], d Vector: [], has_children: 1)
+, 127), Node with key(7, 127), S Vector: [], d Vector: [], has_children: 1)8
+, 227), Node with key(8, 227), S Vector: [-0.825276, 0.0249877, 0.000221027, -2.18285e-06, 4.23548e-08], d Vector: [], has_children: 1)
+0.041487
