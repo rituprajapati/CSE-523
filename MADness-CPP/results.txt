@@ -1,3 +1,4 @@
+
 Norm of function is 1
 f(0.000000)=        1.02238e-32         Exact(0.000000)=    2.18224e-54         Err=      1.02238e-32         
 f(0.050000)=        5.41735e-33         Exact(0.050000)=    4.5019e-44          Err=      5.41735e-33         
@@ -182,19 +183,19 @@ level=    25             boxes=    8              norm=     1.17741
 level=    24             boxes=    8              norm=     1.17741        
 level=    23             boxes=    8              norm=     1.17741        
 level=    22             boxes=    8              norm=     1.17741        
-level=    21             boxes=    8              norm=     1.17741        
-level=    20             boxes=    8              norm=     1.17741        
-level=    19             boxes=    8              norm=     1.1774         
-level=    18             boxes=    8              norm=     1.17738        
-level=    17             boxes=    8              norm=     1.17729        
-level=    16             boxes=    8              norm=     1.17694        
-level=    15             boxes=    8              norm=     1.17554        
-level=    14             boxes=    8              norm=     1.16993        
-level=    13             boxes=    8              norm=     1.14764        
-level=    12             boxes=    8              norm=     1.06081        
-level=    11             boxes=    8              norm=     0.751815       
-level=    10             boxes=    16             norm=     0.590562       
 level=    9              boxes=    500            norm=     2.05009        
+level=    10             boxes=    16             norm=     0.590562       
+level=    11             boxes=    8              norm=     0.751815       
+level=    12             boxes=    8              norm=     1.06081        
+level=    13             boxes=    8              norm=     1.14764        
+level=    14             boxes=    8              norm=     1.16993        
+level=    15             boxes=    8              norm=     1.17554        
+level=    16             boxes=    8              norm=     1.17694        
+level=    17             boxes=    8              norm=     1.17729        
+level=    18             boxes=    8              norm=     1.17738        
+level=    19             boxes=    8              norm=     1.1774         
+level=    20             boxes=    8              norm=     1.17741        
+level=    21             boxes=    8              norm=     1.17741        
 
 difference coefficients
 
@@ -211,18 +212,6 @@ difference coefficients
  level=   24           boxes=  8           norm=. 1.03788
  level=   23           boxes=  8           norm=. 1.07884
  level=   22           boxes=  8           norm=. 1.10774
- level=   21           boxes=  8           norm=. 1.12815
- level=   20           boxes=  8           norm=. 1.14258
- level=   19           boxes=  8           norm=. 1.15278
- level=   18           boxes=  8           norm=. 1.16
- level=   17           boxes=  8           norm=. 1.1651
- level=   16           boxes=  8           norm=. 1.1687
- level=   15           boxes=  8           norm=. 1.17125
- level=   14           boxes=  8           norm=. 1.17306
- level=   13           boxes=  8           norm=. 1.17433
- level=   12           boxes=  8           norm=. 1.17523
- level=   11           boxes=  8           norm=. 1.17586
- level=   10           boxes=  8           norm=. 1.17629
  level=   9            boxes=  12          norm=. 1.17652
  level=   8            boxes=  256         norm=. 1.17641
  level=   7            boxes=  128         norm=. 1.17575
@@ -233,6 +222,18 @@ difference coefficients
  level=   2            boxes=  4           norm=. 1.27603
  level=   1            boxes=  2           norm=. 0.772757
  level=   0            boxes=  1           norm=. 0.684861
+ level=   10           boxes=  8           norm=. 1.17629
+ level=   11           boxes=  8           norm=. 1.17586
+ level=   12           boxes=  8           norm=. 1.17523
+ level=   13           boxes=  8           norm=. 1.17433
+ level=   14           boxes=  8           norm=. 1.17306
+ level=   15           boxes=  8           norm=. 1.17125
+ level=   16           boxes=  8           norm=. 1.1687
+ level=   17           boxes=  8           norm=. 1.1651
+ level=   18           boxes=  8           norm=. 1.16
+ level=   19           boxes=  8           norm=. 1.15278
+ level=   20           boxes=  8           norm=. 1.14258
+ level=   21           boxes=  8           norm=. 1.12815
 
 coefficients after reconstructing
 sum coefficients
@@ -245,19 +246,19 @@ level=    25             boxes=    8              norm=     1.17741
 level=    24             boxes=    8              norm=     1.17741        
 level=    23             boxes=    8              norm=     1.17741        
 level=    22             boxes=    8              norm=     1.17741        
-level=    21             boxes=    8              norm=     1.17741        
-level=    20             boxes=    8              norm=     1.17741        
-level=    19             boxes=    8              norm=     1.1774         
-level=    18             boxes=    8              norm=     1.17738        
-level=    17             boxes=    8              norm=     1.17729        
-level=    16             boxes=    8              norm=     1.17694        
-level=    15             boxes=    8              norm=     1.17554        
-level=    14             boxes=    8              norm=     1.16993        
-level=    13             boxes=    8              norm=     1.14764        
-level=    12             boxes=    8              norm=     1.06081        
-level=    11             boxes=    8              norm=     0.751815       
-level=    10             boxes=    16             norm=     0.590562       
 level=    9              boxes=    500            norm=     2.05009        
+level=    10             boxes=    16             norm=     0.590562       
+level=    11             boxes=    8              norm=     0.751815       
+level=    12             boxes=    8              norm=     1.06081        
+level=    13             boxes=    8              norm=     1.14764        
+level=    14             boxes=    8              norm=     1.16993        
+level=    15             boxes=    8              norm=     1.17554        
+level=    16             boxes=    8              norm=     1.17694        
+level=    17             boxes=    8              norm=     1.17729        
+level=    18             boxes=    8              norm=     1.17738        
+level=    19             boxes=    8              norm=     1.1774         
+level=    20             boxes=    8              norm=     1.17741        
+level=    21             boxes=    8              norm=     1.17741        
 
 difference coefficients
 
@@ -288,10 +289,10 @@ norm of f2 is  1
 norm of f3 = f1 + f2 is  2
 
 sum coefficients
-level=    3              boxes=    4              norm=     8.77817e-15    
-level=    5              boxes=    8              norm=     0.000301224    
-level=    6              boxes=    12             norm=     0.805607       
 level=    7              boxes=    8              norm=     1.83057        
+level=    6              boxes=    12             norm=     0.805607       
+level=    5              boxes=    8              norm=     0.000301224    
+level=    3              boxes=    4              norm=     8.77817e-15    
 
 difference coefficients
 f3(0.000000)=       -2.56638e-16        Exact(0.000000)=    4.36448e-54         Err=      -2.56638e-16        
@@ -321,9 +322,9 @@ norm of f2 is  1.73205
 norm of f3 = f1 + f2 is  2.44949
 
 sum coefficients
-level=    5              boxes=    4              norm=     2.7906e-05     
-level=    6              boxes=    32             norm=     0.806274       
 level=    7              boxes=    48             norm=     2.31299        
+level=    6              boxes=    32             norm=     0.806274       
+level=    5              boxes=    4              norm=     2.7906e-05     
 
 difference coefficients
 f3(0.000000)=       3.04462e-08         Exact(0.000000)=    8.70608e-09         Err=      2.17401e-08         
@@ -353,6 +354,15 @@ norm of f2 is  6.55811
 norm of f3 = f1 + f2 is  6.72369
 
 sum coefficients
+level=    30             boxes=    16             norm=     3.64624        
+level=    29             boxes=    8              norm=     1.17792        
+level=    28             boxes=    8              norm=     1.17814        
+level=    27             boxes=    8              norm=     1.17844        
+level=    26             boxes=    8              norm=     1.17886        
+level=    25             boxes=    8              norm=     1.17946        
+level=    24             boxes=    8              norm=     1.18031        
+level=    23             boxes=    8              norm=     1.18151        
+level=    22             boxes=    8              norm=     1.18321        
 level=    9              boxes=    500            norm=     2.14255        
 level=    10             boxes=    16             norm=     0.456578       
 level=    11             boxes=    8              norm=     1.005          
@@ -366,15 +376,6 @@ level=    18             boxes=    8              norm=     1.2006
 level=    19             boxes=    8              norm=     1.19382        
 level=    20             boxes=    8              norm=     1.18902        
 level=    21             boxes=    8              norm=     1.18562        
-level=    22             boxes=    8              norm=     1.18321        
-level=    23             boxes=    8              norm=     1.18151        
-level=    24             boxes=    8              norm=     1.18031        
-level=    25             boxes=    8              norm=     1.17946        
-level=    26             boxes=    8              norm=     1.17886        
-level=    27             boxes=    8              norm=     1.17844        
-level=    28             boxes=    8              norm=     1.17814        
-level=    29             boxes=    8              norm=     1.17792        
-level=    30             boxes=    16             norm=     3.64624        
 
 difference coefficients
 f3(0.000000)=       1.41421             Exact(0.000000)=    1.41421             Err=      -9.63109e-07        
@@ -479,18 +480,18 @@ level=    25             boxes=    16             norm=     4.97325
 level=    24             boxes=    16             norm=     4.97325        
 level=    23             boxes=    16             norm=     4.97325        
 level=    22             boxes=    16             norm=     4.97325        
-level=    21             boxes=    16             norm=     4.97324        
-level=    20             boxes=    16             norm=     4.97322        
-level=    19             boxes=    16             norm=     4.97312        
-level=    18             boxes=    16             norm=     4.97275        
-level=    17             boxes=    16             norm=     4.97125        
-level=    16             boxes=    16             norm=     4.96526        
-level=    15             boxes=    16             norm=     4.94133        
-level=    14             boxes=    16             norm=     4.84626        
-level=    13             boxes=    16             norm=     4.47626        
-level=    12             boxes=    16             norm=     3.16458        
-level=    11             boxes=    32             norm=     2.3808         
 level=    10             boxes=    1000           norm=     4.61591        
+level=    11             boxes=    32             norm=     2.3808         
+level=    12             boxes=    16             norm=     3.16458        
+level=    13             boxes=    16             norm=     4.47626        
+level=    14             boxes=    16             norm=     4.84626        
+level=    15             boxes=    16             norm=     4.94133        
+level=    16             boxes=    16             norm=     4.96526        
+level=    17             boxes=    16             norm=     4.97125        
+level=    18             boxes=    16             norm=     4.97275        
+level=    19             boxes=    16             norm=     4.97312        
+level=    20             boxes=    16             norm=     4.97322        
+level=    21             boxes=    16             norm=     4.97324        
 
 difference coefficients
 f3(0.000000)=       1.44587e-32         Exact(0.000000)=    3.08615e-54         Err=      1.44587e-32         

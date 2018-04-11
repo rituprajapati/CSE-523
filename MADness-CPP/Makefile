@@ -1,2 +1,2 @@
 all:
-	clang++ -std=c++11 oned.cpp -o oned
+	g++ -std=c++11 oned.cpp -o oned
