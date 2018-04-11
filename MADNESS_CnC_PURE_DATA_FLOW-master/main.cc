@@ -296,6 +296,8 @@ struct Reconstruct_doIt : step_Base{
 struct Norm2 : step_Base{
 
    int execute(const std::pair<int, int> &node, CnCContext &context) const;
+
+
    /*----------------------------------------------------------------*/
    /* Norm2 Constructor
    /*----------------------------------------------------------------*/
@@ -380,30 +382,6 @@ struct InnerProduct : step_Base {
 
 /**********************************************************************/
 /**********************************************************************/
-/* Struct  -  evaluate
-/* Used By -  evaluate_step
-/**********************************************************************/
-/**********************************************************************/
-// struct  Evaluate : step_Base{
-
-//    int execute(const std::pair<int, int> &node, CnCContext &context) const;
-//    double x;
-//    /*----------------------------------------------------------------*/
-//    /* Reconstruct_doIt Constructor
-//    /*----------------------------------------------------------------*/
-//    Evaluate( 
-//             double x,
-//             std::vector<CnC::item_collection<std::pair<int, int>, Node> *> input_terminals,
-//             std::vector<OutputTerminal<std::pair<int, int>, Node>> output_terminals)
-//           : 
-//           x(x),
-//           step_Base(input_terminals, output_terminals) {}
-// };
-
-
-
-/**********************************************************************/
-/**********************************************************************/
 /* Struct  - CnCContext
 /**********************************************************************/
 /**********************************************************************/
@@ -423,16 +401,26 @@ public:
    Vector *quad_w, *quad_x;
    Matrix *quad_phi, *quad_phiT, *quad_phiw;
 
-   tbb::concurrent_vector<double> inner_results;
-   tbb::concurrent_vector<double> norm2_results;
    CnC::item_collection<std::pair<int, int>, Node> evaluate_item;
+   tbb::concurrent_vector<double> inner_results;
+
+    /*----------------------------------------------------------------*/
+    /* norm2 results
+    /*----------------------------------------------------------------*/
+    tbb::concurrent_vector<double> norm2_result;
+    // tbb::concurrent_vector<double> norm2_f2_result;
+    // tbb::concurrent_vector<double> norm2_add_result;
+
 
    CnCContext(int k, double thresh, int max_level)
    : 
     CnC::context<CnCContext>(), 
     evaluate_item(*this),
     k(k), 
-    thresh(thresh), 
+    thresh(thresh),
+    norm2_result(1, 0.0),
+    // norm2_f2_result(1, 0.0),
+    // norm2_add_result(1, 0.0),
     max_level(max_level)
     {
       // cout << "Inside CnCContext " << k << " " << thresh << " " << max_level << "\n";
@@ -519,26 +507,7 @@ public:
    }
 
 
-  double __evaluate (  int n, int l, double x ) {
-
-    Node nodeInfo;
-
-    this->evaluate_item.get(make_pair(n,l), nodeInfo);
-    int k = this->k;
-
-    if( !nodeInfo.has_children ){
-      double *p = phi(x, k);
-      return ( nodeInfo.s.inner( *p) * sqrt( pow ( 2.0, n)) ) ; // doubt!! Inner needs a Vector bu p here is a pointer???
-    } 
-    else{
-      n += 1; l *= 2; x = 2.0 * x;
-
-      if ( x >= 1 ) {
-        l = l+1; x = x-1;
-      }
-      return __evaluate(n, l, x );
-    }
-  } 
+  
 
 };
 
@@ -832,7 +801,7 @@ int Reconstruct_doIt::execute( const std::pair<int, int> &node, CnCContext &cont
         output_terminals[1].put( node, Node( node.first, node.second, k, Vector(), Vector(), true));
     }
     else{
-        output_terminals[1].put( node, Node( node.first, node.second, k, s, Vector(), true));
+        output_terminals[1].put( node, Node( node.first, node.second, k, s, Vector(), false));
     }
 
     return CnC::CNC_Success;
@@ -842,7 +811,7 @@ int Reconstruct_doIt::execute( const std::pair<int, int> &node, CnCContext &cont
 int Printer::execute(const std::pair<int, int> &node, CnCContext &context) const {
    Node nodeInfo;
    input_terminals[0]->get(node, nodeInfo);
-   std::cout << "Printer:: Node with info: (Key: (" << node.first << ", " << node.second << "), " << nodeInfo.toString() << ")" << std::endl;
+   // std::cout << "Printer:: Node with info: (Key: (" << node.first << ", " << node.second << "), " << nodeInfo.toString() << ")" << std::endl;
    return CnC::CNC_Success;
 }
 
@@ -853,12 +822,12 @@ int Norm2::execute( const std::pair<int, int> &node, CnCContext &context ) const
    Node nodeInfo;
    input_terminals[0]->get(node, nodeInfo);
 
-   context.norm2_results.push_back( pow( nodeInfo.s.normf(), 2) );
+   context.norm2_result[0] +=  pow( nodeInfo.s.normf(), 2);
 
    if( nodeInfo.has_children ){
 
-      output_terminals[0].put( make_pair(node.first + 1, node.second * 2), Node());
-      output_terminals[0].put( make_pair(node.first + 1, node.second * 2 + 1), Node());
+      output_terminals[0].put( std::make_pair(node.first + 1, node.second * 2));
+      output_terminals[0].put( std::make_pair(node.first + 1, node.second * 2 + 1));
 
    }
    return CnC::CNC_Success;
@@ -925,7 +894,11 @@ int Diff_doIt::execute( const std::pair<int, int> &node, CnCContext &context ) c
 
      if (left.s.length() != 0) {   
         Vector unfiltered = unfilter(left.s, k, context.hg);
-        output_terminals[0].put(make_pair( node.first+1, node.second*2), Node( left.n +1, left.l*2 +1, k, unfiltered.get_slice(k, 2 * k), Vector(), false));
+        //if node is the leftmost item then put the node as the left for the rightmost at that level
+        if( node.second == 0 )
+          output_terminals[0].put(make_pair( node.first+1, node.second*2), Node( node.first +1, 2 * (pow(2, node.first) - 1) + 1, k, unfiltered.get_slice(k, 2 * k), Vector(), false));
+        else
+          output_terminals[0].put(make_pair( node.first+1, node.second*2), Node( node.first +1, (node.second-1)*2 +1, k, unfiltered.get_slice(k, 2 * k), Vector(), false));
      }
        
      if (center.s.length() != 0) {
@@ -940,7 +913,11 @@ int Diff_doIt::execute( const std::pair<int, int> &node, CnCContext &context ) c
 
      if (right.s.length() != 0) {
         Vector unfiltered = unfilter(right.s, k, context.hg);
-        output_terminals[2].put(make_pair( node.first+1, node.second*2+1), Node( right.n +1, right.l*2 , k, unfiltered.get_slice(0,k), Vector(), false));
+        //if node is the rightmost at level l, then put it as the leftmost of first node at level l
+        if( node.second == pow(2, node.first)-1)
+          output_terminals[2].put(make_pair( node.first+1, 0), Node( node.first +1, (node.second+1)*2 , k, unfiltered.get_slice(0,k), Vector(), false));
+        else
+          output_terminals[2].put(make_pair( node.first+1, node.second*2+1), Node( node.first +1, (node.second+1)*2 , k, unfiltered.get_slice(0,k), Vector(), false));
      }
   }
    
@@ -1214,6 +1191,7 @@ struct diff_test: CnCContext{
 
 struct addition_test : CnCContext {
    
+ 
   /*----------------------------------------------------------------*/
   /* Item Collections
   /*----------------------------------------------------------------*/
@@ -1248,6 +1226,11 @@ struct addition_test : CnCContext {
    CnC::tag_collection<std::pair<int, int>> reconstruct_prolog_tag;
    CnC::tag_collection<std::pair<int, int>> reconstruct_doIt_tag;
 
+   CnC::tag_collection<std::pair<int, int>> norm2_f1_tag;
+   CnC::tag_collection<std::pair<int, int>> norm2_f2_tag;
+   CnC::tag_collection<std::pair<int, int>> norm2_add_tag;
+
+
   /*----------------------------------------------------------------*/
   /* Step Collections
   /*----------------------------------------------------------------*/
@@ -1265,12 +1248,18 @@ struct addition_test : CnCContext {
    CnC::step_collection<Reconstruct_Prolog> reconstruct_prolog_step;
    CnC::step_collection<Reconstruct_doIt>  reconstruct_doIt_step;
 
+
+   CnC::step_collection<Norm2> norm2_f1_step;
+   CnC::step_collection<Norm2> norm2_f2_step;
+   CnC::step_collection<Norm2> norm2_add_step;
+
   /*----------------------------------------------------------------*/
   /* addition_test Constructor
   /*----------------------------------------------------------------*/
-   addition_test(int k, double thresh, int max_level)
+   addition_test(int k, double thresh, int max_level, double (*funcA)(double), double (*funcB)(double))
    : 
      CnCContext( k, thresh, max_level),
+
      projectA_item(*this),
      projectB_item(*this), 
      projectA_tag(*this), 
@@ -1295,6 +1284,9 @@ struct addition_test : CnCContext {
      reconstruct_prolog_tag(*this),
      reconstruct_doIt_tag(*this),
 
+     norm2_f1_tag(*this),
+     norm2_f2_tag(*this),
+     norm2_add_tag(*this),
      /*----------------------------------------------------------------*/
      /* Declare projectA_step
      /*----------------------------------------------------------------*/
@@ -1302,9 +1294,10 @@ struct addition_test : CnCContext {
                   *this, 
                   "projectA_step", 
                   Project(
-                          &funcA, std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{},
+                          funcA, 
+                          std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{},
                           std::vector<OutputTerminalType> {
-                              OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&projectA_tag,}),
+                              OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&projectA_tag}),
                               OutputTerminalType(&projectA_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&compress_prolog_FuncA_tag})}
                           )
                   ),
@@ -1316,7 +1309,7 @@ struct addition_test : CnCContext {
                   *this, 
                   "projectB_step", 
                   Project(
-                          &funcB, 
+                          funcB, 
                           std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{},
                           std::vector<OutputTerminalType> {
                               OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&projectB_tag}),
@@ -1435,10 +1428,52 @@ struct addition_test : CnCContext {
                               std::vector<OutputTerminalType>{
                                 OutputTerminalType(&s_coeff_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&reconstruct_doIt_tag}),
                                 OutputTerminalType(&reconstruct_result_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&printer_tag})})
-                         )
+                         ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare norm2_f1_step
+    /*----------------------------------------------------------------*/
+
+    norm2_f1_step( 
+                  *this, 
+                  "norm2_f1_step", 
+                  Norm2( 
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectA_item}, 
+                      std::vector<OutputTerminalType>{
+                        OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&norm2_f1_tag})})
+                 ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare norm2_f2_step
+    /*----------------------------------------------------------------*/
+
+    norm2_f2_step( 
+                  *this, 
+                  "norm2_f2_step", 
+                  Norm2( 
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectB_item}, 
+                      std::vector<OutputTerminalType>{
+                        OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&norm2_f2_tag})})
+                 ),
+
+
+    /*----------------------------------------------------------------*/
+    /* Declare norm2_add_step
+    /*----------------------------------------------------------------*/
+
+    norm2_add_step( 
+                  *this, 
+                  "norm2_add_step", 
+                  Norm2( 
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&reconstruct_result_item}, 
+                      std::vector<OutputTerminalType>{
+                        OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&norm2_add_tag})})
+                 )
+
 
     {
       
+      // evaluate_item = reconstrucmt_result_item;
       /*----------------------------------------------------------------*/
       /* Tag Prescription
       /*----------------------------------------------------------------*/
@@ -1452,6 +1487,10 @@ struct addition_test : CnCContext {
       gaxpyOP_tag.prescribes( gaxpyOp_step, *this);
       reconstruct_prolog_tag.prescribes( reconstruct_prolog_step, *this);
       reconstruct_doIt_tag.prescribes( reconstruct_doIt_step, *this);
+      norm2_f1_tag.prescribes( norm2_f1_step, *this);
+      norm2_f2_tag.prescribes( norm2_f2_step, *this);
+      norm2_add_tag.prescribes( norm2_add_step, *this);
+
 
       /*----------------------------------------------------------------*/
       /* Steps Produce Consume
@@ -1498,8 +1537,32 @@ struct addition_test : CnCContext {
 
       printer_step.consumes(reconstruct_result_item);
 
+      norm2_f1_step.consumes( projectA_item);
+      norm2_f2_step.consumes( projectB_item);
+      norm2_add_step.consumes( reconstruct_result_item);
    }
 
+
+   double __evaluate (  int n, int l, double x ) {
+
+    Node nodeInfo;
+    this->reconstruct_result_item.get(make_pair(n,l), nodeInfo);
+    int k = this->k;
+
+    if( !nodeInfo.has_children ){
+      double *tmp = phi(x, k);
+      Vector p(tmp, 0, k);
+      return ( nodeInfo.s.inner( p ) * sqrt( pow ( 2.0, n)) ) ; // doubt!! Inner needs a Vector but p here is a pointer???
+    } 
+    else{
+      n += 1; l *= 2; x = 2.0 * x;
+
+      if ( x >= 1 ) {
+        l = l+1; x = x-1;
+      }
+      return __evaluate(n, l, x );
+    }
+  } 
 };
 
 
@@ -1513,10 +1576,74 @@ int main(int argc, char *argv[]) {
 
 
    //Addition test
-   addition_test add_obj(k, thresh, max_level);
+   addition_test add_obj(k, thresh, max_level, test[0], test[1]);
    add_obj.projectA_tag.put(std::make_pair(0, 0));
    add_obj.projectB_tag.put(std::make_pair(0, 0));   
    add_obj.wait();
+
+
+    vector< double > range;
+    for (double i = 0.0; i < (double)npt+1.0; i++)
+      range.push_back(i);
+
+
+  /*****************************************************************/
+  /* Addition test which in turn tests gaxpy             */
+  /*****************************************************************/
+  for( int j = 0; j < 3; j++ ){
+    
+      cout << "\n";
+
+      addition_test add_obj(k, thresh, max_level, test[0], test[j]);
+      add_obj.projectA_tag.put(std::make_pair(0, 0));
+      add_obj.projectB_tag.put(std::make_pair(0, 0));   
+      add_obj.wait();
+
+      add_obj.norm2_f1_tag.put(std::make_pair(0, 0));
+      add_obj.wait();
+      cout << "norm of f1 is  " << add_obj.norm2_result[0] << "\n";
+      add_obj.norm2_result[0] = 0.0;
+      
+
+      add_obj.norm2_f2_tag.put(std::make_pair(0, 0));
+      add_obj.wait();
+      cout << "norm of f2 is  " << add_obj.norm2_result[0] << "\n";
+      add_obj.norm2_result[0] = 0.0;
+
+
+      add_obj.norm2_add_tag.put(std::make_pair(0, 0));
+      add_obj.wait();
+      cout << "norm of addition is  " << add_obj.norm2_result[0] << "\n";
+      add_obj.norm2_result[0] = 0.0;
+
+    for ( int i = 0 ; i < range.size(); i++){
+
+      double x = range[i];
+      x = x/ (double) npt;
+
+      double f3_x = add_obj.__evaluate(0,0,x);
+      double exact_x = test[0](x) + test[j](x);
+      double err_x = f3_x - exact_x;
+      string s1 = "f3(" + to_string(x) + ")=";
+      string s2 = "Exact(" + to_string(x) + ")=";
+
+      cout << left << setw(20) << s1;
+      cout << left << setw(20) << f3_x;
+      cout << left << setw(20) << s2;
+      cout << left << setw(20) << exact_x;
+      cout << left << setw(10) << "Err=";
+      cout << left << setw(20) << err_x;
+
+      cout << "\n";
+          if ( err_x > thresh )
+              cout << left << setw(20) << "outside thresh" << thresh - err_x << "\n";
+    }
+
+
+  }
+
+
+
 
    //Diff test
    // diff_test diff_test_obj( k, thresh, max_level);
