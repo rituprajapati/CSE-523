@@ -527,6 +527,19 @@ Vector sub(const Vector &v1, const Vector &v2) {
 
 
 /**********************************************************************/
+/* This method is used to instantiate the general struct BinaryOp to 
+/* be specifically multiplication of two mathematical functions
+/**********************************************************************/
+Vector mul(const Vector &v1, const Vector &v2) {
+
+  Vector result(v1);
+  for (unsigned int i = 0; i < v2.length(); ++i) {
+    result.data[i] *= v2.data[i];
+  }
+  return result;
+}
+
+/**********************************************************************/
 /* used in the method execute of class BinaryOp for the 
 /* subtraction instance 
 /**********************************************************************/
@@ -534,6 +547,13 @@ double sub_scale_factor(double n) {
    return 1.0;
 }
 
+/**********************************************************************/
+/* used in the method execute of class BinaryOp for the 
+/* multiplication instance 
+/**********************************************************************/
+double mul_scale_factor(double n) {
+   return ( sqrt( pow ( 2.0, n+1) ) );
+}
 
 /**********************************************************************/
 /* Mathematical test functions test1 and test2 would use 
@@ -1399,7 +1419,6 @@ struct addition_test : CnCContext {
 
     {
       
-      // evaluate_item = reconstrucmt_result_item;
       /*----------------------------------------------------------------*/
       /* Tag Prescription
       /*----------------------------------------------------------------*/
@@ -1468,6 +1487,268 @@ struct addition_test : CnCContext {
       norm2_add_step.consumes( reconstruct_result_item);
    }
 };
+
+
+
+
+
+/**********************************************************************/
+/* multiplication test
+/**********************************************************************/
+struct multiplication_test: CnCContext{
+   
+  /*----------------------------------------------------------------*/
+  /* Item Collections
+  /*----------------------------------------------------------------*/
+  CnC::item_collection<std::pair<int, int>, Node> projectA_item;
+  CnC::item_collection<std::pair<int, int>, Node> projectB_item; 
+  CnC::item_collection<std::pair<int, int>, Node> mul_item;
+  
+  /*----------------------------------------------------------------*/
+  /* Tag Collections
+  /*----------------------------------------------------------------*/
+  CnC::tag_collection<std::pair<int, int>> projectA_tag;
+  CnC::tag_collection<std::pair<int, int>> projectB_tag;
+  CnC::tag_collection<std::pair<int, int>> mul_tag;
+  CnC::tag_collection<std::pair<int, int>> printer_tag;
+  CnC::tag_collection<std::pair<int, int>> norm2_f1_tag;
+  CnC::tag_collection<std::pair<int, int>> norm2_f2_tag;
+  CnC::tag_collection<std::pair<int, int>> norm2_mul_tag;
+
+  /*----------------------------------------------------------------*/
+  /* Step Collections
+  /*----------------------------------------------------------------*/
+  using OutputTerminalType = OutputTerminal<std::pair<int, int>, Node>;
+
+  CnC::step_collection<Project> projectA_step;
+  CnC::step_collection<Project> projectB_step;
+  CnC::step_collection<BinaryOp> mul_step;
+  CnC::step_collection<Printer> printer_step;
+  CnC::step_collection<Norm2> norm2_f1_step;
+  CnC::step_collection<Norm2> norm2_f2_step;
+  CnC::step_collection<Norm2> norm2_mul_step;
+
+  /*----------------------------------------------------------------*/
+  /* CnCContext Constructor
+  /*----------------------------------------------------------------*/
+  multiplication_test(int k, double thresh, int max_level, double (*funcA)(double), double (*funcB)(double))
+  : 
+    CnCContext( k, thresh, max_level),
+    projectA_item(*this),
+    projectB_item(*this), 
+    mul_item(*this), 
+    projectA_tag(*this), 
+    projectB_tag(*this), 
+    mul_tag(*this),
+    printer_tag(*this), 
+    norm2_f1_tag(*this),
+    norm2_f2_tag(*this),
+    norm2_mul_tag(*this),
+
+    /*----------------------------------------------------------------*/
+    /* Declare projectA_step
+    /*----------------------------------------------------------------*/
+    projectA_step(
+                  *this, 
+                  "projectA_step", 
+                  Project(
+                          funcA, 
+                          std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{},
+                          std::vector<OutputTerminalType> {
+                              OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&projectA_tag}),
+                              OutputTerminalType(&projectA_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&mul_tag})}
+                          )
+                 ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare projectB_step
+    /*----------------------------------------------------------------*/
+    projectB_step(
+                *this, 
+                "projectB_step", 
+                Project(
+                        funcB, 
+                        std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{},
+                        std::vector<OutputTerminalType> {
+                            OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&projectB_tag}),
+                            OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})}
+                        )
+                ),
+    
+    /*----------------------------------------------------------------*/
+    /* Declare mul_step
+    /*----------------------------------------------------------------*/
+    mul_step(
+            *this, 
+            "mul_step", 
+            BinaryOp(
+                    &mul, 
+                    &mul_scale_factor, 
+                    std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectA_item, &projectB_item},
+                    std::vector<OutputTerminalType>{
+                        OutputTerminalType(&projectA_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&mul_tag}),
+                        OutputTerminalType(&mul_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&printer_tag}),
+                        OutputTerminalType(&projectB_item, std::vector<CnC::tag_collection<std::pair<int, int>> *> {})}
+                    )
+            ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare printer_step
+    /*----------------------------------------------------------------*/
+    printer_step(
+                *this, 
+                "printer_step", 
+                Printer( 
+                  std::vector<CnC::item_collection<std::pair<int, int>, Node> *>{&mul_item}, 
+                  std::vector<OutputTerminalType>{})
+                ),
+
+
+    /*----------------------------------------------------------------*/
+    /* Declare norm2_f1_step
+    /*----------------------------------------------------------------*/
+
+    norm2_f1_step( 
+                  *this, 
+                  "norm2_f1_step", 
+                  Norm2( 
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectA_item}, 
+                      std::vector<OutputTerminalType>{
+                        OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&norm2_f1_tag})})
+                 ),
+
+    /*----------------------------------------------------------------*/
+    /* Declare norm2_f2_step
+    /*----------------------------------------------------------------*/
+
+    norm2_f2_step( 
+                  *this, 
+                  "norm2_f2_step", 
+                  Norm2( 
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&projectB_item}, 
+                      std::vector<OutputTerminalType>{
+                        OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&norm2_f2_tag})})
+                 ),
+
+
+    /*----------------------------------------------------------------*/
+    /* Declare norm2_add_step
+    /*----------------------------------------------------------------*/
+
+    norm2_mul_step( 
+                  *this, 
+                  "norm2_add_step", 
+                  Norm2( 
+                      std::vector<CnC::item_collection<std::pair<int, int>, Node> *> {&mul_item}, 
+                      std::vector<OutputTerminalType>{
+                        OutputTerminalType(nullptr, std::vector<CnC::tag_collection<std::pair<int, int>> *> {&norm2_mul_tag})})
+                 )
+
+
+    
+    {
+      
+      /*----------------------------------------------------------------*/
+      /* Tag Prescription
+      /*----------------------------------------------------------------*/
+      projectA_tag.prescribes(projectA_step, *this);
+      projectB_tag.prescribes(projectB_step, *this);
+      mul_tag.prescribes(mul_step, *this);
+      printer_tag.prescribes(printer_step, *this);
+      norm2_f1_tag.prescribes(norm2_f1_step, *this);
+      norm2_f2_tag.prescribes(norm2_f2_step, *this);
+      norm2_mul_tag.prescribes(norm2_mul_step, *this);
+
+      /*----------------------------------------------------------------*/
+      /* Steps Produce Consume
+      /*----------------------------------------------------------------*/
+      projectA_step.produces(projectA_item);
+
+      projectB_step.produces(projectB_item);
+
+      mul_step.consumes(projectA_item);
+      mul_step.consumes(projectB_item);
+      mul_step.produces(projectA_item);
+      mul_step.produces(projectB_item);
+      mul_step.produces(mul_item);
+
+      printer_step.consumes(mul_item);
+
+      norm2_f1_step.consumes( projectA_item);
+      norm2_f2_step.consumes( projectB_item);
+      norm2_mul_step.consumes( mul_item);
+
+    }
+};
+
+
+
+void Multiplication( int k, int max_level, double thresh ){
+
+  int npt = 20;
+
+  vector< double > range;
+  for (double i = 0.0; i < (double)npt+1.0; i++)
+    range.push_back(i);
+
+  /*****************************************************************/
+  /* Multiplication test 
+  /*****************************************************************/
+  for( int j = 0; j < 3; j++ ){
+    
+      cout << "\n";
+
+      multiplication_test mul_test_obj( k, thresh, max_level, test[0], test[j]);
+      mul_test_obj.projectA_tag.put(std::make_pair(0, 0));
+      mul_test_obj.projectB_tag.put(std::make_pair(0, 0)); 
+      mul_test_obj.wait();
+
+      mul_test_obj.norm2_f1_tag.put(std::make_pair(0, 0));
+      mul_test_obj.wait();
+      cout << "norm of f1 is  " << mul_test_obj.norm2_result[0] << "\n";
+      mul_test_obj.norm2_result[0] = 0.0;
+
+
+      mul_test_obj.norm2_f2_tag.put(std::make_pair(0, 0));
+      mul_test_obj.wait();
+      cout << "norm of f2 is  " << mul_test_obj.norm2_result[0] << "\n";
+      mul_test_obj.norm2_result[0] = 0.0;
+
+
+      mul_test_obj.norm2_mul_tag.put(std::make_pair(0, 0));
+      mul_test_obj.wait();
+      cout << "norm of Multiplication is  " << mul_test_obj.norm2_result[0] << "\n";
+      mul_test_obj.norm2_result[0] = 0.0;
+
+      for ( int i = 0 ; i < range.size(); i++){
+
+        double x = range[i];
+        x = x/ (double) npt;
+
+        double f3_x = mul_test_obj.__evaluate(0,0, x, mul_test_obj.mul_item);
+        double exact_x = test[0](x) * test[j](x);
+        double err_x = f3_x - exact_x;
+        string s1 = "f3(" + to_string(x) + ")=";
+        string s2 = "Exact(" + to_string(x) + ")=";
+
+        cout << left << setw(20) << s1;
+        cout << left << setw(20) << f3_x;
+        cout << left << setw(20) << s2;
+        cout << left << setw(20) << exact_x;
+        cout << left << setw(10) << "Err=";
+        cout << left << setw(20) << err_x;
+
+        cout << "\n";
+            if ( err_x > thresh )
+                cout << left << setw(20) << "outside thresh" << thresh - err_x << "\n";
+    }
+
+  }
+
+}
+
+
+
 
 
 void Addition( int k, int max_level, double thresh ){
@@ -1613,15 +1894,23 @@ int main(int argc, char *argv[]) {
 
    high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
+   cout <<"\n\n---------------------";
+   cout << "\nDIFFERENTIATION TEST";
+   cout <<"\n---------------------";
 
-   // Addition(k, max_level, thresh);
    Differentiation( k, max_level, thresh );
 
-   //Diff test
-   // diff_test diff_test_obj( k, thresh, max_level);
-   // diff_test_obj.project_tag.put( std::make_pair(0, 0) );
-   // diff_test_obj.wait();
+   cout <<"\n\n--------------";
+   cout << "\nADDITION TEST";
+   cout << "\n--------------";
 
+   Addition(k, max_level, thresh);
+
+   cout <<"\n\n-------------------";
+   cout << "\nMULTIPLICATION TEST";
+   cout <<   "\n-------------------";
+
+   Multiplication( k, max_level, thresh );
 
    high_resolution_clock::time_point t2 = high_resolution_clock::now();
    auto duration = duration_cast<microseconds>( t2 - t1 ).count();
