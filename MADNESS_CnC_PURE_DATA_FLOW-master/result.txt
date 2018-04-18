@@ -1,0 +1,378 @@
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 1
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.49084e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  6.48676e-15
+Time taken during computation: 0.088327
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 1
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.49763e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.35321e-15
+Time taken during computation: 0.495062
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 1
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.3243e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.04933e-14
+Time taken during computation: 3.79708
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 1
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.53396e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.11625e-14
+Time taken during computation: 0.097585
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 1
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.51541e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.14956e-14
+Time taken during computation: 0.517932
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 1
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.35436e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.70966e-14
+Time taken during computation: 14.5069
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 2
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.53396e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  6.64383e-15
+Time taken during computation: 0.092298
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 2
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.51528e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.32033e-15
+Time taken during computation: 0.51661
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 2
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.35382e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.04722e-14
+Time taken during computation: 3.91564
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 2
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.53396e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.13041e-14
+Time taken during computation: 0.100594
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 2
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.5154e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.15007e-14
+Time taken during computation: 0.568451
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 2
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.33151e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.70843e-14
+Time taken during computation: 13.6138
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 4
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.47403e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  6.19597e-15
+Time taken during computation: 0.042729
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 4
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.36855e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  8.70359e-15
+Time taken during computation: 0.255179
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 4
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.25956e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.99871e-15
+Time taken during computation: 1.94701
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 4
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.49391e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.1246e-14
+Time taken during computation: 0.053213
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 4
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.44181e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.11444e-14
+Time taken during computation: 0.269432
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 4
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.32185e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.69489e-14
+Time taken during computation: 7.5237
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 8
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.44059e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  5.95837e-15
+Time taken during computation: 0.033815
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 8
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.49212e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.07191e-15
+Time taken during computation: 0.167653
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 8
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.29142e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.03258e-14
+Time taken during computation: 1.29328
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 8
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.50419e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.09746e-14
+Time taken during computation: 0.031088
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 8
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.42451e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.12496e-14
+Time taken during computation: 0.16702
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 8
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.26681e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.68526e-14
+Time taken during computation: 4.64157
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 16
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.47132e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  6.46548e-15
+Time taken during computation: 0.033232
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 16
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.36355e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.14295e-15
+Time taken during computation: 0.122542
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 16
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.21793e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.88416e-15
+Time taken during computation: 0.946908
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 16
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.47116e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.10008e-14
+Time taken during computation: 0.030275
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 16
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.45285e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.08444e-14
+Time taken during computation: 0.128591
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 16
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.22066e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.67363e-14
+Time taken during computation: 3.77081
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 32
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.50004e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  6.53036e-15
+Time taken during computation: 0.062097
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 32
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.29884e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  8.88595e-15
+Time taken during computation: 0.136802
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 32
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.17154e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.75395e-15
+Time taken during computation: 0.838417
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 32
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.50736e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.09129e-14
+Time taken during computation: 0.0496
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 32
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.39135e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.08631e-14
+Time taken during computation: 0.128183
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 32
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.12265e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.61087e-14
+Time taken during computation: 3.52714
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-05, Num of CNC_THREADS: 64
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.49722e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  6.3482e-15
+Time taken during computation: 0.130175
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-10, Num of CNC_THREADS: 64
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.4151e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  8.93113e-15
+Time taken during computation: 0.214575
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:20, Thresh:1e-15, Num of CNC_THREADS: 64
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.15813e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  9.99093e-15
+Time taken during computation: 1.07758
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-05, Num of CNC_THREADS: 64
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  1.46912e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.08828e-14
+Time taken during computation: 0.143695
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-10, Num of CNC_THREADS: 64
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  2.3859e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.10269e-14
+Time taken during computation: 0.235626
+
+
+-----------------------------------------------------------------------
+GAXPY SUBTRACT with max_level:30, Thresh:1e-15, Num of CNC_THREADS: 64
+-----------------------------------------------------------------------
+norm of (test[0]-test[0])- (test[0]-test[0]) is  0
+norm of (test[0]-test[1])- (test[0]-test[1]) is  3.20441e-15
+norm of (test[0]-test[2])- (test[0]-test[2]) is  1.63676e-14
+Time taken during computation: 4.11362

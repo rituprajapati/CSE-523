@@ -1,6 +1,9 @@
 
 #include "header.h"
 
+#include <chrono>
+using namespace std::chrono;
+
 /**************************************************************************/
 /**************************************************************************/
 /* CLASS - FUNCTION 													  */
@@ -652,9 +655,15 @@ public:
 	Vector get_coeffs ( int n, int l ) {
 
 		Vector s;
-		if ( l < 0 || l >= pow( 2, n) ) {
-			Vector tmp( this->k );
-			return tmp;
+		if ( l < 0  ) {
+			// Vector tmp( this->k );
+			// return tmp;
+
+			return get_coeffs(n, pow(2, n)-1);
+		}
+
+		if( l >= pow( 2, n)) {
+			return get_coeffs(n, 0);
 		}
 		
 		if ( this->s.find(n) != this->s.end() && this->s[n].find(l) != this->s[n].end() ) {
@@ -1000,8 +1009,9 @@ int main () {
 	
 	int npt = 20 ;
     int k = 5;
-    ldouble thresh = 1e-5 ;
+    ldouble thresh = 1e-7 ;
 
+	high_resolution_clock::time_point t1 = high_resolution_clock::now();
     vector< ldouble > range;
 	for (ldouble i = 0.0; i < (ldouble)npt+1.0; i++)
 		range.push_back(i);
@@ -1138,7 +1148,10 @@ int main () {
 				cout << "outside thresh  " <<  thresh - err_x << "\n";
 		}
 	}
-
+	
+	high_resolution_clock::time_point t2 = high_resolution_clock::now();
+   auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+   std::cout << duration/1000000.0 << std::endl;
 }
 
 

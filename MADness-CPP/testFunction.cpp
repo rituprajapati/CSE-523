@@ -5,10 +5,11 @@
 
 ldouble test1 ( ldouble x ){
 	
-	ldouble a = 500.0;
-	ldouble tmp = 2 * a / pi;
-	ldouble tmp2 = -a * pow(( x-0.5 ), 2);
-	return pow( tmp , 0.25 ) * exp( tmp2 );
+	// ldouble a = 500.0;
+	// ldouble tmp = 2 * a / pi;
+	// ldouble tmp2 = -a * pow(( x-0.5 ), 2);
+	// return pow( tmp , 0.25 ) * exp( tmp2 );
+	return x;
 
 }
 
@@ -43,11 +44,12 @@ ldouble test3 ( ldouble x ){
 
 ldouble dtest1 ( ldouble x ) {
 
-	ldouble a = 500.0;
-	ldouble tmp1 =  -2.0 * a * (x-0.5);
-	ldouble tmp2 =  pow( 2 * a /pi, 0.25 );
-	ldouble tmp3 =  exp( -a * pow( (x-0.5), 2 ));
-	return tmp1 * tmp2 * tmp3;
+	// ldouble a = 500.0;
+	// ldouble tmp1 =  -2.0 * a * (x-0.5);
+	// ldouble tmp2 =  pow( 2 * a /pi, 0.25 );
+	// ldouble tmp3 =  exp( -a * pow( (x-0.5), 2 ));
+	// return tmp1 * tmp2 * tmp3;
+	return 1;
 }
 
 

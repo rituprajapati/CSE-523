@@ -11,6 +11,7 @@ double test1 ( double x ){
   double tmp = 2 * a / pi;
   double tmp2 = -a * pow(( x-0.5 ), 2);
   return pow( tmp , 0.25 ) * exp( tmp2 );
+  // return x;
 
 }
 
@@ -50,6 +51,8 @@ double dtest1 ( double x ) {
   double tmp2 =  pow( 2 * a /pi, 0.25 );
   double tmp3 =  exp( -a * pow( (x-0.5), 2 ));
   return ( tmp1 * tmp2 * tmp3);
+
+  // return 1;
 }
 
 
