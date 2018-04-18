@@ -257,32 +257,35 @@ int main(int argc, char *argv[]) {
     return -1;
    }
 
-   // cout << "MAX_levels : " << max_level << " Thresh: " << thresh << "\n";
+   cout << "\n*********************************************************************\n";
+   cout << "MAX_levels : " << max_level << "  Thresh: " << thresh << "  Num of threads: " << num_threads;
+   cout << "\n*********************************************************************";
+
    high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
-   // cout <<"\n\n---------------------";
-   // cout << "\nDIFFERENTIATION TEST";
-   // cout <<"\n---------------------";
+   cout <<"\n\n---------------------";
+   cout << "\nDIFFERENTIATION TEST";
+   cout <<"\n---------------------";
 
-   // Differentiation( k, max_level, thresh );
+   Differentiation( k, max_level, thresh );
 
-   // cout <<"\n\n--------------";
-   // cout << "\nADDITION TEST";
-   // cout << "\n--------------";
+   cout <<"\n\n--------------";
+   cout << "\nADDITION TEST";
+   cout << "\n--------------";
 
-   // Addition(k, max_level, thresh);
+   Addition(k, max_level, thresh);
 
-   // cout <<"\n\n-------------------";
-   // cout << "\nMULTIPLICATION TEST";
-   // cout <<   "\n-------------------";
+   cout <<"\n\n-------------------";
+   cout << "\nMULTIPLICATION TEST";
+   cout <<   "\n-------------------";
 
-   // Multiplication( k, max_level, thresh );
+   Multiplication( k, max_level, thresh );
 
-   cout <<"\n\n-----------------------------------------------------------------------";
-   cout << "\nGAXPY SUBTRACT with max_level:" << max_level << ", Thresh:" << thresh << ", Num of CNC_THREADS: " << num_threads;
-   cout <<   "\n-----------------------------------------------------------------------\n";
+   // cout <<"\n\n-----------------------------------------------------------------------";
+   // cout << "\nGAXPY SUBTRACT with max_level:" << max_level << ", Thresh:" << thresh << ", Num of CNC_THREADS: " << num_threads;
+   // cout <<   "\n-----------------------------------------------------------------------\n";
 
-   Gaxpy_Sub( k, max_level, thresh );
+   // Gaxpy_Sub( k, max_level, thresh );
 
    high_resolution_clock::time_point t2 = high_resolution_clock::now();
    auto duration = duration_cast<microseconds>( t2 - t1 ).count();
